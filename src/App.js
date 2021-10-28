@@ -1,7 +1,7 @@
 
 import React from "react";
 import { hot } from 'react-hot-loader/root';
-import ReviewsAndRatings from './ReviewsAndRatings.js';
+import Reviews from './components/reviews/Reviews.js';
 
 class App extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class App extends React.Component {
         <button type="button" class="btn btn-primary">
           This is a bootstrap button
         </button>
-        <ReviewsAndRatings/>
+        <Reviews/>
       </>
     );
   }
