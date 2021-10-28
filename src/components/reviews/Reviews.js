@@ -6,4 +6,4 @@ const Reviews = () => {
   );
 }
 
-export default ReviewsAndRatings;
+export default Reviews;
