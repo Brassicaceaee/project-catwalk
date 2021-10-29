@@ -12,7 +12,7 @@ class App extends React.Component {
         <h1>
           Hello {name}
         </h1>
-        <button type="button" class="btn btn-primary">
+        <button type="button" className="btn btn-primary">
           This is a bootstrap button
         </button>
         <Questions/>
