@@ -1,10 +1,6 @@
 import React from 'react';
 import ProductCardEntry from './ProductCardEntry.jsx'
 
-
-
-
-
 const ProductCardList = () =>{
 
 
@@ -14,9 +10,6 @@ const ProductCardList = () =>{
       <ProductCardEntry />
     </div>
   )
-
 }
-
-
 
 export default ProductCardList;
