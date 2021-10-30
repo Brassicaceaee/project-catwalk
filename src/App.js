@@ -9,10 +9,8 @@ import Related from './components/related/Related.jsx'
 
 class App extends React.Component {
   render() {
-    const { name } = this.props;
     return (
       <>
-
         <h1>
         Brassicaceae
         </h1>
@@ -21,6 +19,10 @@ class App extends React.Component {
         <Related />
         <Reviews/>
         <Questions/>
+        <div className='overview'/>
+        <div className='questions'/>
+        <div className='related'/>
+        <div className='reviews'/>
       </>
     );
   }
