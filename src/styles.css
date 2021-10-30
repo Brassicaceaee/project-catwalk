@@ -2,3 +2,19 @@ h1 {
   color: white;
   background-color: black;
 }
+
+#app {
+  background-color: burlywood;
+}
+
+.overview {
+  background-color: red;
+}
+
+.questions {
+  background-color: blue;
+}
+
+.related {
+  background-color:
+}
