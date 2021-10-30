@@ -15,10 +15,10 @@ class App extends React.Component {
         Brassicaceae
         </h1>
 
-        <Overview />
+        {/* <Overview />
         <Related />
         <Questions/>
-        <Reviews/>
+        <Reviews/>*/}
         <div className='overview'/>
         <div className='questions'/>
         <div className='related'/>
