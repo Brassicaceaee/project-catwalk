@@ -1,47 +1,27 @@
-const webpack = require('webpack');
+
 const path = require('path');
 
-const config = {
-  entry: [
-    'react-hot-loader/patch',
-    './src/index.js'
-  ],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
-  },
+module.exports = {
+  entry: path.join(__dirname, './src/index.js'),
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
+        test: [/\.(js|jsx)$/],
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+          },
+        },
       },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.png$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              mimetype: 'image/png'
-            }
-          }
-        ]
-      }
-    ]
+    ],
   },
-  devServer: {
-    'static': {
-      directory: './dist'
-    }
-  }
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './dist'),
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 };
-
-module.exports = config;
