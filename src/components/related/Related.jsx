@@ -1,13 +1,14 @@
 import React from 'react';
+import ProductCardList from './ProductCardList.jsx'
 
 const Related = () => {
   return (
     <div>
-      Hello from Related
+      Related Products
+      <ProductCardList />
     </div>
   )
 }
-
 
 
 export default Related;
