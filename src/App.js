@@ -3,6 +3,7 @@ import React from "react";
 import { hot } from 'react-hot-loader/root';
 import Reviews from './components/reviews/Reviews.js';
 import Questions from './components/questions/Questions.js'
+import Related from './components/related/Related.jsx'
 
 class App extends React.Component {
   render() {
@@ -17,9 +18,10 @@ class App extends React.Component {
         </button>
         <Questions/>
         <Reviews/>
+        <Related />
       </>
     );
   }
 }
 
-export default hot(App);
+export default App;
