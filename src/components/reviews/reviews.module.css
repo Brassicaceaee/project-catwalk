@@ -1,0 +1,22 @@
+.widget {
+  background-color: rgb(199, 136, 136);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 350px 350px;
+}
+
+.ratingBreakdown {
+ background-color: blue;
+}
+
+.reviewsList {
+  background-color: red;
+  grid-column: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.productBreakdown {
+  background-color: orange;
+}
+
