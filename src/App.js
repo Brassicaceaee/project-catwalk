@@ -17,10 +17,10 @@ class App extends React.Component {
         Brassicaceae
         </h1>
 
-        <Overview />
+        {/* <Overview />
         <Related />
+        <Questions/> */}
         <Reviews/>
-        <Questions/>
       </>
     );
   }
