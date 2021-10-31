@@ -8,11 +8,26 @@ const RatingBreakdown = () => {
         <span>#.#</span>
         <span>*****</span>
       </div>
-      <div>5 Star *****</div>
-      <div>4 Star ****-</div>
-      <div>3 Star ***--</div>
-      <div>2 Star **---</div>
-      <div>1 Star *----</div>
+      <div>
+        <span>5 Star</span>
+        <div className='bar'></div>
+      </div>
+      <div>
+        <span>4 Star</span>
+        <div className='bar'></div>
+      </div>
+      <div>
+        <span>3 Star</span>
+        <div className='bar'></div>
+      </div>
+      <div>
+        <span>2 Star</span>
+        <div className='bar'></div>
+      </div>
+      <div>
+        <span>1 Star</span>
+        <div className='bar'></div>
+      </div>
       <p>##% of reviews recommend this product</p>
     </>
   );
