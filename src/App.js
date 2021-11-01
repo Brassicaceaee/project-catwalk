@@ -19,8 +19,8 @@ class App extends React.Component {
 
         <Overview />
         <Related />
-        <Reviews/>
         <Questions/>
+        <Reviews/>
       </>
     );
   }
