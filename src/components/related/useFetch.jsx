@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { API_KEY } from '../config/config.js'
 
 function useFetch(url){
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const options = {
+    headers: {'Authorization': API_KEY}
+  };
 
   useEffect (() => {
     setLoading (true);
     axios
-      .get(url)
+      .get(url, options)
       .then( response => {
-        setData(response[0].id);
+        console.log(response.data)
+        setData(response.data);
       })
       .catch( err => {
         setError (err)
