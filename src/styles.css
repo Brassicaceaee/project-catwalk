@@ -2,3 +2,32 @@ h1 {
   color: white;
   background-color: black;
 }
+
+#app {
+  background-color: burlywood;
+  margin: 0 10% 0;
+}
+
+:root {
+  --widget-height: 950px
+}
+
+.overview {
+  background-color: rgb(235, 150, 150);
+  height: var(--widget-height);
+}
+
+.questions {
+  background-color: rgb(133, 133, 212);
+  height: var(--widget-height);
+}
+
+.related {
+  background-color: rgb(147, 214, 147);
+  height: var(--widget-height);
+}
+
+.reviews {
+  background-color: rgb(231, 213, 180);
+  height: var(--widget-height);
+}
