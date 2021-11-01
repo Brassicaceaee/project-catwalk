@@ -8,22 +8,26 @@ h1 {
   margin: 0 10% 0;
 }
 
+:root {
+  --widget-height: 950px
+}
+
 .overview {
   background-color: red;
-  height: 500px;
+  height: var(--widget-height);
 }
 
 .questions {
   background-color: blue;
-  height: 500px;
+  height: var(--widget-height);
 }
 
 .related {
   background-color: green;
-  height: 500px;
+  height: var(--widget-height);
 }
 
 .reviews {
   background-color: orange;
-  height: 500px;
+  height: var(--widget-height);
 }
