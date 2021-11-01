@@ -13,21 +13,21 @@ h1 {
 }
 
 .overview {
-  background-color: red;
+  background-color: rgb(235, 150, 150);
   height: var(--widget-height);
 }
 
 .questions {
-  background-color: blue;
+  background-color: rgb(133, 133, 212);
   height: var(--widget-height);
 }
 
 .related {
-  background-color: green;
+  background-color: rgb(147, 214, 147);
   height: var(--widget-height);
 }
 
 .reviews {
-  background-color: orange;
+  background-color: rgb(231, 213, 180);
   height: var(--widget-height);
 }

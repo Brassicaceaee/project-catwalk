@@ -6,17 +6,17 @@
 }
 
 .ratingBreakdown {
- background-color: orange;
+ background-color: rgb(216, 186, 132);
 }
 
 .reviewsList {
-  background-color: red;
+  background-color: rgb(224, 149, 149);
   grid-column: 2;
   grid-row-start: 1;
   grid-row-end: 3;
 }
 
 .productBreakdown {
-  background-color: blue;
+  background-color: rgb(139, 139, 226);
 }
 
