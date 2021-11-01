@@ -6,7 +6,7 @@ import styles from "./reviews.module.css";
 
 const Reviews = () => {
   return (
-    <div className={styles.widget}>
+    <div className={styles.widget + ' reviews'}>
       <RatingBreakdown className={styles.ratingBreakdown}/>
       <ReviewsList className={styles.reviewsList}/>
       <ProductBreakdown className={styles.productBreakdown}/>
