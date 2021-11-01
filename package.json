@@ -14,9 +14,13 @@
     "test": "jest"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "axios": "^0.24.0",
+=======
     "@babel/plugin-proposal-decorators": "^7.15.8",
     "@babel/plugin-proposal-function-sent": "^7.14.5",
     "@babel/plugin-proposal-throw-expressions": "^7.14.5",
+>>>>>>> main
     "git": "^0.1.5",
     "jquery": "^3.6.0",
     "react": "^17.0.2",

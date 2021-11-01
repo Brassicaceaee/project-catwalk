@@ -26,6 +26,6 @@ class App extends React.Component {
   }
 }
 
-export default App;
-//export default hot(App);  // if you want auto refresh when saving
+// export default App;
+export default hot(App);  // if you want auto refresh when saving
 //https://stackoverflow.com/questions/42077671/what-is-react-hot-loader
