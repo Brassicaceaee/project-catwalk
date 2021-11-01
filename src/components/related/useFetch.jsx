@@ -14,7 +14,7 @@ function useFetch(url){
     axios
       .get(url, options)
       .then( response => {
-        console.log(response.data)
+        // console.log(response.data)
         setData(response.data);
       })
       .catch( err => {
