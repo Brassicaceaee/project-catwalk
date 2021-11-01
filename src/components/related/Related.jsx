@@ -3,10 +3,10 @@ import ProductCardList from './ProductCardList.jsx'
 
 const Related = () => {
   return (
-    <div>
+    <>
       Related Products
       <ProductCardList />
-    </div>
+    </>
   )
 }
 
