@@ -1,7 +1,7 @@
 
 import React from "react";
 import { hot } from 'react-hot-loader/root';
-import Reviews from './components/reviews/Reviews.js';
+import Reviews from './components/reviews/Reviews.jsx';
 import Questions from './components/questions/Questions.js'
 import Overview from './components/overview/overview.jsx'
 
