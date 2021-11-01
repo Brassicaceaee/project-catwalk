@@ -1,5 +1,5 @@
 import React from 'react';
-import useFetch from './useFetch.jsx'
+import useFetch from './utils/useFetch.jsx'
 
 const ProductCardEntry = () =>{
   const {data: productInfo} = useFetch('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/products/')
