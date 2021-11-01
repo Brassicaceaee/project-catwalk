@@ -19,10 +19,6 @@ class App extends React.Component {
         <Related />
         <Questions/>
         <Reviews/>
-        {/* <div className='overview'/>
-        <div className='questions'/>
-        <div className='related'/>
-        <div className='reviews'/> */}
       </>
     );
   }

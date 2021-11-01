@@ -2,11 +2,11 @@
   background-color: rgb(199, 136, 136);
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 350px 350px;
+  grid-template-rows: 1fr 1fr;
 }
 
 .ratingBreakdown {
- background-color: blue;
+ background-color: orange;
 }
 
 .reviewsList {
@@ -17,6 +17,6 @@
 }
 
 .productBreakdown {
-  background-color: orange;
+  background-color: blue;
 }
 
