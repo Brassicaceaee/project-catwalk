@@ -2,7 +2,7 @@ import React from 'react';
 
 const Questions = () => {
   return (
-    <div>
+    <div className='questions'>
       Questions and Answers go here
     </div>
   )
