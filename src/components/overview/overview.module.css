@@ -1,0 +1,33 @@
+.widget {
+  height: var(--widget-height);
+  background-color: rgb(220, 99, 99);
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 3fr 1fr;
+}
+
+
+
+.imageGallery {
+ background-color: rgb(120, 194, 83);
+ grid-column: 1;
+ grid-row:1
+}
+
+.productInfo {
+  background-color: rgb(126, 89, 89);
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.description {
+  background-color: rgb(139, 139, 226);
+  grid-column: 1;
+  grid-row: 2
+}
+
+.features {
+  background-color: rgb(37, 37, 113);
+  grid-column: 2;
+  grid-row: 2;
+}
