@@ -1,5 +1,4 @@
 .widget {
-  background-color: rgb(235, 150, 150);
   height: var(--widget-height);
   background-color: rgb(220, 99, 99);
   display: grid;
