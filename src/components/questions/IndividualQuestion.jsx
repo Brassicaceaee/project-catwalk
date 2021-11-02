@@ -7,7 +7,11 @@ const Question = (props) => {
 
   return(
       <li>
-        <h6>{props.question.question_body}</h6>
+        <div>
+          <h6>{props.question.question_body}</h6>
+          <button> helpful</button>
+          <button>add answer</button>
+        </div>
         <AnswerList answers={answers.results}/>
       </li>
   )

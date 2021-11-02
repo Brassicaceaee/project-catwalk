@@ -10,9 +10,9 @@ const QuestionList = (props) => {
   })
 
   return(
-    <div>
+    <ul>
       {items}
-    </div>
+    </ul>
   )
 };
 

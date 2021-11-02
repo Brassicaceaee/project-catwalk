@@ -4,7 +4,13 @@ const Answer = (props) => {
 
   return(
     <li>
-      {props.answer}
+      <div>
+        {props.answer.body}
+      </div>
+      <div>by [username], [date here]
+      <button>Helpful</button>
+      <button>Report</button>
+      </div>
     </li>
   )
 };
