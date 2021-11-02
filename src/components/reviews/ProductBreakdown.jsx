@@ -3,11 +3,27 @@ import styles from "./reviews.module.css";
 
 const ProductBreakdown = () => {
   return (
-    <div className={styles.productBreakdown}>Product Breakdown</div>
+    <div className={styles.productBreakdown}>
+      {scores.map((score, index) => {
+        return (
+          <div key={index} className={styles.characteristic}>
+            <p>{score.label}</p>
+            <div className={styles.scoreBar}>
+              <div className={styles.arrowDown} style={{'--score': score.score}}></div>
+            </div>
+            <div className={styles.subLabels}>
+              <div>{subLabel[score.label][0]}</div>
+              <div>{subLabel[score.label][1]}</div>
+              <div>{subLabel[score.label][2]}</div>
+            </div>
+          </div>
+        )
+      })}
+    </div>
   );
 }
 
-var product = [
+var scores = [
   {
     label: 'Size',
     score: 3.4,
@@ -20,6 +36,7 @@ var product = [
     label: 'Quality',
     score: 4,
   },
+  
 ]
 
 var subLabel = {
