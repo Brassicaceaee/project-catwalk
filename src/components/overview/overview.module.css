@@ -50,13 +50,21 @@
 }
 
 .category{
-  flex: 2;
+  flex: 1;
   border: 1px solid black;
+
+  font-size: larger;
+  /* text-align: left; */
+  vertical-align: middle;
+
 }
 
 .title{
-  flex: 1;
+  flex: 2;
   border: 1px solid black;
+  font-weight: bolder;
+  font-size: xx-large;
+
 }
 
 .price{
@@ -74,3 +82,4 @@
   border: 1px solid black;
 }
 
+/*============= ProductInfo_Category ====================*/
