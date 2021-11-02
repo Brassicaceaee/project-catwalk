@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from './related.module.css';
 import { API_KEY } from '../config/config.js'
 import ProductCard from './ProductCard.jsx'
 
@@ -16,7 +17,6 @@ const ProductCardList = () =>{
     // // get the related product's info
     // axios.get(`${API_URL}/40344/related`,options)
     // .then(response => setRelatedID(response.data))
-
     // get the related products' id
     axios.get(`${API_URL}/40365/related`,options)
     .then(response => setRelatedID(response.data))
@@ -25,7 +25,7 @@ const ProductCardList = () =>{
   // console.log(relatedID)
 
   return (
-    <div>
+    <div className={styles.productCardList} >
       <h1>This is Product List ↓ </h1>
       {relatedID.map((result, index) => {
         return <ProductCard
