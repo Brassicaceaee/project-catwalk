@@ -1,11 +1,12 @@
 import React from 'react';
-import ProductCardList from './ProductCardList.jsx'
+import ProductCardList from './ProductCardList.jsx';
+import styles from './related.module.css';
 
 const Related = () => {
   return (
-    <div className='related'>
+    <div >
       Related Products
-      <ProductCardList />
+        <ProductCardList />
     </div>
   )
 }
