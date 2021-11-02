@@ -35,8 +35,7 @@ var scores = [
   {
     label: 'Quality',
     score: 4,
-  },
-  
+  }
 ]
 
 var subLabel = {
