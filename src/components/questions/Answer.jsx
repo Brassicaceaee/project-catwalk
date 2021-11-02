@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './questions.module.css';
 
 const Answer = (props) => {
 
   return(
-    <li>
+    <li className={styles.answer}>
       <div>
         {props.answer.body}
       </div>
