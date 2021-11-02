@@ -3,7 +3,7 @@ import ProductCardList from './ProductCardList.jsx'
 
 const Related = () => {
   return (
-    <div>
+    <div className='related'>
       Related Products
       <ProductCardList />
     </div>

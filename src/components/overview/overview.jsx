@@ -1,24 +1,30 @@
 import React from 'react';
-
+import styles from './overview.module.css'
+import ImageGallery from './ImageGallery.jsx';
+import ProductInfo from './ProductInfo.jsx'
+import Description from './Description.jsx';
+import Features from './Features.jsx'
 
 const Overview = (props) => {
-  var overviewStyle = {
 
-      margin:  'auto 10%',
-      height: '950px',
-      border: '2px solid green',
-      display: 'grid',
-      gap: '10px',
-      // grid-template-columns: 'repeat(2, 1fr)',
-      // grid-auto-rows: 'minmax(100px, auto)',
+    return(
+      <div className={styles.widget}>
 
-  }
-  return(
-    <div className='overview' style={overviewStyle}>
-      <div className='Image'>Image</div>
-      <div className='PrductInfo'>ProdcutInfo</div>
-      <div className='DescriptionOne'>ProductDescription</div>
-      <div className='DescriptionTwo'></div>
+      <div className={styles.imageGallery}>
+      <ImageGallery />
+      </div>
+
+      <div className={styles.productInfo}>
+      <ProductInfo />
+      </div>
+
+      <div className={styles.description}>
+        <Description />
+      </div>
+
+      <div className={styles.features}>
+        <Features />
+      </div>
     </div>
   )
 }
