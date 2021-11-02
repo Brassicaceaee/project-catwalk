@@ -1,13 +1,14 @@
 import React from 'react'
+import Stars from "../Stars.jsx";
 import styles from "./reviews.module.css";
 
 const RatingBreakdown = () => {
   return (
     <div className={styles.ratingBreakdown}>
       <h3>RATINGS & REVIEWS</h3>
-      <div>
+      <div className={styles.ratingBar}>
         <span className={styles.averageRating}>#.# </span>
-        <span className={styles.stars}>* * * * *</span>
+        <Stars rating={2.34}/>
       </div>
       {bars.map((bar, index) => {
         let percent = index + '0' + '%';
