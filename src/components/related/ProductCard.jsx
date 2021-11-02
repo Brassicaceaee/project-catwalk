@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './related.module.css';
-import { API_KEY } from '../config/config.js'
+import { API_KEY } from '../../../config/config.js'
 
 const ProductCard = ({relatedID}) =>{
   const[relatedProduct, setRelatedProduct] = useState({});
