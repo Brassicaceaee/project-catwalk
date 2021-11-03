@@ -51,6 +51,14 @@
   text-decoration: underline;
   margin-left: 5px;
 }
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
 /* .answer {
 
 }
