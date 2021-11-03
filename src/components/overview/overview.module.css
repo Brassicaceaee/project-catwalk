@@ -80,4 +80,15 @@
   border: 1px solid black;
 }
 
-/*============= ProductInfo_Category ====================*/
+/*============= ProductInfo_Style Selector====================*/
+.styleText{
+  height: 5%;
+  vertical-align: top;
+}
+
+.styleSelection{
+  display: flexbox;
+  height: 80%;
+  width: 100%;
+  border: 1px solid darkblue
+}

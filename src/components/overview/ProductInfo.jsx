@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './overview.module.css'
-
+import StyleSelector from './StyleSelector.jsx'
 
 const ProductInfo = (props) => {
 
@@ -23,7 +23,9 @@ const ProductInfo = (props) => {
         <p>Price</p>
       </div>
 
-      <div className={styles.styles}>styles</div>
+      <div className={styles.styles}>
+        <StyleSelector />
+      </div>
 
       <div className={styles.addToCart}>addToCart</div>
 
