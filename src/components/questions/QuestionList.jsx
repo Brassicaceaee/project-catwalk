@@ -4,7 +4,7 @@ import styles from './questions.module.css';
 
 const QuestionList = (props) => {
 
-  let firstTwoQuestions = props.data.results.slice(0, 2);
+  let firstTwoQuestions = props.data.results.slice(0, 4);
 
   let items = firstTwoQuestions.map((question, i) => {
     return (

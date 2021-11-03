@@ -35,7 +35,22 @@
   display: flex;
   /* align-items: flex-start; */
 }
+.answerInfo {
+  display: flex;
+  flex-direction: row;
+}
 
+.helpfulAnswer {
+  margin-left: 5px;
+}
+.report {
+  margin-left: 5px;
+}
+
+.clickableWord {
+  text-decoration: underline;
+  margin-left: 5px;
+}
 /* .answer {
 
 }
