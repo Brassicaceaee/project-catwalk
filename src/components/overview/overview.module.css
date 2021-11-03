@@ -44,23 +44,21 @@
 }
 
 .starReview{
-  flex: 1;
+  flex: .5;
   border: 1px solid black;
 
 }
 
 .category{
-  flex: 1;
+  flex: .75;
   border: 1px solid black;
-
   font-size: larger;
-  /* text-align: left; */
   vertical-align: middle;
 
 }
 
 .title{
-  flex: 2;
+  flex: 1.5;
   border: 1px solid black;
   font-weight: bolder;
   font-size: xx-large;
@@ -68,17 +66,17 @@
 }
 
 .price{
-  flex: 1;
+  flex: .5;
   border: 1px solid black;
 }
 
 .styles{
-  flex: 2.5;
+  flex: 4.5;
   border: 1px solid black;
 }
 
 .addToCart{
-  flex: 2;
+  flex: 4;
   border: 1px solid black;
 }
 
