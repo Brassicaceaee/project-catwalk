@@ -3,9 +3,7 @@
   flex-direction: column;
 }
 
-.questionList {
-  background-color: coral;
-}
+
 
 .questionRow {
   display: flex;
@@ -20,7 +18,6 @@
 } */
 
 .question {
-  background-color: rgb(91, 91, 241);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -60,6 +57,10 @@
   margin: 2%;
 }
 
+.addQuestion {
+  background-color: turquoise;
+}
+
 /* Temporary until we do a reset -------*/
 ul, li {
   margin: 0;
@@ -72,7 +73,9 @@ li {
 
 /* May use these later.... commented out for now until cleanup */
 
-/* .answer {
+/*
+
+.questionList {
 
 }
 
@@ -84,6 +87,4 @@ li {
 
 }
 
-.questionButton {
-
-} */
+ */
