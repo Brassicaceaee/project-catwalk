@@ -1,5 +1,6 @@
 import React from 'react';
 import Answer from './Answer.jsx';
+import styles from './questions.module.css';
 
 const AnswerList = (props) => {
 
@@ -8,7 +9,7 @@ const AnswerList = (props) => {
   });
 
   return(
-    <ul>
+    <ul className={styles.answerList}>
       {answers}
     </ul>
   )
