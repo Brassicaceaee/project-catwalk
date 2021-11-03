@@ -21,7 +21,7 @@ const Answer = (props) => {
             className={styles.clickableWord}
             >Yes
             </span>
-            <span className={styles.helpfulAnswer}>({}) | </span>
+            <span className={styles.helpfulAnswer}>({props.answer.helpfulness}) | </span>
           </div>
           <span className={styles.report} className={styles.clickableWord}>Report</span>
       </div>
