@@ -1,18 +1,10 @@
 .widget {
   display: flex;
-  /* align-items: flex-start; */
   flex-direction: column;
-  /* justify-content: space-around; */
-  /* flex: 2; */
 }
 
 .questionList {
   background-color: coral;
-  width: 100%;
-  /* display: flex;
-  align-items: flex-start;
-  flex-direction: row;
-  justify-content: space-around; */
 }
 
 .questionRow {
@@ -22,10 +14,10 @@
   align-items: center;
 }
 
-.answerRow {
+/* .answerRow {
   display: flex;
   flex-direction: row;
-}
+} */
 
 .question {
   background-color: rgb(91, 91, 241);
@@ -39,19 +31,17 @@
 }
 
 .searchBar {
-  background-color: aliceblue;
-  /* display: flex;
-  align-items: flex-start;
-  /* flex-direction: row; */
-  /* justify-content: space-around;  */
+  background-color: rgb(236, 161, 220);
+  display: flex;
+  /* align-items: flex-start; */
 }
 
-.answer {
+/* .answer {
 
 }
 
 .answerList {
-  width: 100%;
+
 }
 
 .addQuestion {
@@ -60,4 +50,11 @@
 
 .questionButton {
 
+} */
+.questionRowRight {
+ margin: 2%;
+}
+
+.questionRowLeft {
+  margin: 2%;
 }
