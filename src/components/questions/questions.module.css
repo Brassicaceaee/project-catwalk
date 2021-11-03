@@ -3,9 +3,7 @@
   flex-direction: column;
 }
 
-.questionList {
-  background-color: coral;
-}
+
 
 .questionRow {
   display: flex;
@@ -20,7 +18,6 @@
 } */
 
 .question {
-  background-color: rgb(91, 91, 241);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -35,8 +32,50 @@
   display: flex;
   /* align-items: flex-start; */
 }
+.answerInfo {
+  display: flex;
+  flex-direction: row;
+}
 
-/* .answer {
+.helpfulAnswer {
+  margin-left: 5px;
+}
+.report {
+  margin-left: 5px;
+}
+
+.clickableWord {
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.questionRowRight {
+ margin: 2%;
+}
+
+.questionRowLeft {
+  margin: 2%;
+}
+
+.addQuestion {
+  background-color: turquoise;
+}
+
+/* Temporary until we do a reset -------*/
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* May use these later.... commented out for now until cleanup */
+
+/*
+
+.questionList {
 
 }
 
@@ -48,13 +87,4 @@
 
 }
 
-.questionButton {
-
-} */
-.questionRowRight {
- margin: 2%;
-}
-
-.questionRowLeft {
-  margin: 2%;
-}
+ */

@@ -4,7 +4,7 @@ import styles from './questions.module.css';
 const AddQuestion = (props) => {
 
   return(
-    <div className={styles.AddQuestion}>
+    <div className={styles.addQuestion}>
       add question button goes here
     </div>
   )
