@@ -6,6 +6,14 @@ import moment from 'moment';
 const Answer = (props) => {
 
   let date = props.answer.date.split('T')[0].split('-');
+  let username = props.answer.answerer_name;
+  let returnUsername = (username) => {
+    if (username === 'Seller') {
+      return <b>Seller</b>;
+    } else {
+      return username;
+    }
+  }
 
   return(
     <li className={styles.answer}>
@@ -13,7 +21,7 @@ const Answer = (props) => {
         {props.answer.body}
       </div>
       <div className={styles.answerInfo}>
-        <span> by {props.answer.answerer_name}, {moment(date).format('MMMM DD, YYYY')} | </span>
+        <span> by {returnUsername(username)}, {moment(date).format('MMMM DD, YYYY')} | </span>
           <div>
             <span className={styles.helpfulAnswer}>Helpful</span>
             <span
