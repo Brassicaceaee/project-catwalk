@@ -1,0 +1,60 @@
+.widget {
+  display: flex;
+  flex-direction: column;
+}
+
+.questionList {
+  background-color: coral;
+}
+
+.questionRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .answerRow {
+  display: flex;
+  flex-direction: row;
+} */
+
+.question {
+  background-color: rgb(91, 91, 241);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* display: flex;
+  align-items: flex-start;
+  /* flex-direction: row; */
+  /* justify-content: space-around; */
+}
+
+.searchBar {
+  background-color: rgb(236, 161, 220);
+  display: flex;
+  /* align-items: flex-start; */
+}
+
+/* .answer {
+
+}
+
+.answerList {
+
+}
+
+.addQuestion {
+
+}
+
+.questionButton {
+
+} */
+.questionRowRight {
+ margin: 2%;
+}
+
+.questionRowLeft {
+  margin: 2%;
+}

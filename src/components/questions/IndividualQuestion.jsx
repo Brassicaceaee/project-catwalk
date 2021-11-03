@@ -1,18 +1,25 @@
 import React from 'react';
 import AnswerList from './AnswerList.jsx';
 const answers = require('./questiondata/answerdata.js');
+import styles from './questions.module.css';
 
 
 const Question = (props) => {
 
   return(
-      <li>
-        <div>
-          <h6>{props.question.question_body}</h6>
-          <button> helpful</button>
-          <button>add answer</button>
+      <li className={styles.question}>
+        <div className={styles.questionRow}>
+          <div className={styles.questionRowLeft}>
+            <h6>{props.question.question_body}</h6>
+          </div>
+          <div className={styles.questionRowRight}>
+            <button> helpful</button>
+            <button>add answer</button>
+          </div>
         </div>
-        <AnswerList answers={answers.results}/>
+        <div className={styles.answerRow}>
+          <AnswerList answers={answers.results}/>
+        </div>
       </li>
   )
 };
