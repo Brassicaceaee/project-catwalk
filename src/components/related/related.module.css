@@ -6,14 +6,14 @@
 
 
 .productCardList {
- background-color: rgb(120, 194, 83);
+ background-color: rgb(211, 208, 172);
  display: flex;
  /* grid-column: 1;
  grid-row:1 */
 }
 
 .productCard{
-  background-color: rgb(126, 89, 89);
+  background-color: rgb(83, 105, 228);
   /* grid-column: 2;
   grid-row: 1; */
 }
