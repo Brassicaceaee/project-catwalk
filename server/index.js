@@ -27,9 +27,12 @@ app.get('/products', (req, res) => {
   .then((result) => {
     product.info = result[0].data;
     product.styles = result[1].data;
-    product.related = result[2].data;
+    product.related_ids = result[2].data;
     product.reviews = result[3].data;
     product.meta = result[4].data;
+    let {total, average} = calculateAverage(product.meta.ratings)
+    product.meta.total = total;
+    product.meta.average = average;
     product.questions = result[5].data;
     product.cart = result[6].data;
     product.answers = {};
@@ -51,9 +54,29 @@ app.get('/products', (req, res) => {
     .catch((error) => {
       debugger;
     })
+  })
+  .catch((err) => {
+    debugger;
   });
 });
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
+
+
+// Helper function
+const calculateAverage = (ratings) => {
+  let average = 0;
+  let total = 0;
+  let weightedTotal = 0;
+  for (let key in ratings) {
+    let starCount = parseInt(key);
+    let count = parseInt(ratings[key]);
+    total += count;
+    weightedTotal += count * starCount;
+  }
+  average = weightedTotal / total;
+  return {total, average};
+}
