@@ -1,46 +1,46 @@
 import React, { useState, useEffect} from 'react';
-import Modal from 'react-modal';
+import styles from './related.module.css';
 
+const ComparisonModal = ({left, right, togglePop}) => {
 
-const ComparisonModal = ({left, right}) => {
-
-  const[isOpen, setIsOpen] = useState(false);
-  const[testFeature, setTestFeature] = useState([]);
-
-  const togglePop = () => {
-    setIsOpen(!isOpen)
-  };
-
-
-console.log(left)
-//   let featureHolder = {};
-//  useEffect( () =>{
-//   let mount = true;
-//   if(mount && left){
-    // const overviewFeatures = left.features.reduce((obj, user) => {
-    //   obj[user.feature] = user.value;
-    //   return obj;
-    // }, {});
-    // console.log(overviewFeatures);
-//   }
-//    return function cleanUp(){
-//      mount = false;
-//    }
-//  }, [])
-
-
-  const relatedFeatures = right.features.reduce((obj, user) => {
+  // get an array of objects, having all the overviewProduct features as key, and value as value
+  let overviewFeatures = left.features.reduce((obj, user) => {
     obj[user.feature] = user.value;
     return obj;
   }, {});
+  // console.log("overview:" , overviewFeatures);
 
+  // get an array of objects, having all the relatedProduct features as key, and value as value
+  let relatedFeatures = right.features.reduce((obj, user) => {
+    obj[user.feature] = user.value;
+    return obj;
+  }, {});
+  // console.log('compare:', relatedFeatures);
 
-  console.log('compare:', relatedFeatures);
+  let featureHolder = {};
+  Object.keys(overviewFeatures).forEach(value =>{
+    featureHolder[value] = ''
+  })
 
+  Object.keys(relatedFeatures).forEach(value =>{
+    featureHolder[value] = ''
+  })
+
+// console.log(featureHolder)
   return (
-   <div>
-      Test
-   </div>
+    <div>
+      <div className={styles.modal}>
+      <button onClick={togglePop}>Close</button>
+        <div>{Object.keys(featureHolder).map((features, index) => {
+          return (
+          <div key={index} className={styles.modal.content}>
+            <span>{overviewFeatures[features]? overviewFeatures[features] : ' x'}</span>
+            <span>{features}</span>
+            <span>{relatedFeatures[features]?  relatedFeatures[features]:  'x '}</span>
+          </div>);
+        })}</div>
+      </div>
+    </div>
   );
  }
 

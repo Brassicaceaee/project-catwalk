@@ -27,8 +27,7 @@ const ProductCardList = () =>{
   // console.log(relatedID)
 
   return (
-    <div className={styles.productCardList} >
-      <h1>This is Product List ↓ </h1>
+    <div className={styles.productCardList}>
       {relatedID.map((result, index) => {
         return <ProductCard
           overviewProduct={overviewProduct}
@@ -36,7 +35,6 @@ const ProductCardList = () =>{
           key={index}
           />
       })}
-       <h1>This is Product List ↑ </h1>
     </div>
   );
 }
