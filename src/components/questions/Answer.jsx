@@ -15,9 +15,13 @@ const Answer = (props) => {
     }
   }
   const [helpful, wasHelpful] = useState(props.answer.helpfulness)
+  const [helpfulNotClicked, canClickHelpful] = useState(true);
 
   let helpfulClick = () => {
-
+    if (helpfulNotClicked) {
+      wasHelpful(helpful + 1);
+      canClickHelpful(false);
+    }
   }
 
   return(
@@ -32,7 +36,7 @@ const Answer = (props) => {
             <span
             className={styles.helpfulAnswer}
             className={styles.clickableWord}
-            onClick={() => wasHelpful(helpful + 1)}
+            onClick={helpfulClick}
             >Yes
             </span>
             <span className={styles.helpfulAnswer}>({helpful}) | </span>
