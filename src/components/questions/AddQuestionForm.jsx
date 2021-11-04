@@ -5,9 +5,19 @@ const QuestionForm = () => {
   return (
     <form>
       <label>
-        Question:
+        Your question:
         <input type='text' name='question'></input>
       </label>
+      <label>
+        Your nickname:
+        <input type='text' placeholder='Example: jackson11!'></input>
+      </label>
+      <label>
+        Your email:
+        <input type='text' placeholder='Why did you like the product or not?'></input>
+        “For authentication reasons, you will not be emailed”
+      </label>
+      <input type='submit' name='Submit Question'></input>
     </form>
   )
 }
