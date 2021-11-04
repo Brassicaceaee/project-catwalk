@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import Stars from "../Stars.jsx";
 import styles from "./reviews.module.css";
 import {useProductContext} from '../../context/ProductContext.jsx';
-
 const RatingBreakdown = () => {
   const {meta} = useProductContext();
   
@@ -10,8 +9,8 @@ const RatingBreakdown = () => {
     <div className={styles.ratingBreakdown}>
       <h3>RATINGS & REVIEWS</h3>
       <div className={styles.ratingBar}>
-        <span className={styles.averageRating}>{meta.average} </span>
-        <Stars rating={meta.average}/>
+        <span className={styles.averageRating}>{meta ? meta.average : 0} </span>
+        <Stars rating={meta ? meta.average : 0}/>
       </div>
       {bars.map((bar, index) => {
         let percent = index + '0' + '%';
