@@ -4,13 +4,14 @@ import styles from "./reviews.module.css";
 import {useProductContext} from '../../context/ProductContext.jsx';
 const RatingBreakdown = () => {
   const {meta} = useProductContext();
-  
+  const average = meta.average;
+
   return (
     <div className={styles.ratingBreakdown}>
       <h3>RATINGS & REVIEWS</h3>
       <div className={styles.ratingBar}>
-        <span className={styles.averageRating}>{meta ? meta.average : 0} </span>
-        <Stars rating={meta ? meta.average : 0}/>
+        <span className={styles.averageRating}>{average} </span>
+        <Stars rating={average}/>
       </div>
       {bars.map((bar, index) => {
         let percent = index + '0' + '%';

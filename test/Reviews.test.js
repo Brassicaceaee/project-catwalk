@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
+import {ProductProvider} from '../src/context/ProductContext.jsx'
 import Reviews from '../src/components/reviews/Reviews.jsx';
 import ProductBreakdown from '../src/components/reviews/ProductBreakdown.jsx';
 import RatingBreakdown from '../src/components/reviews/RatingBreakdown.jsx';
@@ -9,30 +10,30 @@ import ReviewTile from '../src/components/reviews/ReviewTile.jsx';
 
 describe('Reviews', () => {
   test('renders Reviews component', () => {
-    render(<Reviews />);
+    render(<ProductProvider><Reviews /></ProductProvider>);
   });
 });
 
 describe('ProductBreakdown', () => {
   test('renders ProductBreakdown component', () => {
-    render(<ProductBreakdown />);
+    render(<ProductProvider><ProductBreakdown /></ProductProvider>);
   });
 });
 
 describe('RatingBreakdown', () => {
   test('renders RatingBreakdown component', () => {
-    render(<RatingBreakdown />);
+    render(<ProductProvider><RatingBreakdown /></ProductProvider>);
   });
 });
 
 describe('ReviewsList', () => {
   test('renders ReviewsList component', () => {
-    render(<ReviewsList />);
+    render(<ProductProvider><ReviewsList /></ProductProvider>);
   });
 });
 
 describe('ReviewTile', () => {
   test('renders ReviewTile component', () => {
-    render(<ReviewTile />);
+    render(<ProductProvider><ReviewTile /></ProductProvider>);
   });
 });

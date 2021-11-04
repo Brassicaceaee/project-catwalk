@@ -13,7 +13,7 @@ export const updateProductContext = () => {
 
 
 export function ProductProvider({children}) {
-  const [product, updateProduct] = useState({});
+  const [product, updateProduct] = useState(null);
 
   const update = (product_id) => {
     axios.get(`/products?product_id=${product_id}`)
@@ -21,16 +21,20 @@ export function ProductProvider({children}) {
       updateProduct(data);
     })
   }
-
+  // debugger;
   useEffect(() => {
     update(40344);
   }, [])
-
-  return (
-    <ProductContext.Provider value={product}>
-      <ProductUpdateContext.Provider value={update}>
-        {children}
-      </ProductUpdateContext.Provider>
-    </ProductContext.Provider>
-  )
+  
+  if (product) {
+    return (
+      <ProductContext.Provider value={product}>
+        <ProductUpdateContext.Provider value={update}>
+          {children}
+        </ProductUpdateContext.Provider>
+      </ProductContext.Provider>
+    )
+  } else {
+    return <></>
+  }
 }
