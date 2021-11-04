@@ -100,13 +100,79 @@
 
 .styleItem {
   flex: 1;
-
+  height: 100px;
+  width: 10px;
+  margin: 2.5px 15px;
+  position:relative;
+  top: 0;
+  left: 0;
 }
 
 .styleThumbnail {
   height: 55px;
   width: 55px;
-  margin: 2.5px 15px;
   border: 1px solid black;
   border-radius: 50%;
+  position: relative;
+  top: 0;
+  left: 0;
+
+}
+
+.styleThumbnail:hover {
+  opacity: 0.3;
+}
+
+#check  {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border: 2px solid #74ff6d;
+  border-radius: 25%;
+}
+
+
+/*============= ProductInfo_Add To Cart  ====================*/
+
+.addToCart {
+  display: flex;
+  flex-wrap: wrap;
+  height: 95%;
+  width:  450px;
+  border: 1px solid darkblue;
+  justify-items: auto;
+}
+
+.size {
+ border: 2px solid darkblue;
+ height: 60px;
+ width: 250px;
+ margin: 10px;
+ /* flex-basis: 100px; */
+
+}
+
+.quantity {
+  border: 2px solid darkblue;
+  height: 60px;
+  width: 150px;
+  margin: 10px;
+  /* flex-basis: 100px; */
+}
+
+.cartButton {
+  border: 2px solid darkblue;
+  margin: 10px;
+  height: 60px;
+  width: 300px;
+
+}
+
+.cartStar {
+  border: 2px solid darkblue;
+  margin: 10px;
+  height: 60px;
+  width: 60px;
+
+
 }
