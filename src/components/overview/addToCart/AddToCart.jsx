@@ -1,30 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from '../overview.module.css';
 import json from '../styleSample.json';
 
 
 const AddToCart = (props) => {
-  const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  // const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
   var options = json.results;
   var currentSkus = options[0].skus; //Object of containing skus;
 
   var skus = Object.values(currentSkus)
-  debugger;
+
+  const [selectedSize, setSize] = useState(null)
+  const [selectedSKU, setSKU] = useState(null)
 
   //TODO
-  //for every size ['XS', 'S', 'M', 'L', 'XL', 'XXL']
-    //based on teh size chosen, we save the sku's Key ID
-      //We render a quantity selector based of with the quantity associated with the sku's keyID
-  var sizeSelector = P
+  //Based on the selected size, get SKU, creat quantity selector
+  //If no sizes, selector only has "OUT of Stock"
+  //If size not selected, render "-" for quantity selector
+
+  const handleSizeSelect = (event) => {
+    var skuID = event.target.value[0]
+    var skuData = event.target.value[1]
+
+    setSKU(skuID)
+    setSize(skuData.size)
+  }
+
+
 
   return (
       <>
       <div className={styles.addToCart}>
         <span className={styles.size}>
-          <select>
 
-            {Object.values(currentSkus).map( (sku ) =>
-             <option option={sku.size}>{sku.size}</option>)}
+          <select value={selectedSize} onChange={handleSizeSelect}>
+
+            {selectedSize === null && <option>Select Style</option>}
+
+            {Object.entries(currentSkus).map( (sku ) =>
+             <option value={sku}>{sku[1].size}</option>)}
 
           </select>
         </span>
