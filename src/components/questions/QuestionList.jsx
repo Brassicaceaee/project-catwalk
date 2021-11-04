@@ -21,7 +21,7 @@ const QuestionList = (props) => {
   });
 
   return(
-    <ul className={styles.questionList} ref={ref}>
+    <ul className={styles.questionList} ref={ref} style={{maxHeight: screenHeight - 100}}>
       {items}
     </ul>
   )
