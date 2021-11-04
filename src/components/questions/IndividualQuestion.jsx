@@ -10,7 +10,7 @@ const Question = (props) => {
       <li className={styles.question}>
         <div className={styles.questionRow}>
           <div className={styles.questionRowLeft}>
-            <h6>{props.question.question_body}</h6>
+            <h6>Q: {props.question.question_body}</h6>
           </div>
           <div className={styles.questionRowRight}>
             <button> helpful</button>

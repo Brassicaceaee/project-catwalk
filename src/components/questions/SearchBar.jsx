@@ -5,7 +5,9 @@ const SearchBar = (props) => {
 
   return(
     <div className={styles.searchBar}>
-      search bar here
+      <form>
+        <input type='text' placeholder='Have a question? Search for answers…'></input>
+      </form>
     </div>
   )
 };
