@@ -36,24 +36,46 @@ app.get('/products', (req, res) => {
     product.questions = result[5].data;
     product.cart = result[6].data;
     product.answers = {};
+    product.related = {};
     // Get all the answers
-    let promises = [];
+    let answerPromises = [];
 
-    product.questions.results.map(({question_id}) => {
-      promises.push(axios.get(`${url}/qa/questions/${question_id}/answers`, options))
+    product.questions.results.forEach(({question_id}) => {
+      answerPromises.push(axios.get(`${url}/qa/questions/${question_id}/answers`, options))
     })
 
+    let relatedProducts = [];
+    let relatedStyles = [];
 
-    Promise.all(promises)
+    product.related_ids.forEach((product_id) => {
+      relatedProducts.push(axios.get(`${url}/products/${product_id}`, options))
+      relatedStyles.push(axios.get(`${url}/products/${product_id}/styles`, options))
+    })
+
+    Promise.all(answerPromises)
     .then((results) => {
-      results.map(({data}) => {
+      results.forEach(({data}) => {
         product.answers[data.question] = data.results;
       })
+      return Promise.all([Promise.all(relatedProducts), Promise.all(relatedStyles)]);
+    })
+    .then((results) => {
+      for (var i = 0; i < results[0].length; i++) {
+        let relatedProduct = results[0][i].data;
+        let relatedStyles = results[1][i].data.results;
+        if (product.related[relatedProduct.id] === undefined) {
+          product.related[relatedProduct.id] = {};
+        }
+        product.related[relatedProduct.id].info = relatedProduct;
+        product.related[relatedProduct.id].styles = relatedStyles;
+      }
       res.send(200, product);
     })
     .catch((error) => {
       debugger;
     })
+
+
   })
   .catch((err) => {
     debugger;
