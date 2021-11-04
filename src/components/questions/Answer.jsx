@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './questions.module.css';
 import moment from 'moment';
 
@@ -14,6 +14,15 @@ const Answer = (props) => {
       return username;
     }
   }
+  const [helpful, wasHelpful] = useState(props.answer.helpfulness)
+  const [helpfulNotClicked, canClickHelpful] = useState(true);
+
+  let helpfulClick = () => {
+    if (helpfulNotClicked) {
+      wasHelpful(helpful + 1);
+      canClickHelpful(false);
+    }
+  }
 
   return(
     <li className={styles.answer}>
@@ -27,9 +36,10 @@ const Answer = (props) => {
             <span
             className={styles.helpfulAnswer}
             className={styles.clickableWord}
+            onClick={helpfulClick}
             >Yes
             </span>
-            <span className={styles.helpfulAnswer}>({props.answer.helpfulness}) | </span>
+            <span className={styles.helpfulAnswer}>({helpful}) | </span>
           </div>
           <span className={styles.report} className={styles.clickableWord}>Report</span>
       </div>
