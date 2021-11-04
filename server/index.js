@@ -77,6 +77,6 @@ const calculateAverage = (ratings) => {
     total += count;
     weightedTotal += count * starCount;
   }
-  average = weightedTotal / total;
+  average = Math.round((weightedTotal / total) * 10) / 10;
   return {total, average};
 }
