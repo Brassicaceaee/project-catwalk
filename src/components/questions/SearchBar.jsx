@@ -5,7 +5,9 @@ const SearchBar = (props) => {
 
   return(
     <div className={styles.searchBar}>
-      search bar here
+      <form>
+        <input value='search'></input>
+      </form>
     </div>
   )
 };
