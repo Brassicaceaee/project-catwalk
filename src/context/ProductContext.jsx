@@ -13,12 +13,12 @@ export const updateProductContext = () => {
 
 
 export function ProductProvider({children}) {
-  const [product, updateProduct] = useState(5);
+  const [product, updateProduct] = useState({});
 
   const update = (product_id) => {
     axios.get(`/products?product_id=${product_id}`)
-    .then((productInfo) => {
-      updateProduct(productInfo);
+    .then(({data}) => {
+      updateProduct(data);
     })
   }
 
