@@ -48,7 +48,7 @@ const ProductCard = ({overviewProduct, relatedID}) =>{
     Object.keys(relatedProduct).length > 0 &&
     Object.keys(overviewProduct).length > 0 &&
     <div>
-      <i className="far fa-star" onClick={togglePop}></i>
+      <i className="far fa-star" onClick={togglePop}  ></i>
       {isOpen
       ? <ComparisonModal left={overviewProduct} right={relatedProduct} togglePop={togglePop}/>
       : <></>}
