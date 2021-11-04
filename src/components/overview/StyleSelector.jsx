@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './overview.module.css';
 import json from './styleSample.json';
-
+import {FaCheck} from 'react-icons/fa';
 
 const StyleSelector = (props) => {
   var data = json;
@@ -24,9 +24,14 @@ const StyleSelector = (props) => {
 
       <div className={styles.styleSelection}>
 
-      {styleOptions.map( (option) =>
-        <span className={styles.styleItem} >
-          <img className={styles.styleThumbnail} src={option.photos[0].thumbnail_url} onClick={(e)=>{handleClick(e, option)}}/>
+      {styleOptions.map( (option, key) =>
+        <span className={styles.styleItem} key={key}>
+          <img
+            className={styles.styleThumbnail}
+            src={option.photos[0].thumbnail_url}
+            onClick={(e)=>{handleClick(e, option)}}
+          />
+          {option === selectedStyle && <FaCheck id={styles.check} color="#00acee"/>}
         </span>
       )}
       </div>
