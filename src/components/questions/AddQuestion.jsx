@@ -18,7 +18,10 @@ const AddQuestion = (props) => {
   return(
     <div className={styles.addQuestion}>
       <button onClick={modalButtonClick}>Add Question +</button>
-      <QuestionForm show={modalShown}/>
+      <div>
+        <QuestionForm show={modalShown} modalButtonClick={modalButtonClick}/>
+        {/* <button onClick={modalButtonClick}>Close</button> */}
+      </div>
     </div>
   )
 };
