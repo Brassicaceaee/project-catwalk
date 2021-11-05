@@ -14,7 +14,6 @@ const Questions = () => {
       <SearchBar/>
       <QuestionList data={data}/>
       <AddQuestion/>
-      <QuestionForm/>
     </div>
   )
 }
