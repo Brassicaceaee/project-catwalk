@@ -24,6 +24,7 @@ const QuestionList = (props) => {
       setDisplayed(items.slice(0, length + 2));
     }
   }
+
   // This stores the height of the client screen
   const screenHeight = window.innerHeight;
 
@@ -45,6 +46,7 @@ const QuestionList = (props) => {
         {(displayedQuestions.length < items.length) &&
         <button onClick={moreQuestionsClick}>More Answered Questions</button>
       }
+      {(displayedQuestions.length === items.length && items.length > 2) && <button onClick={ () => setDisplayed(items.slice(0, 2))}>Collapse Questions</button> }
       <AddQuestion/>
       </div>
     </div>

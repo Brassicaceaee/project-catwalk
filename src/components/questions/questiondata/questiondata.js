@@ -90,32 +90,7 @@ const questions =
           "question_helpfulness": 1,
           "reported": false,
           "answers": {}
-      },
-      {
-        "question_id": 426007,
-        "question_body": "Where are these shoes made?",
-        "question_date": "2021-09-17T00:00:00.000Z",
-        "asker_name": "Stud",
-        "question_helpfulness": 1,
-        "reported": false,
-        "answers": {}
-    },    {
-        "question_id": 426007,
-        "question_body": "Where are these shoes made?",
-        "question_date": "2021-09-17T00:00:00.000Z",
-        "asker_name": "Stud",
-        "question_helpfulness": 1,
-        "reported": false,
-        "answers": {}
-    },    {
-        "question_id": 426007,
-        "question_body": "Where are these shoes made?",
-        "question_date": "2021-09-17T00:00:00.000Z",
-        "asker_name": "Stud",
-        "question_helpfulness": 1,
-        "reported": false,
-        "answers": {}
-    }
+      }
   ]
 }
 module.exports = questions;
