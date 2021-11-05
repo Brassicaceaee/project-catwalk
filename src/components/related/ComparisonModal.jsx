@@ -30,10 +30,13 @@ const ComparisonModal = ({left, right, togglePop}) => {
   return (
     <div>
       <div className={styles.modal}>
-      <button onClick={togglePop}>Close</button>
+      <div className={styles.actions}>
+        <button onClick={togglePop}>Close</button>
+      </div>
+      <h3>Comparing</h3>
         <div>{Object.keys(featureHolder).map((features, index) => {
           return (
-          <div key={index} className={styles.modal.content}>
+          <div key={index} className={styles.content}>
             <span>{overviewFeatures[features]? overviewFeatures[features] : ' x'}</span>
             <span>{features}</span>
             <span>{relatedFeatures[features]?  relatedFeatures[features]:  'x '}</span>
