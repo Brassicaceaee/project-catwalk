@@ -23,13 +23,16 @@ const ImageGallery = (props) => {
   console.log(photos)
 
   return(
-
     <div className={styles.galleryContainer}>
 
       <span className={styles.galleryThumbnails}>
 
-        {nums.map((num) =>
-        <span className={styles.galleryThumbnailImages}> {num} </span>)}
+          {photos.map((photo) =>
+            <span className={styles.galleryThumbnailPhotoContainer}>
+              <img className={styles.galleryThumbnailPhoto} src={photo.thumbnail_url}/>
+            </span>
+          )}
+
 
       </span>
       <span className={styles.galleryMain}>
