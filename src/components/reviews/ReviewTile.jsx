@@ -27,7 +27,7 @@ const ReviewTile = ({review}) => {
           <p>{review.response}</p>
         </div>
       }
-      <p>Was this review? <span>Yes</span> (#) <span>No</span> (#)</p>
+      <p>Was this review? <span>Yes</span> ({review.helpfulness}) </p>
       <hr></hr>
     </div>
   );
