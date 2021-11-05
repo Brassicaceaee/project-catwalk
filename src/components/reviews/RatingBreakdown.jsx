@@ -11,7 +11,7 @@ const RatingBreakdown = () => {
 
   return (
     <div className={styles.ratingBreakdown}>
-      <h3>RATINGS & REVIEWS</h3>
+      <h3 className={styles.ratingHeader}>RATINGS & REVIEWS</h3>
       <div className={styles.ratingBar}>
         <span className={styles.averageRating}>{average} </span>
         <Stars rating={average}/>

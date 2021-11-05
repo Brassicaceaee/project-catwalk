@@ -1,7 +1,8 @@
 .widget {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: auto 2fr;
+  grid-template-rows: auto 1fr;
+  height: 95vh;
 }
 
 .ratingBreakdown {
@@ -10,8 +11,10 @@
  flex-direction: column;
 }
 
-.reviewsList {
+.reviewsComponent {
   margin: 2%;
+  display: flex;
+  flex-direction: column;
   grid-column: 2;
   grid-row-start: 1;
   grid-row-end: 3;
@@ -20,7 +23,7 @@
 .productBreakdown {
   display: flex;
   flex-direction: column;
-  margin: 5%;
+  margin: 2%;
 }
 
 .scoreBar {
@@ -38,14 +41,24 @@
   border-top: 15px solid black;
 }
 
+.charHeader {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
 .subLabels {
   margin-top: 5px;
   display: flex;
   justify-content: space-between;
+  font-size: 14px;
 }
 
 .characteristic {
-  margin-bottom: 15px;
+  margin-bottom: 8px;
+}
+
+.ratingHeader {
+  margin-top: 0;
 }
 
 .averageRating {
@@ -60,7 +73,7 @@
 
 .ratingBar {
   display: flex;
-  margin: 20px 0 20px 0;
+  margin: 5px 0 5px 0;
 }
 
 .percentBar {
@@ -100,4 +113,31 @@
 
 .sortLabel {
   margin: 0 5px 0 0;
+}
+
+.thumbNailContainer {
+  height: 75px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 125px;
+  margin: 2px;
+  /* height: 75px; */
+}
+
+.photoRow {
+  display: flex;
+}
+
+
+.reviewsList {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  /* height: 80%; */
+  overflow: scroll;
 }
