@@ -16,14 +16,15 @@ const QuestionList = (props) => {
   const [height, setHeight] = useState(0);
   const ref = useRef(null);
 
+
   useEffect(() => {
     setHeight(ref.current.clientHeight);
   });
 
   return(
-    <ul className={styles.questionList} ref={ref} style={{maxHeight: screenHeight - 100}}>
-      {items}
-    </ul>
+      <ul className={styles.questionList} ref={ref} style={{maxHeight: screenHeight - 100}}>
+        {items}
+      </ul>
   )
 };
 

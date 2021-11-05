@@ -1,24 +1,24 @@
 import React from 'react';
+import styles from './questions.module.css';
 
 const QuestionForm = () => {
 
   return (
-    <form>
-      <label>
-        Your question:
-        <input type='text' name='question'></input>
-      </label>
-      <label>
-        Your nickname:
-        <input type='text' placeholder='Example: jackson11!'></input>
-      </label>
-      <label>
-        Your email:
-        <input type='text' placeholder='Why did you like the product or not?'></input>
-        “For authentication reasons, you will not be emailed”
-      </label>
-      <input type='submit' name='Submit Question'></input>
-    </form>
+    <div>
+      <form className={styles.questionForm}>
+        <label> Your Question: </label>
+        <input type='text' name='question' maxlength='1000'></input>
+
+        <label> Your Nickname: </label>
+          <input type='text' placeholder='Example: jackson11!' maxlength='60'></input>
+        <span className={styles.inputSubtext}> For privacy reasons, do not use your full name or email address </span>
+
+        <label> Your Email: </label>
+          <input type='text' placeholder='Why did you like the product or not?' maxlength='60'></input>
+          <span className={styles.inputSubtext}> “For authentication reasons, you will not be emailed”</span>
+        <input type='submit' name='Submit Question'></input>
+      </form>
+    </div>
   )
 }
 

@@ -75,10 +75,36 @@ li {
   list-style-type: none;
 }
 
-/* input {
-  width: 100%;
-} */
 
+
+/* Forms CSS
+----------------------------------------------------
+*/
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 70px;
+  align-self: center;
+}
+
+input[name=question] {
+  height: 200px;
+}
+
+.questionForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputSubtext {
+  padding-bottom: 8px;
+}
 /* May use these later.... commented out for now until cleanup */
 
 /*
