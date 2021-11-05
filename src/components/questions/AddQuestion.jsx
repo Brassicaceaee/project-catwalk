@@ -1,16 +1,24 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './questions.module.css';
+import QuestionForm from './AddQuestionForm.jsx';
 
 const AddQuestion = (props) => {
 
   const [modalShown, toggleModal] = useState(false);
   const modalButtonClick = () => {
-    useState(!modalShown);
+    toggleModal(!modalShown);
   }
+
+  useEffect(() => {
+    if (modalShown) {
+
+    }
+  });
 
   return(
     <div className={styles.addQuestion}>
-      Sample text
+      <button onClick={modalButtonClick}>Add Question +</button>
+      <QuestionForm show={modalShown}/>
     </div>
   )
 };
