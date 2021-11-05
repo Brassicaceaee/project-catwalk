@@ -27,11 +27,6 @@
   /* justify-content: space-around; */
 }
 
-.searchBar {
-  background-color: rgb(236, 161, 220);
-  display: flex;
-  /* align-items: flex-start; */
-}
 .answerInfo {
   display: flex;
   flex-direction: row;
@@ -76,16 +71,62 @@ li {
   list-style-type: none;
 }
 
-/* May use these later.... commented out for now until cleanup */
 
-/*
 
-.answerList {
+/* Forms CSS
+----------------------------------------------------
+*/
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 70px;
+  align-self: center;
+}
+
+input[name=question] {
+  height: 200px;
+}
+
+.questionForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputSubtext {
+  padding-bottom: 8px;
+}
+
+
+/* ---------- MODAL CSS ----------- */
+.modal {
+  width: 80%;
+  background: white;
+  border: 1px solid gray;
+  z-index: 1;
+  position: absolute;
+}
+
+.modal .content {
+  padding: 5px;
+  z-index: 10;
+  margin: auto;
+  position: fixed;
+  top: 100px;
+  left: 25%;
+  border: 1px solid gray;
+  width: 40%;
+  min-width: 400px;
+  background-color: white;
 
 }
 
-.addQuestion {
-
+.modal .actions {
+  padding: 5px;
+  align-self: center;
 }
-
- */

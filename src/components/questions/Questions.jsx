@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from './SearchBar.jsx';
 import QuestionList from './QuestionList.jsx';
 import AddQuestion from './AddQuestion.jsx';
+import QuestionForm from './AddQuestionForm.jsx';
 const data = require('./questiondata/questiondata.js');
 import styles from './questions.module.css';
 
