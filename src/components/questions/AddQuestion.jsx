@@ -9,18 +9,11 @@ const AddQuestion = (props) => {
     toggleModal(!modalShown);
   }
 
-  useEffect(() => {
-    if (modalShown) {
-
-    }
-  });
-
   return(
     <div className={styles.addQuestion}>
       <button onClick={modalButtonClick}>Add Question +</button>
       <div>
         <QuestionForm show={modalShown} modalButtonClick={modalButtonClick}/>
-        {/* <button onClick={modalButtonClick}>Close</button> */}
       </div>
     </div>
   )
