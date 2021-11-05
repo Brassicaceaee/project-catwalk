@@ -26,6 +26,12 @@ const AddToCart = (props) => {
   }
 
 
+  const handleQuantitySelect = (event) => {
+    console.log(event.target.value)
+    setQuantity(event.target.value)
+  }
+
+
   let styleSelector;
 
   if (Object.entries(currentSkus).length > 0){
@@ -43,19 +49,19 @@ const AddToCart = (props) => {
   let quantitySelector;
 
   if (selectedSkuID === '') {
-    quantitySelector = <select><option> - </option></select>
+    // quantitySelector = <select><option> - </option></select>
 
   } else {
     var num = currentSkus[selectedSkuID].quantity
-    debugger
     var quantityNumbers = Array.from(Array(num).keys())
 
-    quantitySelector = (
-              <select value={selectedQuantity} onChange={(e) => (console.log(e.targe.value))}>
-                {quantityNumbers.map( (num) => {
-                  <option value={num}>{num}</option>
-                })}
 
+    quantitySelector = (
+              <select value={selectedQuantity} onChange={handleQuantitySelect}>
+                {quantityNumbers.map( (number) =>
+                  <option value={number}>{number}</option>
+                )}
+                {/* <option>sjadkfhajks</option> */}
               </select>
 
     )
