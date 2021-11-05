@@ -18,6 +18,7 @@ export function ProductProvider({children}) {
   const update = (product_id) => {
     axios.get(`/products?product_id=${product_id}`)
     .then(({data}) => {
+      // console.log(data)
       updateProduct(data);
     })
   }
@@ -25,7 +26,7 @@ export function ProductProvider({children}) {
   useEffect(() => {
     update(40344);
   }, [])
-  
+
   if (product) {
     return (
       <ProductContext.Provider value={product}>
