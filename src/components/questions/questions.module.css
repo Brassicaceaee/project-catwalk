@@ -70,7 +70,10 @@ ul, li {
 li {
   list-style-type: none;
 }
-
+.questionListButtons {
+  display: flex;
+  flex-direction: row;
+}
 
 
 /* Forms CSS
