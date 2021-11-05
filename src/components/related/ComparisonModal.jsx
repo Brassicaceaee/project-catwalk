@@ -11,7 +11,7 @@ const ComparisonModal = ({left, right, togglePop}) => {
   // console.log("overview:" , overviewFeatures);
 
   // get an array of objects, having all the relatedProduct features as key, and value as value
-  let relatedFeatures = right.features.reduce((obj, user) => {
+  let relatedFeatures = right.info.features.reduce((obj, user) => {
     obj[user.feature] = user.value;
     return obj;
   }, {});
@@ -29,11 +29,14 @@ const ComparisonModal = ({left, right, togglePop}) => {
 // console.log(featureHolder)
   return (
     <div>
-      <div className={styles.modal}>
-      <button onClick={togglePop}>Close</button>
+      <div className={styles.modal} >
+      <div className={styles.actions}>
+        <button onClick={togglePop}>Close</button>
+      </div>
+      <h3>Comparing</h3>
         <div>{Object.keys(featureHolder).map((features, index) => {
           return (
-          <div key={index} className={styles.modal.content}>
+          <div key={index} className={styles.content}>
             <span>{overviewFeatures[features]? overviewFeatures[features] : ' x'}</span>
             <span>{features}</span>
             <span>{relatedFeatures[features]?  relatedFeatures[features]:  'x '}</span>
