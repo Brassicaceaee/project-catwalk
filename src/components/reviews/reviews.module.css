@@ -1,3 +1,4 @@
+/* WIDGET */
 .widget {
   display: grid;
   grid-template-columns: auto 2fr;
@@ -6,18 +7,18 @@
 }
 
 .ratingBreakdown {
- margin: 5%;
- display:flex;
- flex-direction: column;
+  display:flex;
+  flex-direction: column;
+  margin: 5%;
 }
 
 .reviewsComponent {
-  margin: 2%;
   display: flex;
   flex-direction: column;
   grid-column: 2;
   grid-row-start: 1;
   grid-row-end: 3;
+  margin: 2%;
 }
 
 .productBreakdown {
@@ -27,18 +28,18 @@
 }
 
 .scoreBar {
-  height: 10px;
   background-color: rgb(173, 173, 173);
+  height: 10px;
 }
 
 .arrowDown {
-  position: relative;
-  left: calc(var(--score) / 5 * 100% );
-  width: 0;
-  height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 15px solid black;
+  height: 0;
+  left: calc(var(--score) / 5 * 100% );
+  width: 0;
+  position: relative;
 }
 
 .charHeader {
