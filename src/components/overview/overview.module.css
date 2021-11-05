@@ -176,3 +176,33 @@
 
 
 }
+
+
+
+
+/*============= Image Gallery ====================*/
+
+.galleryContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+
+
+}
+
+
+.galleryThumbnails{
+  height: 680px;
+  width: 100px;
+  margin: 10px;
+  border: 1px solid purple;
+}
+
+.galleryMain{
+  height: 680px;
+  width: 550px;
+  margin: 10px;
+  border: 1px solid purple;
+}
