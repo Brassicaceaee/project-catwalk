@@ -4,14 +4,14 @@ import json from '../styleSample.json';
 
 
 const AddToCart = (props) => {
-  // const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+
   var options = json.results;
   var currentSkus = options[0].skus; //Object of containing skus;
 
   var skus = Object.values(currentSkus)
 
-  const [selectedSize, setSize] = useState(null)
-  const [selectedSKU, setSKU] = useState(null)
+  const [selectedSize, setSize] = useState('')
+  const [selectedSKU, setSKU] = useState('')
 
   //TODO
   //Based on the selected size, get SKU, creat quantity selector
@@ -26,21 +26,30 @@ const AddToCart = (props) => {
     setSize(skuData.size)
   }
 
+  //TODO: Needs test
 
+  //Style Selector
+  let styleSelector;
+  if (Object.entries(currentSkus).length > 0){
+
+    styleSelector =
+             ( <select value={selectedSize} onChange={handleSizeSelect}>
+
+                {selectedSize === '' && <option>Select Style</option>}
+
+                {Object.entries(currentSkus).map( (sku ) =>
+                <option value={sku} key={sku[0]}> {sku[1].size} </option>)}
+
+              </select>);
+  } else {
+    styleSelector = <p>OUT OF STOCK</p>
+  }
 
   return (
       <>
       <div className={styles.addToCart}>
         <span className={styles.size}>
-
-          <select value={selectedSize} onChange={handleSizeSelect}>
-
-            {selectedSize === null && <option>Select Style</option>}
-
-            {Object.entries(currentSkus).map( (sku ) =>
-             <option value={sku}>{sku[1].size}</option>)}
-
-          </select>
+          {styleSelector}
         </span>
         <span className={styles.quantity}> quantity</span>
         <span className={styles.cartButton}>add To Cart</span>
