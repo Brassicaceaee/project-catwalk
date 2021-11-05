@@ -1,4 +1,5 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
+import axios from 'axios';
 
 const ProductContext = React.createContext();
 const ProductUpdateContext = React.createContext();
@@ -12,17 +13,28 @@ export const updateProductContext = () => {
 
 
 export function ProductProvider({children}) {
-  const [average, updateAverage] = useState(5);
+  const [product, updateProduct] = useState(null);
 
-  const update = () => {
-    updateAverage(prev => prev * 2);
+  const update = (product_id) => {
+    axios.get(`/products?product_id=${product_id}`)
+    .then(({data}) => {
+      updateProduct(data);
+    })
   }
-
-  return (
-    <ProductContext.Provider value={average}>
-      <ProductUpdateContext.Provider value={update}>
-        {children}
-      </ProductUpdateContext.Provider>
-    </ProductContext.Provider>
-  )
+  // debugger;
+  useEffect(() => {
+    update(40344);
+  }, [])
+  
+  if (product) {
+    return (
+      <ProductContext.Provider value={product}>
+        <ProductUpdateContext.Provider value={update}>
+          {children}
+        </ProductUpdateContext.Provider>
+      </ProductContext.Provider>
+    )
+  } else {
+    return <></>
+  }
 }
