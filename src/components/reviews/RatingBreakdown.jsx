@@ -4,7 +4,10 @@ import styles from "./reviews.module.css";
 import {useProductContext} from '../../context/ProductContext.jsx';
 const RatingBreakdown = () => {
   const {meta} = useProductContext();
+  const total = meta.total;
   const average = meta.average;
+  const ratings = meta.ratings;
+  const recommended = meta.recommended.true;
 
   return (
     <div className={styles.ratingBreakdown}>
@@ -29,39 +32,7 @@ const RatingBreakdown = () => {
   );
 }
 
-var reviewsMeta = {
-  "product_id": "40344",
-  "ratings": {
-      "1": "7",
-      "2": "12",
-      "3": "20",
-      "4": "28",
-      "5": "106"
-  },
-  "recommended": {
-      "false": "41",
-      "true": "132"
-  },
-  "characteristics": {
-      "Fit": {
-          "id": 135219,
-          "value": "2.5476190476190476"
-      },
-      "Length": {
-          "id": 135220,
-          "value": "2.5952380952380952"
-      },
-      "Comfort": {
-          "id": 135221,
-          "value": "2.8536585365853659"
-      },
-      "Quality": {
-          "id": 135222,
-          "value": "3.1111111111111111"
-      }
-  }
-}
-
+// This is a temporary helper variable that I will replace when I think of a better way to map over the ratings
 var bars = [
   5,
   4,
