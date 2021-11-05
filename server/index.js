@@ -15,6 +15,7 @@ app.get('/products', (req, res) => {
 
   let product = {}
 
+
   Promise.all([
     axios.get(`${url}/products/${productId}`, options),
     axios.get(`${url}/products/${productId}/styles`, options),
@@ -37,6 +38,8 @@ app.get('/products', (req, res) => {
     product.cart = result[6].data;
     product.answers = {};
     product.related = {};
+    // console.log(product)
+
     // Get all the answers
     let answerPromises = [];
 
@@ -69,12 +72,12 @@ app.get('/products', (req, res) => {
         product.related[relatedProduct.id].info = relatedProduct;
         product.related[relatedProduct.id].styles = relatedStyles;
       }
-      res.send(200, product);
+      // res.send(200, product);
+      res.status(200).send(product)
     })
     .catch((error) => {
       debugger;
     })
-
 
   })
   .catch((err) => {

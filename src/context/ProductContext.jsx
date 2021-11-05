@@ -18,6 +18,7 @@ export function ProductProvider({children}) {
   const update = (product_id) => {
     axios.get(`/products?product_id=${product_id}`)
     .then(({data}) => {
+      // console.log(data)
       updateProduct(data);
     })
   }

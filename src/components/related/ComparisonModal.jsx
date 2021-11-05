@@ -11,7 +11,7 @@ const ComparisonModal = ({left, right, togglePop}) => {
   // console.log("overview:" , overviewFeatures);
 
   // get an array of objects, having all the relatedProduct features as key, and value as value
-  let relatedFeatures = right.features.reduce((obj, user) => {
+  let relatedFeatures = right.info.features.reduce((obj, user) => {
     obj[user.feature] = user.value;
     return obj;
   }, {});
