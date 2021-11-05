@@ -192,17 +192,38 @@
 
 }
 
-
 .galleryThumbnails{
   height: 680px;
   width: 100px;
   margin: 10px;
   border: 1px solid purple;
+
+  display: flex;
+  flex-direction: column;
 }
 
+
+.galleryThumbnailPhotoContainer{
+  /* flex: 1; */
+  height: 75px;
+  width: 75px;
+  margin: 8px;
+  border: 2px solid black;
+
+}
+
+.galleryThumbnailPhoto{
+  height: 100%;
+  width: auto;
+}
 .galleryMain{
   height: 680px;
   width: 550px;
   margin: 10px;
   border: 1px solid purple;
+}
+
+.mainPhoto{
+  height: 100%;
+  width: auto;
 }

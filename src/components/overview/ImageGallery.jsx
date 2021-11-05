@@ -22,17 +22,23 @@ const ImageGallery = (props) => {
 
   console.log(photos)
 
+  const handleThumbnailClick = (event, index) => {
+    setMainPhoto(index)
+  }
+
+
   return(
     <div className={styles.galleryContainer}>
 
       <span className={styles.galleryThumbnails}>
 
-          {photos.map((photo) =>
+          {photos.map((photo, index) =>
             <span className={styles.galleryThumbnailPhotoContainer}>
-              <img className={styles.galleryThumbnailPhoto} src={photo.thumbnail_url}/>
+              <img className={styles.galleryThumbnailPhoto}
+              src={photo.thumbnail_url}
+              onClick={(e) => handleThumbnailClick(e, index)}/>
             </span>
           )}
-
 
       </span>
       <span className={styles.galleryMain}>
