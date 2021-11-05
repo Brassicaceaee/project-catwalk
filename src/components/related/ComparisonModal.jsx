@@ -29,7 +29,7 @@ const ComparisonModal = ({left, right, togglePop}) => {
 // console.log(featureHolder)
   return (
     <div>
-      <div className={styles.modal}>
+      <div className={styles.modal} >
       <div className={styles.actions}>
         <button onClick={togglePop}>Close</button>
       </div>

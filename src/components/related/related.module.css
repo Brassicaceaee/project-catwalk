@@ -52,7 +52,7 @@
   background: blue;
   color: red;
 }
-/* .modal.off {
+.modal.off {
   opacity: 0;
   visibility: hidden;
   filter: blur(8px);
@@ -67,12 +67,12 @@
   .modal.off {
     offset-distance: 100%;
   }
-} */
-/* @media (prefers-reduced-motion) {
+}
+@media (prefers-reduced-motion) {
   .modal {
     offset-path: none;
   }
-} */
+}
 .modal h3 {
   border-bottom: 1px solid #ccc;
   padding: 1rem;
