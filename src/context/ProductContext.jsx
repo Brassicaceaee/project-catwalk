@@ -25,7 +25,7 @@ export function ProductProvider({children}) {
   useEffect(() => {
     update(40344);
   }, [])
-  
+
   if (product) {
     return (
       <ProductContext.Provider value={product}>
