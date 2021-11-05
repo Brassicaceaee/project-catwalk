@@ -38,7 +38,6 @@ app.get('/products', (req, res) => {
     product.cart = result[6].data;
     product.answers = {};
     product.related = {};
-    // console.log(product)
 
     // Get all the answers
     let answerPromises = [];
