@@ -7,12 +7,12 @@ const ProductBreakdown = () => {
   const characteristics = meta.characteristics;
   // debugger;
   return (
-    <div className={`${styles.productBreakdown} ${styles.flex} ${styles.column}`}>
+    <div className={`${styles.flex} ${styles.column} ${styles.medPadding}`}>
       {Object.keys(characteristics).map((key, index) => {
         return (
-          <div key={characteristics[key].id} className={styles.characteristic}>
-            <p className={styles.charHeader}>{key}</p>
-            <div className={styles.scoreBar}>
+          <div key={characteristics[key].id} className={styles.smallMarginBottom}>
+            <p className={styles.smallMarginBottom}>{key}</p>
+            <div className={`${styles.scoreBar} ${styles.smallMarginBottom}`}>
               <div className={styles.arrowDown} style={{'--score': characteristics[key].value}}></div>
             </div>
             <div className={`${styles.subLabels} ${styles.flex} ${styles.spaceBetween}`}>

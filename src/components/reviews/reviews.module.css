@@ -22,19 +22,75 @@
 }
 
 
+/* MARGIN */
+
+.resetMargin {
+  margin: 0;
+}
+
+.smallMargin {
+  margin: 2px;
+}
+
+.smallMarginBottom {
+  margin-bottom: 5px;
+}
+
+.medMarginBottom {
+  margin-bottom: 15px;
+}
+
+.largeMarginBottom {
+  margin-bottom: 30px;
+}
+
+.medMarginRight {
+  margin-right: 20px;
+}
+
+
+
+/* PADDING */
+
+.smallPadding {
+  padding: 2%;
+}
+
+.medPadding {
+  padding: 5%;
+}
 
 
 
 
 
 
+.percentBar {
+  background-color: rgb(158, 158, 158);
+  flex: 1;
+  height: 10px;
+}
+.averageRating {
+  font-size: 42px;
+}
+.stars {
+  font-size: 50px;
+}
+.thumbnail {
+  width: 125px;
+}
+.response {
+  background-color: rgb(190, 190, 190);
+}
+.reviewsComponent {
+  grid-column: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
 .subLabels {
-  margin-top: 5px;
   font-size: 14px;
 }
-.ratingBar {
-  margin: 5px 0 5px 0;
-}
+
 .thumbNailContainer {
   height: 75px;
   overflow: hidden;
@@ -43,20 +99,6 @@
   flex: 1;
   overflow: scroll;
 }
-.ratingBreakdown {
-  margin: 5%;
-}
-.reviewsComponent {
-  grid-column: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  margin: 2%;
-}
-.productBreakdown {
-  margin: 2%;
-}
-
-
 
 /* WIDGET */
 
@@ -76,54 +118,23 @@
 
 
 
-.reviewTile {
-  padding: 15px 0;
-}
 
-.response {
-  background-color: rgb(190, 190, 190);
-  padding: 2%;
-}
 
 .sortSelect {
   height: 20px;
 }
 
-.sortLabel {
-  margin: 0 5px 0 0;
-}
 
 
-.thumbnail {
-  width: 125px;
-  margin: 2px;
-}
 
 
 
 /* RATING BREAKDOWN  */
 
-.ratingHeader {
-  margin-top: 0;
-}
-
-.averageRating {
-  font-size: 42px;
-  margin-right: 20px;
-}
-
-.stars {
-  font-size: 50px;
-  margin-left: 25px;
-}
 
 
-.percentBar {
-  background-color: rgb(158, 158, 158);
-  flex: 1;
-  height: 10px;
-  margin: 5px 20px 0;
-}
+
+
 
 .percentBar>div {
   background-color: green;
@@ -136,9 +147,6 @@
 
 /* PRODUCT BREAKDOWN */
 
-.characteristic {
-  margin-bottom: 8px;
-}
 
 .scoreBar {
   background-color: rgb(173, 173, 173);
@@ -155,10 +163,6 @@
   position: relative;
 }
 
-.charHeader {
-  margin-bottom: 5px;
-  margin-top: 10px;
-}
 
 
 

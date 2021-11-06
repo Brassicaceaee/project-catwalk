@@ -8,9 +8,9 @@ const ReviewsList = () => {
   const reviewsList = reviews.results;
 
   return (
-    <div className={`${styles.reviewsComponent} ${styles.flex} ${styles.column}`}>
+    <div className={`${styles.reviewsComponent} ${styles.flex} ${styles.column} ${styles.medPadding}`}>
       <div className={`${styles.flex}`}>
-        <p className={`${styles.sortLabel}`}><span>{reviews.count}</span> reviews, sorted by </p>
+        <p className={`${styles.resetMargin} ${styles.smallMarginBottom}`}><span>{reviews.count}</span> reviews, sorted by </p>
         <select className={styles.sortSelect}>
           <option>relevance</option>
           <option>helpful</option>
