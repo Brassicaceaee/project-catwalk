@@ -5,18 +5,7 @@ import json from './styleSample.json';
 
 const ImageGallery = (props) => {
 
-  var nums = Array.from(Array(7).keys()) //Used for testing flex box children size
-  // console.log(nums)
-
-  /*Gallery would need
-   -state of style index,
-    -style information,
-    chosen thumbnail index
-    */
-
-
-   var photos = json.results[0].photos;
-  // const [selectedStyle, setStyle] = useState() //Place holder for use of context to change style
+  var photos = json.results[0].photos;
   const [mainPhoto, setMainPhoto] = useState(0);
 
   const handleThumbnailClick = (event, index) => {
