@@ -18,7 +18,8 @@ const AnswerForm = (props) => {
             <label> Your email (mandatory) </label>
              <input type='text' placeholder='Example: jack@email.com' maxlength='60'></input>
             <span className={styles.inputSubtext}> “For authentication reasons, you will not be emailed”</span>
-            <input type='submit' name='Submit Question'></input>
+            <label> Upload your photos </label>
+            <input type='file' accept="image/*" multiple></input>
             <div className={styles.actions}>
               <button onClick={props.modalButtonClick}> Close </button>
             </div>
