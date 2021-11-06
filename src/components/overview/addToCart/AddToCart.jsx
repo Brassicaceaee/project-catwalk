@@ -26,10 +26,10 @@ const AddToCart = (props) => {
     setSize(skuData.size)
   }
 
-  let styleSelector;
+  let sizeSelector;
 
   if (Object.entries(currentSkus).length > 0){
-    styleSelector = (
+   sizeSelector = (
              <select name={selectedSize} onChange={handleSizeSelect}>
 
                 {selectedSize === '' && <option>Select Style</option>}
@@ -39,7 +39,7 @@ const AddToCart = (props) => {
               </select>
     )
   } else {
-    styleSelector = <p>OUT OF STOCK</p>
+   sizeSelector = <p>OUT OF STOCK</p>
   }
 
 
@@ -76,7 +76,7 @@ const AddToCart = (props) => {
       <>
       <div className={styles.addToCart}>
         <span className={styles.size}>
-          {styleSelector}
+           {sizeSelector}
         </span>
         <span className={styles.quantity}>
           {quantitySelector}
