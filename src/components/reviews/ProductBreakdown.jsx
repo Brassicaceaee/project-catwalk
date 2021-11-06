@@ -12,8 +12,8 @@ const ProductBreakdown = () => {
         return (
           <div key={characteristics[key].id} className={styles.smallMarginBottom}>
             <p className={styles.smallMarginBottom}>{key}</p>
-            <div className={`${styles.scoreBar} ${styles.smallMarginBottom}`}>
-              <div className={styles.arrowDown} style={{'--score': characteristics[key].value}}></div>
+            <div className={`${styles.bar} ${styles.smallMarginBottom}`}>
+              <div className={styles.downArrow} style={{'--score': characteristics[key].value}}></div>
             </div>
             <div className={`${styles.subLabels} ${styles.flex} ${styles.spaceBetween}`}>
               <div>{subLabel[key][0]}</div>

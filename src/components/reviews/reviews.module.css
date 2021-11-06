@@ -44,10 +44,13 @@
   margin-bottom: 30px;
 }
 
+.smallMarginRight {
+  margin-right: 10px;
+}
+
 .medMarginRight {
   margin-right: 20px;
 }
-
 
 
 /* PADDING */
@@ -61,17 +64,35 @@
 }
 
 
+/* BARS */
 
-
-
-
-.percentBar {
-  background-color: rgb(158, 158, 158);
+.bar {
+  background-color: rgb(180, 180, 180);
   flex: 1;
   height: 10px;
 }
+
+/* This is specifically for the precent bars filled portion. The width is added inline. */
+.bar>div:not(.downArrow) {
+  background-color: green;
+  height: 10px;
+}
+
+.downArrow {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid black;
+  height: 0;
+  left: calc(var(--score) / 5 * 100% );
+  width: 0;
+  position: relative;
+}
+
+
+
+
 .averageRating {
-  font-size: 42px;
+  font-size: 50px;
 }
 .stars {
   font-size: 50px;
@@ -117,18 +138,6 @@
 
 
 
-
-
-
-.sortSelect {
-  height: 20px;
-}
-
-
-
-
-
-
 /* RATING BREAKDOWN  */
 
 
@@ -136,32 +145,10 @@
 
 
 
-.percentBar>div {
-  background-color: green;
-  width: 75%;
-  height: 10px;
-}
-
-
-
 
 /* PRODUCT BREAKDOWN */
 
 
-.scoreBar {
-  background-color: rgb(173, 173, 173);
-  height: 10px;
-}
-
-.arrowDown {
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 15px solid black;
-  height: 0;
-  left: calc(var(--score) / 5 * 100% );
-  width: 0;
-  position: relative;
-}
 
 
 

@@ -21,7 +21,7 @@ const RatingBreakdown = () => {
         return (
           <div key={index} className={`${styles.flex} ${styles.center} ${styles.medMarginBottom}`}>
             <span className={styles.medMarginRight}>{bar} Star</span>
-            <div className={styles.percentBar}>
+            <div className={styles.bar}>
               <div style={{ width: percent }}></div>
             </div>
           </div>
