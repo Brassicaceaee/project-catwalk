@@ -13,7 +13,7 @@ const RatingBreakdown = () => {
     <div className={`${styles.flex} ${styles.column} ${styles.medPadding}`}>
       <h3 className={`${styles.resetMargin} ${styles.medMarginBottom}`}>RATINGS & REVIEWS</h3>
       <div className={styles.flex}>
-        <span className={`${styles.averageRating} ${styles.medMarginRight}`}>{average} </span>
+        <span className={`${styles.largeFont} ${styles.medMarginRight}`}>{average} </span>
         <Stars rating={average}/>
       </div>
       {bars.map((bar, index) => {

@@ -2,6 +2,20 @@
 
 /* GRID */
 
+.widget {
+  display: grid;
+  grid-template-columns: auto 2fr;
+  grid-template-rows: auto 1fr;
+  height: 95vh;
+}
+
+.reviewsComponent {
+  grid-column: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+/* The other two subcomponents are automatically placed */
+
 
 /* FLEX */
 .flex {
@@ -67,7 +81,7 @@
 /* BARS */
 
 .bar {
-  background-color: rgb(180, 180, 180);
+  background-color: var(--light-gray);
   flex: 1;
   height: 10px;
 }
@@ -78,6 +92,7 @@
   height: 10px;
 }
 
+/* Makes a downward pointing arrow that is used in the product breakdown bars */
 .downArrow {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
@@ -91,66 +106,35 @@
 
 
 
-.averageRating {
-  font-size: 50px;
-}
-.stars {
-  font-size: 50px;
-}
-.thumbnail {
-  width: 125px;
-}
-.response {
-  background-color: rgb(190, 190, 190);
-}
-.reviewsComponent {
-  grid-column: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
-.subLabels {
+/* ---------- TYPOGRAPHY ----------- */
+
+.smallFont {
   font-size: 14px;
+}
+
+.largeFont {
+  font-size: 42px;
+}
+
+
+
+
+/* REVIEW LIST */
+
+.reviewsList {
+  flex: 1;
+  overflow: scroll;
 }
 
 .thumbNailContainer {
   height: 75px;
   overflow: hidden;
 }
-.reviewsList {
-  flex: 1;
-  overflow: scroll;
+
+.thumbnail {
+  width: 125px;
 }
 
-/* WIDGET */
-
-.widget {
-  display: grid;
-  grid-template-columns: auto 2fr;
-  grid-template-rows: auto 1fr;
+.response {
+  background-color: var(--light-gray);
 }
-.maxSize {
-  height: 95vh;
-}
-
-
-
-
-
-
-
-/* RATING BREAKDOWN  */
-
-
-
-
-
-
-
-/* PRODUCT BREAKDOWN */
-
-
-
-
-
-
-

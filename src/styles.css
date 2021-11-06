@@ -1,6 +1,7 @@
 h1 {
   color: white;
   background-color: black;
+
 }
 
 #app {
@@ -9,7 +10,8 @@ h1 {
 }
 
 :root {
-  --widget-height: 950px
+  --widget-height: 950px;
+  --light-gray: rgb(180, 180, 180);
 }
 
 .overview {
