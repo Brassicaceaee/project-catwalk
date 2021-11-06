@@ -7,12 +7,13 @@ import rightArrow from '../../../asset/img/right-arrow.png';
 
 const ProductCardList = () =>{
   const { related } = useProductContext();
+  const style = { height: '130px', width: '50px'};
 
   return (
     <div className={styles.productCardList}>
       <img
         src={leftArrow}
-        style={{ height: '50px', width: '50px'}}
+        style={style}
       />
       {Object.values(related).map((result, index) => {
         return <ProductCard
@@ -22,7 +23,7 @@ const ProductCardList = () =>{
       })}
       <img
         src={rightArrow}
-        style={{ height: '50px', width: '50px'}}
+        style={style}
       />
     </div>
   );

@@ -7,7 +7,7 @@ const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
   const { styles } = useProductContext();
 
   const outfitImg = styles.results[0].photos[0].thumbnail_url
-  const isSale = styles.results[0].sale_price
+  const salePrice = styles.results[0].sale_price
   const originalPrice = styles.results[0].original_price
 
   // delete outfit, then get the new outfit list back and reset outfitData
@@ -28,10 +28,7 @@ const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
       <img src={outfitImg}/>
       <div>{storedOutfit.category}</div>
       <div>{storedOutfit.name}</div>
-      {isSale
-      ? <div>${isSale}</div>
-      : <div>${originalPrice}</div>
-    }
+      <div>${salePrice || originalPrice}</div>
     </div>
   )
 }

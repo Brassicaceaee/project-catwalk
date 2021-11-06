@@ -12,7 +12,7 @@ const ProductCard = ({relatedProduct}) =>{
     setIsOpen(!isOpen)
   };
 
-  const isSale = relatedProduct.styles[0].sale_price
+  const salePrice = relatedProduct.styles[0].sale_price
   const originalPrice = relatedProduct.info.default_price
   const relatedImg = relatedProduct.styles[0].photos[0].thumbnail_url
 
@@ -25,10 +25,7 @@ const ProductCard = ({relatedProduct}) =>{
       <img src={relatedImg || imgNotAvailable }/>
       <div>{relatedProduct.info.category}</div>
       <div>{relatedProduct.info.name}</div>
-      {isSale
-      ? <div>${isSale}</div>
-      : <div>${originalPrice}</div>
-    }
+      <div>${salePrice || originalPrice }</div>
     </div>
   )
 }
