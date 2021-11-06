@@ -3,7 +3,7 @@ import styles from './questions.module.css';
 
 const AnswerForm = (props) => {
 
-  const [uploadArray, updateArray] = useState(0);
+  const [uploadArray, setUploadArray] = useState([]);
   let imageInput = document.getElementById('image-uploads');
   // let images = imageInput.files;
   // var loadFile = function(event) {
@@ -11,12 +11,17 @@ const AnswerForm = (props) => {
 	// image.src = URL.createObjectURL(event.target.files[0]);
   // };
 
-  const ref = useRef(null);
+  // const ref = useRef(null);
 
-// useEffect(() => {
-//   updateArray(ref.current);
-// })
+useEffect(() => {
+  // updateArray(ref.current);
+}, [uploadArray])
 
+  const handleUpload = (e) => {
+    console.log(e.target.files[0])
+    setUploadArray(uploadArray => [...uploadArray, e.target.files[0]]);
+    // updateArray(uploadArray => [...uploadArray, e.target.files[0]])
+  }
 
   if (props.show) {
     return (
@@ -34,8 +39,9 @@ const AnswerForm = (props) => {
             <label> Your email (mandatory) </label>
              <input type='text' placeholder='Example: jack@email.com' maxlength='60'></input>
             <span className={styles.inputSubtext}> “For authentication reasons, you will not be emailed”</span>
-            <label> Upload your photos </label>
-            <input type='file' id='image-uploads' accept="image/*" ref={ref} multiple onChange={(e) => updateArray(imageInput.files) }></input>
+            {uploadArray.length < 5 && <label> Upload your photos </label>}
+            {/* <input type='file' id='image-uploads' name='uploads' accept="image/*" ref={ref} multiple onChange={(e) => updateArray(ref.current.files) }></input> */}
+            {uploadArray.length < 5 && <input type='file' id='file' name='file' accept="image/*" onChange={handleUpload}></input>}
             <div className={styles.actions}>
               <button onClick={props.modalButtonClick}> Close </button>
             </div>
