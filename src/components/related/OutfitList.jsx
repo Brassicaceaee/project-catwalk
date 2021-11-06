@@ -3,6 +3,7 @@ import styles from './related.module.css';
 import axios from 'axios';
 import {useProductContext} from '../../context/ProductContext.jsx';
 import OutfitCard from './OutfitCard.jsx';
+import plusSymbol from '../../../asset/img/plus-symbol.png';
 
 
 const OutfitList = () => {
@@ -37,10 +38,18 @@ const OutfitList = () => {
 
   return (
     <div className={styles.OutfitList}>
-      <i onClick={handleAddOutfit} className="fas fa-plus">Add to Outfit</i>
+      Add to Outfit
+      <img
+        src={plusSymbol}
+        style={{ height: '200px', width: '200px'}}
+        onClick={handleAddOutfit}
+      />
       {Object.values(outfitData).map((storedOutfit) => {
-        return <OutfitCard key={storedOutfit.id} storedOutfit={storedOutfit}
-        getStoredOutfit={getStoredOutfit}/>
+        return <OutfitCard
+          key={storedOutfit.id}
+          storedOutfit={storedOutfit}
+          getStoredOutfit={getStoredOutfit}
+        />
       })}
     </div>
   )

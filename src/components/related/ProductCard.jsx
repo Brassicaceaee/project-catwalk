@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './related.module.css';
 import ComparisonModal from './ComparisonModal.jsx';
 import {useProductContext} from '../../context/ProductContext.jsx';
+import imgNotAvailable from '../../../asset/img/image-not-available.png';
 
 const ProductCard = ({relatedProduct}) =>{
   const { info, styles } = useProductContext();
@@ -21,7 +22,7 @@ const ProductCard = ({relatedProduct}) =>{
       {isOpen
       ? <ComparisonModal left={info} right={relatedProduct} togglePop={togglePop}/>
       : <></>}
-      <img src={relatedImg}/>
+      <img src={relatedImg || imgNotAvailable }/>
       <div>{relatedProduct.info.category}</div>
       <div>{relatedProduct.info.name}</div>
       {isSale

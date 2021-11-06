@@ -2,18 +2,28 @@ import React, { useState, useEffect } from 'react';
 import styles from './related.module.css';
 import ProductCard from './ProductCard.jsx';
 import {useProductContext} from '../../context/ProductContext.jsx';
+import leftArrow from '../../../asset/img/left-arrow.png';
+import rightArrow from '../../../asset/img/right-arrow.png';
 
 const ProductCardList = () =>{
   const { related } = useProductContext();
 
   return (
     <div className={styles.productCardList}>
+      <img
+        src={leftArrow}
+        style={{ height: '50px', width: '50px'}}
+      />
       {Object.values(related).map((result, index) => {
         return <ProductCard
         relatedProduct={result}
         key={index}
         />
       })}
+      <img
+        src={rightArrow}
+        style={{ height: '50px', width: '50px'}}
+      />
     </div>
   );
 }
