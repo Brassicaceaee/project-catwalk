@@ -7,8 +7,16 @@ import { useProductContext } from '../../context/ProductContext.jsx';
 
 const ReviewsList = () => {
   const {reviews} = useProductContext();
-  const [showModal, toggleModal] = useState(false);
+  const [modalIsActive, setModalState] = useState(false);
   const reviewsList = reviews.results;
+
+  const startReview = () => {
+    setModalState(true);
+  }
+
+  const cancelReview = () => {
+    setModalState(false);
+  }
 
   return (
     <div className={`${styles.reviewsComponent} ${styles.flex} ${styles.column} ${styles.medPadding}`}>
@@ -27,9 +35,9 @@ const ReviewsList = () => {
       </div>
       <div>
         <button>MORE REVIEWS</button>
-        <button>ADD A REVIEW +</button>
+        <button onClick={startReview}>ADD A REVIEW +</button>
       </div>
-      {showModal && <ReviewForm/>}
+      {modalIsActive && <ReviewForm close={cancelReview}/>}
     </div>
   );
 }
