@@ -1,19 +1,20 @@
 import React from 'react';
 import styles from './questions.module.css';
 
-const QuestionForm = (props) => {
+const AnswerForm = (props) => {
   if (props.show) {
     return (
       <div className={styles.modal}>
         <div className={styles.content}>
+          <h3> Submit Your Answer </h3>
           <form className={styles.questionForm}>
-            <label> Your Question: </label>
+            <label> Your Answer (mandatory) </label>
             <input type='text' name='question' maxlength='1000'></input>
-            <label> Your Nickname: </label>
-            <input type='text' placeholder='Example: jackson11!' maxlength='60'></input>
+            <label> What is your nickname (mandatory) </label>
+            <input type='text' placeholder='Example: jack543!' maxlength='60'></input>
             <span className={styles.inputSubtext}> For privacy reasons, do not use your full name or email address </span>
 
-            <label> Your Email: </label>
+            <label> Your email (mandatory) </label>
              <input type='text' placeholder='Example: jack@email.com' maxlength='60'></input>
             <span className={styles.inputSubtext}> “For authentication reasons, you will not be emailed”</span>
             <input type='submit' name='Submit Question'></input>
@@ -29,4 +30,4 @@ const QuestionForm = (props) => {
   }
 }
 
-export default QuestionForm;
+export default AnswerForm;
