@@ -1,4 +1,5 @@
 /* WIDGET */
+
 .widget {
   display: grid;
   grid-template-columns: auto 2fr;
@@ -27,36 +28,54 @@
   margin: 2%;
 }
 
-.scoreBar {
-  background-color: rgb(173, 173, 173);
-  height: 10px;
-}
-
-.arrowDown {
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 15px solid black;
-  height: 0;
-  left: calc(var(--score) / 5 * 100% );
-  width: 0;
-  position: relative;
-}
-
-.charHeader {
-  margin-bottom: 5px;
-  margin-top: 10px;
-}
-
-.subLabels {
-  margin-top: 5px;
+.flex {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
 }
 
-.characteristic {
-  margin-bottom: 8px;
+
+/* REVIEW COMPONENT */
+
+.sortOptions {
+  display: flex;
 }
+
+.reviewTile {
+  padding: 15px 0;
+}
+
+.response {
+  background-color: rgb(190, 190, 190);
+  padding: 2%;
+}
+
+.sortSelect {
+  height: 20px;
+}
+
+.sortLabel {
+  margin: 0 5px 0 0;
+}
+
+.thumbNailContainer {
+  height: 75px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 125px;
+  margin: 2px;
+}
+
+.photoRow {
+  display: flex;
+}
+
+
+/* RATING BREAKDOWN  */
 
 .ratingHeader {
   margin-top: 0;
@@ -90,48 +109,44 @@
   height: 10px;
 }
 
-.sortOptions {
-  display: flex;
+
+
+
+/* PRODUCT BREAKDOWN */
+
+.characteristic {
+  margin-bottom: 8px;
 }
 
-.reviewTile {
-  padding: 15px 0;
+.scoreBar {
+  background-color: rgb(173, 173, 173);
+  height: 10px;
 }
 
-.flex {
+.arrowDown {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid black;
+  height: 0;
+  left: calc(var(--score) / 5 * 100% );
+  width: 0;
+  position: relative;
+}
+
+.charHeader {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.subLabels {
+  margin-top: 5px;
   display: flex;
   justify-content: space-between;
+  font-size: 14px;
 }
 
-.response {
-  background-color: rgb(190, 190, 190);
-  padding: 2%;
-}
 
-.sortSelect {
-  height: 20px;
-}
 
-.sortLabel {
-  margin: 0 5px 0 0;
-}
-
-.thumbNailContainer {
-  height: 75px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.thumbnail {
-  width: 125px;
-  margin: 2px;
-}
-
-.photoRow {
-  display: flex;
-}
 
 
 .reviewsList {
