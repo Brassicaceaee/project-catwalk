@@ -7,6 +7,7 @@ const AnswerForm = (props) => {
       <div className={styles.modal}>
         <div className={styles.content}>
           <h3> Submit Your Answer </h3>
+          <span>[Insert Product Name]: [Insert Product Body] </span>
           <form className={styles.questionForm}>
             <label> Your Answer (mandatory) </label>
             <input type='text' name='question' maxlength='1000'></input>
