@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReviewTile from './ReviewTile.jsx';
 import ReviewForm from './ReviewForm.jsx';
 import styles from './reviews.module.css';
@@ -7,6 +7,7 @@ import { useProductContext } from '../../context/ProductContext.jsx';
 
 const ReviewsList = () => {
   const {reviews} = useProductContext();
+  const [showModal, toggleModal] = useState(false);
   const reviewsList = reviews.results;
 
   return (
@@ -28,7 +29,7 @@ const ReviewsList = () => {
         <button>MORE REVIEWS</button>
         <button>ADD A REVIEW +</button>
       </div>
-      <ReviewForm/>
+      {showModal && <ReviewForm/>}
     </div>
   );
 }
