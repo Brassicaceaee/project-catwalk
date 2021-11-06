@@ -10,7 +10,7 @@ const RatingBreakdown = () => {
   const recommended = meta.recommended.true;
 
   return (
-    <div className={styles.ratingBreakdown}>
+    <div className={`${styles.ratingBreakdown} ${styles.flex} ${styles.column}`}>
       <h3 className={styles.ratingHeader}>RATINGS & REVIEWS</h3>
       <div className={styles.ratingBar}>
         <span className={styles.averageRating}>{average} </span>
@@ -19,7 +19,7 @@ const RatingBreakdown = () => {
       {bars.map((bar, index) => {
         let percent = (ratings[bar] / total * 100) + '%';
         return (
-          <div key={index} className={styles.ratingBar}>
+          <div key={index} className={`${styles.ratingBar} ${styles.flex}`}>
             <span>{bar} Star</span>
             <div className={styles.percentBar}>
               <div style={{ width: percent }}></div>

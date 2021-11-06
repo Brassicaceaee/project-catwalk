@@ -8,16 +8,16 @@ const ReviewsList = () => {
   const reviewsList = reviews.results;
 
   return (
-    <div className={styles.reviewsComponent}>
-      <div className={styles.sortOptions}>
-        <p className={styles.sortLabel}><span>{reviews.count}</span> reviews, sorted by </p>
+    <div className={`${styles.reviewsComponent} ${styles.flex} ${styles.column}`}>
+      <div className={`${styles.flex}`}>
+        <p className={`${styles.sortLabel}`}><span>{reviews.count}</span> reviews, sorted by </p>
         <select className={styles.sortSelect}>
           <option>relevance</option>
           <option>helpful</option>
           <option>newest</option>
         </select>
       </div>
-      <div className={styles.reviewsList}>
+      <div className={`${styles.reviewsList} ${styles.flex} ${styles.column}`}>
         {reviewsList.map((review, index) => {
           return <ReviewTile key={review.review_id} review={review}/>
         })}

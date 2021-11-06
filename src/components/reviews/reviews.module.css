@@ -1,44 +1,80 @@
+/* ------- LAYOUT ---------- */
+
+/* GRID */
+
+
+/* FLEX */
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+.subLabels {
+  margin-top: 5px;
+  font-size: 14px;
+}
+.ratingBar {
+  margin: 5px 0 5px 0;
+}
+.thumbNailContainer {
+  height: 75px;
+  overflow: hidden;
+}
+.reviewsList {
+  flex: 1;
+  overflow: scroll;
+}
+.ratingBreakdown {
+  margin: 5%;
+}
+.reviewsComponent {
+  grid-column: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  margin: 2%;
+}
+.productBreakdown {
+  margin: 2%;
+}
+
+
+
 /* WIDGET */
 
 .widget {
   display: grid;
   grid-template-columns: auto 2fr;
   grid-template-rows: auto 1fr;
+}
+.maxSize {
   height: 95vh;
 }
 
-.ratingBreakdown {
-  display:flex;
-  flex-direction: column;
-  margin: 5%;
-}
-
-.reviewsComponent {
-  display: flex;
-  flex-direction: column;
-  grid-column: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  margin: 2%;
-}
-
-.productBreakdown {
-  display: flex;
-  flex-direction: column;
-  margin: 2%;
-}
-
-.flex {
-  display: flex;
-  justify-content: space-between;
-}
 
 
-/* REVIEW COMPONENT */
 
-.sortOptions {
-  display: flex;
-}
+
+
+
 
 .reviewTile {
   padding: 15px 0;
@@ -57,22 +93,12 @@
   margin: 0 5px 0 0;
 }
 
-.thumbNailContainer {
-  height: 75px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .thumbnail {
   width: 125px;
   margin: 2px;
 }
 
-.photoRow {
-  display: flex;
-}
 
 
 /* RATING BREAKDOWN  */
@@ -91,10 +117,6 @@
   margin-left: 25px;
 }
 
-.ratingBar {
-  display: flex;
-  margin: 5px 0 5px 0;
-}
 
 .percentBar {
   background-color: rgb(158, 158, 158);
@@ -138,20 +160,6 @@
   margin-top: 10px;
 }
 
-.subLabels {
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-}
 
 
 
-
-
-.reviewsList {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  overflow: scroll;
-}

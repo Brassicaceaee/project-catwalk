@@ -13,11 +13,11 @@ const ReviewTile = ({review}) => {
       <p><strong>Review summary</strong></p>
       <p>{review.body}</p>
       <p>Show more</p>
-      <div className={styles.photoRow}>
+      <div className={styles.flex}>
         {
           review.photos.map((photo) => {
             return (
-              <div key={photo.id} className={styles.thumbNailContainer}>
+              <div key={photo.id} className={`${styles.thumbNailContainer} ${styles.flex} ${styles.center}`}>
                 <img src={photo.url} className={styles.thumbnail}></img>
               </div>
             )
