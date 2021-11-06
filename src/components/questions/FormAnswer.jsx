@@ -2,6 +2,14 @@ import React from 'react';
 import styles from './questions.module.css';
 
 const AnswerForm = (props) => {
+
+
+
+  var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+  };
+
   if (props.show) {
     return (
       <div className={styles.modal}>
