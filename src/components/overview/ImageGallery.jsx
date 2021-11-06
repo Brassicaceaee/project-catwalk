@@ -12,15 +12,12 @@ const ImageGallery = (props) => {
    -state of style index,
     -style information,
     chosen thumbnail index
-
     */
 
 
    var photos = json.results[0].photos;
   // const [selectedStyle, setStyle] = useState() //Place holder for use of context to change style
   const [mainPhoto, setMainPhoto] = useState(0);
-
-  console.log(photos)
 
   const handleThumbnailClick = (event, index) => {
     setMainPhoto(index)
@@ -32,13 +29,24 @@ const ImageGallery = (props) => {
 
       <span className={styles.galleryThumbnails}>
 
-          {photos.map((photo, index) =>
-            <span className={styles.galleryThumbnailPhotoContainer}>
-              <img className={styles.galleryThumbnailPhoto}
-              src={photo.thumbnail_url}
-              onClick={(e) => handleThumbnailClick(e, index)}/>
-            </span>
-          )}
+          {photos.map((photo, index) => {
+            if (mainPhoto === index) {
+              var thumbnailStyle = styles.galleryThumbnailPhotoSelected;
+            } else {
+              var thumbnailStyle = styles.galleryThumbnailPhoto;
+            }
+
+            return (
+              <span className={styles.galleryThumbnailPhotoContainer}>
+
+
+                <img className={thumbnailStyle}
+                src={photo.thumbnail_url}
+                onClick={(e) => handleThumbnailClick(e, index)}/>
+              </span>
+              )
+            })
+          }
 
       </span>
       <span className={styles.galleryMain}>
