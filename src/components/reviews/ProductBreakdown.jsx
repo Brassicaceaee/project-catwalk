@@ -5,13 +5,13 @@ import { useProductContext } from '../../context/ProductContext.jsx'
 const ProductBreakdown = () => {
   const {meta} = useProductContext();
   const characteristics = meta.characteristics;
-
+  // debugger;
   return (
     <div className={styles.productBreakdown}>
       {Object.keys(characteristics).map((key, index) => {
         return (
-          <div key={characteristics[key]} className={styles.characteristic}>
-            <p>{key}</p>
+          <div key={characteristics[key].id} className={styles.characteristic}>
+            <p className={styles.charHeader}>{key}</p>
             <div className={styles.scoreBar}>
               <div className={styles.arrowDown} style={{'--score': characteristics[key].value}}></div>
             </div>
