@@ -12,6 +12,7 @@ const ProductCard = ({relatedProduct}) =>{
   };
 
   const isSale = relatedProduct.styles[0].sale_price
+  const originalPrice = relatedProduct.info.default_price
   const relatedImg = relatedProduct.styles[0].photos[0].thumbnail_url
 
   return (
@@ -25,7 +26,7 @@ const ProductCard = ({relatedProduct}) =>{
       <div>{relatedProduct.info.name}</div>
       {isSale
       ? <div>${isSale}</div>
-      : <div>${relatedProduct.info.default_price}</div>
+      : <div>${originalPrice}</div>
     }
     </div>
   )
