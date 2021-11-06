@@ -10,18 +10,18 @@ const RatingBreakdown = () => {
   const recommended = meta.recommended.true;
 
   return (
-    <div className={styles.ratingBreakdown}>
-      <h3 className={styles.ratingHeader}>RATINGS & REVIEWS</h3>
-      <div className={styles.ratingBar}>
-        <span className={styles.averageRating}>{average} </span>
+    <div className={`${styles.flex} ${styles.column} ${styles.medPadding}`}>
+      <h3 className={`${styles.resetMargin} ${styles.medMarginBottom}`}>RATINGS & REVIEWS</h3>
+      <div className={styles.flex}>
+        <span className={`${styles.largeFont} ${styles.medMarginRight}`}>{average} </span>
         <Stars rating={average}/>
       </div>
       {bars.map((bar, index) => {
         let percent = (ratings[bar] / total * 100) + '%';
         return (
-          <div key={index} className={styles.ratingBar}>
-            <span>{bar} Star</span>
-            <div className={styles.percentBar}>
+          <div key={index} className={`${styles.flex} ${styles.center} ${styles.medMarginBottom}`}>
+            <span className={styles.medMarginRight}>{bar} Star</span>
+            <div className={styles.bar}>
               <div style={{ width: percent }}></div>
             </div>
           </div>

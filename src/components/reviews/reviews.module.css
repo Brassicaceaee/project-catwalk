@@ -1,4 +1,7 @@
-/* WIDGET */
+/* ------- LAYOUT ---------- */
+
+/* GRID */
+
 .widget {
   display: grid;
   grid-template-columns: auto 2fr;
@@ -6,33 +9,91 @@
   height: 95vh;
 }
 
-.ratingBreakdown {
-  display:flex;
-  flex-direction: column;
-  margin: 5%;
-}
-
 .reviewsComponent {
-  display: flex;
-  flex-direction: column;
   grid-column: 2;
   grid-row-start: 1;
   grid-row-end: 3;
-  margin: 2%;
 }
+/* The other two subcomponents are automatically placed */
 
-.productBreakdown {
+
+/* FLEX */
+.flex {
   display: flex;
-  flex-direction: column;
-  margin: 2%;
 }
 
-.scoreBar {
-  background-color: rgb(173, 173, 173);
+.column {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+
+/* MARGIN */
+
+.resetMargin {
+  margin: 0;
+}
+
+.smallMargin {
+  margin: 2px;
+}
+
+.smallMarginBottom {
+  margin-bottom: 5px;
+}
+
+.medMarginBottom {
+  margin-bottom: 15px;
+}
+
+.largeMarginBottom {
+  margin-bottom: 30px;
+}
+
+.smallMarginRight {
+  margin-right: 10px;
+}
+
+.medMarginRight {
+  margin-right: 20px;
+}
+
+
+/* PADDING */
+
+.smallPadding {
+  padding: 2%;
+}
+
+.medPadding {
+  padding: 5%;
+}
+
+
+/* BARS */
+
+.bar {
+  background-color: var(--light-gray);
+  flex: 1;
   height: 10px;
 }
 
-.arrowDown {
+/* This is specifically for the precent bars filled portion. The width is added inline. */
+.bar>div:not(.downArrow) {
+  background-color: green;
+  height: 10px;
+}
+
+/* Makes a downward pointing arrow that is used in the product breakdown bars */
+.downArrow {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 15px solid black;
@@ -42,103 +103,38 @@
   position: relative;
 }
 
-.charHeader {
-  margin-bottom: 5px;
-  margin-top: 10px;
-}
 
-.subLabels {
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-between;
+
+
+/* ---------- TYPOGRAPHY ----------- */
+
+.smallFont {
   font-size: 14px;
 }
 
-.characteristic {
-  margin-bottom: 8px;
-}
-
-.ratingHeader {
-  margin-top: 0;
-}
-
-.averageRating {
+.largeFont {
   font-size: 42px;
-  margin-right: 20px;
 }
 
-.stars {
-  font-size: 50px;
-  margin-left: 25px;
-}
 
-.ratingBar {
-  display: flex;
-  margin: 5px 0 5px 0;
-}
 
-.percentBar {
-  background-color: rgb(158, 158, 158);
+
+/* REVIEW LIST */
+
+.reviewsList {
   flex: 1;
-  height: 10px;
-  margin: 5px 20px 0;
-}
-
-.percentBar>div {
-  background-color: green;
-  width: 75%;
-  height: 10px;
-}
-
-.sortOptions {
-  display: flex;
-}
-
-.reviewTile {
-  padding: 15px 0;
-}
-
-.flex {
-  display: flex;
-  justify-content: space-between;
-}
-
-.response {
-  background-color: rgb(190, 190, 190);
-  padding: 2%;
-}
-
-.sortSelect {
-  height: 20px;
-}
-
-.sortLabel {
-  margin: 0 5px 0 0;
+  overflow: scroll;
 }
 
 .thumbNailContainer {
   height: 75px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .thumbnail {
   width: 125px;
-  margin: 2px;
-  /* height: 75px; */
 }
 
-.photoRow {
-  display: flex;
-}
-
-
-.reviewsList {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  /* height: 80%; */
-  overflow: scroll;
+.response {
+  background-color: var(--light-gray);
 }
