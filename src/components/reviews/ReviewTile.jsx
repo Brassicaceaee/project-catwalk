@@ -13,13 +13,17 @@ const ReviewTile = ({review}) => {
       <p><strong>Review summary</strong></p>
       <p>{review.body}</p>
       <p>Show more</p>
-      {
-        review.photos.map((photo) => {
-          return (
-            <img key={photo.id} src={photo.url}></img>
-          )
-        })
-      }
+      <div className={styles.photoRow}>
+        {
+          review.photos.map((photo) => {
+            return (
+              <div key={photo.id} className={styles.thumbNailContainer}>
+                <img src={photo.url} className={styles.thumbnail}></img>
+              </div>
+            )
+          })
+        }
+      </div>
       <p>{review.reviewer_name}</p>
       {review.response &&
         <div className={styles.response}>
