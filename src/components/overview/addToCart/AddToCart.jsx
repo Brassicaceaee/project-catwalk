@@ -12,6 +12,7 @@ const AddToCart = (props) => {
 
   const [selectedSize, setSize] = useState('')
   const [selectedSKU, setSKU] = useState('')
+  const [selectedQuantity, setQuantity] = useState(1);
 
   //TODO
   //Based on the selected size, get SKU, creat quantity selector
@@ -19,39 +20,67 @@ const AddToCart = (props) => {
   //If size not selected, render "-" for quantity selector
 
   const handleSizeSelect = (event) => {
-    var skuID = event.target.value[0]
-    var skuData = event.target.value[1]
-
+    var skuID = event.target.value
+    var skuData = currentSkus[skuID]
     setSKU(skuID)
     setSize(skuData.size)
   }
 
-  //TODO: Needs test
+  let sizeSelector;
 
-  //Style Selector
-  let styleSelector;
   if (Object.entries(currentSkus).length > 0){
-
-    styleSelector =
-             ( <select value={selectedSize} onChange={handleSizeSelect}>
+   sizeSelector = (
+             <select name={selectedSize} onChange={handleSizeSelect}>
 
                 {selectedSize === '' && <option>Select Style</option>}
+                {Object.entries(currentSkus).map( (sku) =>
+                <option value={sku[0]} key={sku[0]}> {sku[1].size} </option>)}
 
-                {Object.entries(currentSkus).map( (sku ) =>
-                <option value={sku} key={sku[0]}> {sku[1].size} </option>)}
-
-              </select>);
+              </select>
+    )
   } else {
-    styleSelector = <p>OUT OF STOCK</p>
+   sizeSelector = <p>OUT OF STOCK</p>
   }
+
+
+  const handleQuantitySelect = (event) => {
+    setQuantity(event.target.value)
+  }
+
+  let quantitySelector;
+
+  if (selectedSKU === '') {
+    quantitySelector = <select><option> - </option></select>
+  } else {
+    var num = currentSkus[selectedSKU].quantity
+    //Keeps quantity to only display 15 max
+    if (num > 15) {
+      num = 15
+    }
+    //Generates array [0, 1, 2, 3, 4, ...] for quantity options,
+    //array is used for mapping out React option elements for the selector
+    var quantityNumbers = Array.from(Array(num).keys())
+
+    quantitySelector = (
+              <select value={selectedQuantity} onChange={handleQuantitySelect}>
+
+                {quantityNumbers.slice(1, quantityNumbers.length).map( (number) =>
+                  <option value={number} key={number}>{number}</option>)}
+
+              </select>
+    )
+  }
+
 
   return (
       <>
       <div className={styles.addToCart}>
         <span className={styles.size}>
-          {styleSelector}
+           {sizeSelector}
         </span>
-        <span className={styles.quantity}> quantity</span>
+        <span className={styles.quantity}>
+          {quantitySelector}
+        </span>
         <span className={styles.cartButton}>add To Cart</span>
         <span className={styles.cartStar}>star</span>
       </div>
