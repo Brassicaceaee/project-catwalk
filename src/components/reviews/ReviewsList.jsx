@@ -1,7 +1,9 @@
 import React from 'react';
 import ReviewTile from './ReviewTile.jsx';
-import styles from "./reviews.module.css";
-import { useProductContext } from "../../context/ProductContext.jsx";
+import ReviewForm from './ReviewForm.jsx';
+import styles from './reviews.module.css';
+import modalStyle from '../questions/questions.module.css';
+import { useProductContext } from '../../context/ProductContext.jsx';
 
 const ReviewsList = () => {
   const {reviews} = useProductContext();
@@ -26,6 +28,7 @@ const ReviewsList = () => {
         <button>MORE REVIEWS</button>
         <button>ADD A REVIEW +</button>
       </div>
+      <ReviewForm/>
     </div>
   );
 }
