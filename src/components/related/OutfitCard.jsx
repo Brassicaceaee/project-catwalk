@@ -5,7 +5,7 @@ import {useProductContext} from '../../context/ProductContext.jsx';
 
 const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
   const { styles } = useProductContext();
-  console.log(styles)
+
   const outfitImg = styles.results[0].photos[0].thumbnail_url
   const isSale = styles.results[0].sale_price
   const originalPrice = styles.results[0].original_price
