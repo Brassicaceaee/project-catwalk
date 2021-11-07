@@ -25,7 +25,7 @@ const ProductInfo = (props) => {
       </div>
 
       <div className={styles.styles}>
-        <StyleSelector />
+        <StyleSelector styles={props.productInfo.styles.results}/>
       </div>
 
       <div className={styles.addToCart}>

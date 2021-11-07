@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './overview.module.css'
 import ImageGallery from './ImageGallery.jsx';
 import ProductInfo from './ProductInfo.jsx'
@@ -8,14 +8,32 @@ import json from './styleSample.json'
 import {useProductContext} from '../../context/ProductContext.jsx'
 //Will pass in productcontext.style to to style context as default value
 
-export const StyleContext = React.createContext();
 
+export const StyleIndexContext = React.createContext({
+  styleIndex:0,
+  changeStyleIndex: () => {},
+});
+
+//Refactoring to pass Style info as props to components
+// Then the StyleContext will change the Index for the ImageGallery and AddToCart to determine
+  //The selected style
+
+//If new productInfo is provide,
+//the style index will be reset to first index.
+//Maybe create state for overview to retain the state of style index, and cureent product info
+  //Could compare to previous ID to see if there needs to be an index reset
 
 const Overview = (props) => {
+
+    const [styleIndex, setStyleIndex] = useState();
     var product = useProductContext();
-    debugger;
+
+    // const changeStyleIndex = (event, index) => {
+    //   setStyleIndex(index)
+    // }
+    console.log(styleIndex)
     return(
-      <StyleContext.Provider value ={product.styles.results}>
+      <StyleIndexContext.Provider value ={{changeStyleIndex : setStyleIndex}}>
         <div className={styles.widget}>
 
         <div className={styles.imageGallery}>
@@ -24,7 +42,7 @@ const Overview = (props) => {
 
 
         <div className={styles.productInfo}>
-        <ProductInfo />
+        <ProductInfo productInfo={product}/>
         </div>
 
         <div className={styles.description}>
@@ -35,7 +53,7 @@ const Overview = (props) => {
           <Features />
         </div>
       </div>
-    </StyleContext.Provider>
+    </StyleIndexContext.Provider>
   )
 }
 
