@@ -28,6 +28,16 @@ const AnswerForm = (props) => {
   const handleAnswerChange = (e) => {
     updateAnswer(e.target.value);
   }
+  const [nickname, updateNickname] = useState('');
+  const handleNicknameChange = (e) => {
+    updateNickname(e.target.value);
+  }
+  const [email, updateEmail] = useState('');
+  const handleEmailChange = (e) => {
+    updateEmail(e.target.value);
+  }
+
+
   // onSubmit={handleSubmit}
   if (props.show) {
     return (
@@ -39,11 +49,11 @@ const AnswerForm = (props) => {
             <label> Your Answer (mandatory) </label>
             <input type='text' name='question' maxlength='1000' onChange={handleAnswerChange}></input>
             <label> What is your nickname (mandatory) </label>
-            <input type='text' placeholder='Example: jack543!' maxlength='60'></input>
+            <input type='text' placeholder='Example: jack543!' maxlength='60' onChange={handleNicknameChange}></input>
             <span className={styles.inputSubtext}> For privacy reasons, do not use your full name or email address </span>
 
             <label> Your email (mandatory) </label>
-             <input type='text' placeholder='Example: jack@email.com' maxlength='60'></input>
+             <input type='text' placeholder='Example: jack@email.com' maxlength='60' onChange={handleEmailChange}></input>
             <span className={styles.inputSubtext}> “For authentication reasons, you will not be emailed”</span>
             {uploadArray.length < 5 && <label> Upload your photos </label>}
             {uploadArray.length < 5 && <input type='file' id='file' name='file' accept="image/*" onChange={handleUpload}></input>}
