@@ -12,7 +12,6 @@ const Questions = () => {
       <h4> Questions & Answers </h4>
       <SearchBar/>
       <QuestionList data={data}/>
-      <AddQuestion/>
     </div>
   )
 }

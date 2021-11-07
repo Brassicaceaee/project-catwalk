@@ -1,103 +1,140 @@
+/* ------- LAYOUT ---------- */
+
+/* GRID */
+
 .widget {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: auto 2fr;
+  grid-template-rows: auto 1fr;
+  height: 95vh;
 }
 
-.ratingBreakdown {
- margin: 5%;
- display:flex;
- flex-direction: column;
-}
-
-.reviewsList {
-  margin: 2%;
+.reviewsComponent {
   grid-column: 2;
   grid-row-start: 1;
   grid-row-end: 3;
 }
+/* The other two subcomponents are automatically placed */
 
-.productBreakdown {
+
+/* FLEX */
+.flex {
   display: flex;
+}
+
+.column {
   flex-direction: column;
-  margin: 5%;
 }
 
-.scoreBar {
-  height: 10px;
-  background-color: rgb(173, 173, 173);
+.center {
+  justify-content: center;
+  align-items: center;
 }
 
-.arrowDown {
-  position: relative;
-  left: calc(var(--score) / 5 * 100% );
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 15px solid black;
-}
-
-.subLabels {
-  margin-top: 5px;
-  display: flex;
+.spaceBetween {
   justify-content: space-between;
 }
 
-.characteristic {
+
+/* MARGIN */
+
+.resetMargin {
+  margin: 0;
+}
+
+.smallMargin {
+  margin: 2px;
+}
+
+.smallMarginBottom {
+  margin-bottom: 5px;
+}
+
+.medMarginBottom {
   margin-bottom: 15px;
 }
 
-.averageRating {
-  font-size: 42px;
+.largeMarginBottom {
+  margin-bottom: 30px;
+}
+
+.smallMarginRight {
+  margin-right: 10px;
+}
+
+.medMarginRight {
   margin-right: 20px;
 }
 
-.stars {
-  font-size: 50px;
-  margin-left: 25px;
-}
 
-.ratingBar {
-  display: flex;
-  margin: 20px 0 20px 0;
-}
+/* PADDING */
 
-.percentBar {
-  background-color: rgb(158, 158, 158);
-  flex: 1;
-  height: 10px;
-  margin: 5px 20px 0;
-}
-
-.percentBar>div {
-  background-color: green;
-  width: 75%;
-  height: 10px;
-}
-
-.sortOptions {
-  display: flex;
-}
-
-.reviewTile {
-  padding: 15px 0;
-}
-
-.flex {
-  display: flex;
-  justify-content: space-between;
-}
-
-.response {
-  background-color: rgb(190, 190, 190);
+.smallPadding {
   padding: 2%;
 }
 
-.sortSelect {
-  height: 20px;
+.medPadding {
+  padding: 5%;
 }
 
-.sortLabel {
-  margin: 0 5px 0 0;
+
+/* BARS */
+
+.bar {
+  background-color: var(--light-gray);
+  flex: 1;
+  height: 10px;
+}
+
+/* This is specifically for the precent bars filled portion. The width is added inline. */
+.bar>div:not(.downArrow) {
+  background-color: green;
+  height: 10px;
+}
+
+/* Makes a downward pointing arrow that is used in the product breakdown bars */
+.downArrow {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid black;
+  height: 0;
+  left: calc(var(--score) / 5 * 100% );
+  width: 0;
+  position: relative;
+}
+
+
+
+
+/* ---------- TYPOGRAPHY ----------- */
+
+.smallFont {
+  font-size: 14px;
+}
+
+.largeFont {
+  font-size: 42px;
+}
+
+
+
+
+/* REVIEW LIST */
+
+.reviewsList {
+  flex: 1;
+  overflow: scroll;
+}
+
+.thumbNailContainer {
+  height: 75px;
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 125px;
+}
+
+.response {
+  background-color: var(--light-gray);
 }
