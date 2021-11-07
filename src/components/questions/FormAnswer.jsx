@@ -54,13 +54,13 @@ const AnswerForm = (props) => {
           <h3> Submit Your Answer </h3>
           <span>{productName} </span>
           <form className={styles.questionForm} onSubmit={handleSubmit}>
-            <label> Your Answer (mandatory) </label>
+            <label> Your Answer *</label>
             <input type='text' name='question' maxlength='1000' onChange={handleAnswerChange}></input>
-            <label> What is your nickname (mandatory) </label>
+            <label> What is your nickname *</label>
             <input type='text' placeholder='Example: jack543!' maxlength='60' onChange={handleNicknameChange}></input>
             <span className={styles.inputSubtext}> For privacy reasons, do not use your full name or email address </span>
 
-            <label> Your email (mandatory) </label>
+            <label> Your email *</label>
              <input type='text' placeholder='Example: jack@email.com' maxlength='60' onChange={handleEmailChange}></input>
             <span className={styles.inputSubtext}> “For authentication reasons, you will not be emailed”</span>
             {uploadArray.length < 5 && <label> Upload your photos </label>}
