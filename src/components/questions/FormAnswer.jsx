@@ -23,6 +23,15 @@ useEffect(() => {
     // updateArray(uploadArray => [...uploadArray, e.target.files[0]])
   }
 
+  const [file, setFile] = useState()
+  const ref = useRef(null);
+
+// useEffect(() => {
+//   updateArray(ref.current);
+// })
+  const uploadFile = (e) => {
+    setFile(e.target.files[0])
+  }
   if (props.show) {
     return (
       <div className={styles.modal}>
@@ -42,6 +51,9 @@ useEffect(() => {
             {uploadArray.length < 5 && <label> Upload your photos </label>}
             {/* <input type='file' id='image-uploads' name='uploads' accept="image/*" ref={ref} multiple onChange={(e) => updateArray(ref.current.files) }></input> */}
             {uploadArray.length < 5 && <input type='file' id='file' name='file' accept="image/*" onChange={handleUpload}></input>}
+            <label> Upload your photos </label>
+            <input type='file' id='image-uploads' accept="image/*" ref={ref} multiple onChange={ uploadFile }></input>
+            {file && <img src={URL.createObjectURL(file)}/>}
             <div className={styles.actions}>
               <button onClick={props.modalButtonClick}> Close </button>
             </div>
