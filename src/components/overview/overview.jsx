@@ -25,7 +25,7 @@ export const StyleIndexContext = React.createContext({
 
 const Overview = (props) => {
 
-    const [styleIndex, setStyleIndex] = useState();
+    const [styleIndex, setStyleIndex] = useState(0);
     var product = useProductContext();
 
     // const changeStyleIndex = (event, index) => {
@@ -37,7 +37,7 @@ const Overview = (props) => {
         <div className={styles.widget}>
 
         <div className={styles.imageGallery}>
-        <ImageGallery />
+        <ImageGallery styles={product.styles.results} styleIndex={styleIndex}/>
         </div>
 
 
