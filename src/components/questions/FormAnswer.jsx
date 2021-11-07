@@ -5,17 +5,10 @@ const AnswerForm = (props) => {
 
   const [uploadArray, setUploadArray] = useState([]);
   let imageInput = document.getElementById('image-uploads');
-  // let images = imageInput.files;
-  // var loadFile = function(event) {
-	// var image = document.getElementById('output');
-	// image.src = URL.createObjectURL(event.target.files[0]);
-  // };
 
-  // const ref = useRef(null);
-
-useEffect(() => {
-  // updateArray(ref.current);
-}, [uploadArray])
+  useEffect(() => {
+    // updateArray(ref.current);
+  }, [uploadArray])
 
   const handleUpload = (e) => {
     console.log(e.target.files[0])
@@ -27,12 +20,10 @@ useEffect(() => {
   const [file, setFile] = useState()
   const ref = useRef(null);
 
-// useEffect(() => {
-//   updateArray(ref.current);
-// })
   const uploadFile = (e) => {
     setFile(e.target.files[0])
   }
+
   if (props.show) {
     return (
       <div className={styles.modal}>
@@ -50,7 +41,6 @@ useEffect(() => {
              <input type='text' placeholder='Example: jack@email.com' maxlength='60'></input>
             <span className={styles.inputSubtext}> “For authentication reasons, you will not be emailed”</span>
             {uploadArray.length < 5 && <label> Upload your photos </label>}
-            {/* <input type='file' id='image-uploads' name='uploads' accept="image/*" ref={ref} multiple onChange={(e) => updateArray(ref.current.files) }></input> */}
             {uploadArray.length < 5 && <input type='file' id='file' name='file' accept="image/*" onChange={handleUpload}></input>}
             {file && <img src={URL.createObjectURL(file)} width='100'/>}
             {/* <label> Upload your photos </label>
