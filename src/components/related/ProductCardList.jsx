@@ -10,7 +10,7 @@ const ProductCardList = () =>{
   const style = { height: '130px', width: '50px'};
 
   // const ref = useRef()
-  // // console.log(ref.current)
+  // console.log(ref.current)
 
 
   // const handleSlide = (width) => {
