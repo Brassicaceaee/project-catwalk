@@ -2,9 +2,10 @@ import React from 'react';
 import AnswerList from './AnswerList.jsx';
 const answers = require('./questiondata/answerdata.js');
 import styles from './questions.module.css';
-
+import AddAnswer from './AddAnswer.jsx';
 
 const Question = (props) => {
+
 
   return(
       <li className={styles.question}>
@@ -14,7 +15,7 @@ const Question = (props) => {
           </div>
           <div className={styles.questionRowRight}>
             <button> helpful</button>
-            <button>add answer</button>
+            <AddAnswer/>
           </div>
         </div>
         <div className={styles.answerRow}>
