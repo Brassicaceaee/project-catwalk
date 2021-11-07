@@ -4,6 +4,10 @@ import {useProductContext} from '../../context/ProductContext.jsx';
 
 const AnswerForm = (props) => {
 
+  // Store variables from context
+  const {info} = useProductContext();
+  const productName = info.name;
+
   const [uploadArray, setUploadArray] = useState([]);
   let imageInput = document.getElementById('image-uploads');
 
@@ -48,7 +52,7 @@ const AnswerForm = (props) => {
       <div className={styles.modal}>
         <div className={styles.content}>
           <h3> Submit Your Answer </h3>
-          <span>[Insert Product Name]: [Insert Product Body] </span>
+          <span>{productName} </span>
           <form className={styles.questionForm} onSubmit={handleSubmit}>
             <label> Your Answer (mandatory) </label>
             <input type='text' name='question' maxlength='1000' onChange={handleAnswerChange}></input>
