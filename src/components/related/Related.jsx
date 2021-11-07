@@ -6,13 +6,12 @@ import './related.css';
 const Related = () => {
   return (
     <div className='widget'>
-
       <div className='productCardList'>
-        Related Productss
+        <p className='title'>Related Products</p>
         <ProductCardList />
       </div>
       <div className='outfitList'>
-        Your Outfit List
+      <p className='title'>Your Outfit List</p>
         <OutfitList />
       </div>
     </div>

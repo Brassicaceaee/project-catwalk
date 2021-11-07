@@ -46,6 +46,16 @@
 ========================
       Font & Button
 ======================== */
+.title{
+    font:  2.5em "Fira Sans", sans-serif;
+    font-weight: 700;
+}
+.small-title{
+  font:  1.2em "Fira Sans", sans-serif;
+  font-weight: 700;
+  text-align: right;
+}
+
 .button{
   text-align: right;
 }
