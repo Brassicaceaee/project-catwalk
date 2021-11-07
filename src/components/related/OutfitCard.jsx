@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styles from './related.module.css';
+import {useProductContext} from '../../context/ProductContext.jsx';
 
-const OutfitCard = () => {
+const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
+  const { styles } = useProductContext();
+
+  const outfitImg = styles.results[0].photos[0].thumbnail_url
+  const salePrice = styles.results[0].sale_price
+  const originalPrice = styles.results[0].original_price
+
+  // delete outfit, then get the new outfit list back and reset outfitData
+  const handleRemoveOutfit = () =>{
+    axios.delete('/outfit',  {
+      data:{storedOutfitID: storedOutfit.id},
+    })
+    .catch(function (err) {
+      console.log('error in handleRemoveOutfit', err);
+    });
+
+    getStoredOutfit()
+  }
+
   return (
     <div >
-      Outfit Card
+      <i onClick={handleRemoveOutfit} className="fas fa-times"></i>
+      <img src={outfitImg}/>
+      <div>{storedOutfit.category}</div>
+      <div>{storedOutfit.name}</div>
+      <div>${salePrice || originalPrice}</div>
     </div>
   )
 }

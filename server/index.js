@@ -4,6 +4,7 @@ const { API_KEY } = require('../config/config.js')
 const app = express();
 const port = 3000;
 
+app.use(express.json())
 app.use(express.static('dist'))
 
 app.get('/products', (req, res) => {
@@ -83,6 +84,32 @@ app.get('/products', (req, res) => {
     debugger;
   });
 });
+
+
+//related product - outfit list
+var storedOutfit = {};
+
+// get outfit list data
+app.get('/outfit', (req, res) => {
+  res.send(storedOutfit);
+});
+
+// add product to outfit list
+app.post('/outfit', (req, res) => {
+  // console.log(req.body)
+  const productID = req.body.productID;
+  const productInfo = req.body.productInfo;
+  storedOutfit[productID] = productInfo
+  res.sendStatus(201);
+});
+
+// delete data from outfit List
+app.delete('/outfit', (req, res) => {
+  const productID = req.body.storedOutfitID;
+  delete storedOutfit[productID]
+  res.sendStatus(202);
+});
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
