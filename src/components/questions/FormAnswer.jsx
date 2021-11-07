@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styles from './questions.module.css';
+import {useProductContext} from '../../context/ProductContext.jsx';
 
 const AnswerForm = (props) => {
 
@@ -37,15 +38,18 @@ const AnswerForm = (props) => {
     updateEmail(e.target.value);
   }
 
+  const handleSubmit = () => {
+    alert(`answer: ${answer} nickname: ${nickname} email ${email}`)
+  }
 
-  // onSubmit={handleSubmit}
+
   if (props.show) {
     return (
       <div className={styles.modal}>
         <div className={styles.content}>
           <h3> Submit Your Answer </h3>
           <span>[Insert Product Name]: [Insert Product Body] </span>
-          <form className={styles.questionForm} >
+          <form className={styles.questionForm} onSubmit={handleSubmit}>
             <label> Your Answer (mandatory) </label>
             <input type='text' name='question' maxlength='1000' onChange={handleAnswerChange}></input>
             <label> What is your nickname (mandatory) </label>
