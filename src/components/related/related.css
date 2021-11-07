@@ -1,38 +1,60 @@
 .widget {
-  height: var(--widget-height);
-  background-color: rgb(220, 99, 99);
-  /* display: flex; */
-}
-
-
-.productCardList {
- background-color: rgb(211, 208, 172);
- display: flex;
- /* grid-column: 1;
- grid-row:1 */
-}
-
-.productCard{
-  background-color: rgb(83, 105, 228);
-  /* grid-column: 2;
-  grid-row: 1; */
-}
-
-.OutfitList {
-  background-color: rgb(211, 208, 172);
+  /* height: var(--widget-height); */
+  background-color: rgb(255, 250, 240);
   display: flex;
-  /* grid-column: 1;
-  grid-row:1 */
- }
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: 80px;
+  align-items: space-evenly;
+  left: 0%;
+  top: 0%;
+}
 
- .OutfitCard{
-   background-color: rgb(83, 105, 228);
-   /* grid-column: 2;
-   grid-row: 1; */
- }
+.img{
+
+}
+.arrow{
+  align-self: center;
+}
+
+.add{
+  align-self: center;
+}
 
 
+/* ================== Related Card ================== */
+.related-list{
+  background-color: rgb(0, 0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: baseline;
+}
 
+/* .related-card{
+  border: solid 1px black;
+  position: relative;
+  padding: 25px 15px;
+  background-color: white;
+  margin: 50px 15px;
+  height: 300px;
+  width: 180px;
+  box-shadow: 0 2px 5px #ccc;
+  text-align: left;
+  z-index: 1;
+} */
+
+/* ===================== Outfit ===================== */
+ .outfit-list{
+   background-color: rgb(0, 0, 0, 0);
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: flex-start;;
+  }
+
+  /* ================= Comparison Modal =================*/
  .modal {
   width: 500px;
   background: white;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './related.module.css';
+import './related.css';
 import ComparisonModal from './ComparisonModal.jsx';
 import {useProductContext} from '../../context/ProductContext.jsx';
 import imgNotAvailable from '../../../asset/img/image-not-available.png';
@@ -12,20 +12,30 @@ const ProductCard = ({relatedProduct}) =>{
     setIsOpen(!isOpen)
   };
 
-  const salePrice = relatedProduct.styles[0].sale_price
+  const isSale = relatedProduct.styles[0].sale_price
   const originalPrice = relatedProduct.info.default_price
   const relatedImg = relatedProduct.styles[0].photos[0].thumbnail_url
 
   return (
-    <div>
-      <i className="far fa-star" onClick={togglePop}  ></i>
+    <div className='related-card'>
+      <div>
+        <i className="far fa-star" onClick={togglePop}></i>
+      </div>
       {isOpen
       ? <ComparisonModal left={info} right={relatedProduct} togglePop={togglePop}/>
       : <></>}
-      <img src={relatedImg || imgNotAvailable }/>
+      <img
+        // className={styles.img}
+        src={relatedImg || imgNotAvailable }/>
       <div>{relatedProduct.info.category}</div>
       <div>{relatedProduct.info.name}</div>
-      <div>${salePrice || originalPrice }</div>
+      {isSale
+      ? <div>
+         ${isSale}
+         <strike style={{color: 'red'}}>${originalPrice}</strike>
+        </div>
+      : <div>${originalPrice}</div>
+      }
     </div>
   )
 }

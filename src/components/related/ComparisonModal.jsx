@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import styles from './related.module.css';
+import './related.css';
 
 const ComparisonModal = ({left, right, togglePop}) => {
 
@@ -29,14 +29,14 @@ const ComparisonModal = ({left, right, togglePop}) => {
 // console.log(featureHolder)
   return (
     <div>
-      <div className={styles.modal} >
-      <div className={styles.actions}>
+      <div className='modal'>
+      <div className='actions'>
         <button onClick={togglePop}>Close</button>
       </div>
       <h3>Comparing</h3>
         <div>{Object.keys(featureHolder).map((features, index) => {
           return (
-          <div key={index} className={styles.content}>
+          <div key={index} className='content'>
             <span>{overviewFeatures[features]? overviewFeatures[features] : ' x'}</span>
             <span>{features}</span>
             <span>{relatedFeatures[features]?  relatedFeatures[features]:  'x '}</span>

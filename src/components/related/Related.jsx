@@ -1,15 +1,20 @@
 import React from 'react';
 import ProductCardList from './ProductCardList.jsx';
 import OutfitList from './OutfitList.jsx';
-import styles from './related.module.css';
+import './related.css';
 
 const Related = () => {
   return (
-    <div >
-      Related Products
+    <div className='widget'>
+
+      <div className='productCardList'>
+        Related Productss
         <ProductCardList />
-      Your Outfit List
-       <OutfitList />
+      </div>
+      <div className='outfitList'>
+        Your Outfit List
+        <OutfitList />
+      </div>
     </div>
   )
 }

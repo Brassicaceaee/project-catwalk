@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import styles from './related.module.css';
+import React, { useState, useEffect, useRef } from 'react';
+import './related.css';
 import ProductCard from './ProductCard.jsx';
 import {useProductContext} from '../../context/ProductContext.jsx';
 import leftArrow from '../../../asset/img/left-arrow.png';
@@ -9,19 +9,31 @@ const ProductCardList = () =>{
   const { related } = useProductContext();
   const style = { height: '130px', width: '50px'};
 
+  // const ref = useRef()
+  // // console.log(ref.current)
+
+
+  // const handleSlide = (width) => {
+  //   // alert('click!')
+  //   ref.current.scrollLeft += width;
+  // }
+
   return (
-    <div className={styles.productCardList}>
-      <img
-        src={leftArrow}
-        style={style}
-      />
-      {Object.values(related).map((result, index) => {
-        return <ProductCard
-        relatedProduct={result}
-        key={index}
+    <div className='related-list'>
+        <img
+          className='arrow'
+          src={leftArrow}
+          style={style}
         />
-      })}
+      {Object.values(related).map((result, index) => {
+        return(
+         <ProductCard
+          key={index}
+          relatedProduct={result}
+         />
+      )})}
       <img
+        className='arrow'
         src={rightArrow}
         style={style}
       />

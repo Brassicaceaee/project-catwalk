@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './related.module.css';
+import './related.css';
 import axios from 'axios';
 import {useProductContext} from '../../context/ProductContext.jsx';
 import OutfitCard from './OutfitCard.jsx';
@@ -37,20 +37,22 @@ const OutfitList = () => {
   }
 
   return (
-    <div className={styles.OutfitList}>
+    <div className='outfit-list'>
       Add to Outfit
       <img
+        className='add'
         src={plusSymbol}
         style={{ height: '200px', width: '200px'}}
         onClick={handleAddOutfit}
       />
       {Object.values(outfitData).map((storedOutfit) => {
-        return <OutfitCard
-          key={storedOutfit.id}
-          storedOutfit={storedOutfit}
-          getStoredOutfit={getStoredOutfit}
-        />
-      })}
+        return (
+          <OutfitCard
+            key={storedOutfit.id}
+            storedOutfit={storedOutfit}
+            getStoredOutfit={getStoredOutfit}
+          />
+      )})}
     </div>
   )
 }
