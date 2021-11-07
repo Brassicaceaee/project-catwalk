@@ -10,14 +10,15 @@ const AnswerForm = (props) => {
 	// var image = document.getElementById('output');
 	// image.src = URL.createObjectURL(event.target.files[0]);
   // };
-
+  const [file, setFile] = useState()
   const ref = useRef(null);
 
 // useEffect(() => {
 //   updateArray(ref.current);
 // })
-
-
+  const uploadFile = (e) => {
+    setFile(e.target.files[0])
+  }
   if (props.show) {
     return (
       <div className={styles.modal}>
@@ -35,7 +36,8 @@ const AnswerForm = (props) => {
              <input type='text' placeholder='Example: jack@email.com' maxlength='60'></input>
             <span className={styles.inputSubtext}> “For authentication reasons, you will not be emailed”</span>
             <label> Upload your photos </label>
-            <input type='file' id='image-uploads' accept="image/*" ref={ref} multiple onChange={(e) => updateArray(imageInput.files) }></input>
+            <input type='file' id='image-uploads' accept="image/*" ref={ref} multiple onChange={ uploadFile }></input>
+            {file && <img src={URL.createObjectURL(file)}/>}
             <div className={styles.actions}>
               <button onClick={props.modalButtonClick}> Close </button>
             </div>
