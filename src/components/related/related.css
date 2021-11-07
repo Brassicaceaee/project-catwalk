@@ -4,14 +4,16 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  row-gap: 80px;
+  row-gap: 40px;
   align-items: space-evenly;
   left: 0%;
   top: 0%;
 }
 
 .img{
-
+  max-width: 100%;
+  height: 75%;
+  object-fit: scale-down;
 }
 .arrow{
   align-self: center;
@@ -19,6 +21,20 @@
 
 .add{
   align-self: center;
+  border: solid 3px black;
+  /* position: relative; */
+  padding: 25px 15px;
+  background-color: white;
+  height: 500px;
+  width: 300px;
+  margin: 50px 15px;
+  box-shadow: 1px 1px 2px black;
+  text-align: justify;
+  z-index: 1;
+}
+
+.button{
+  text-align: right;
 }
 
 
@@ -32,18 +48,18 @@
   align-items: baseline;
 }
 
-/* .related-card{
-  border: solid 1px black;
-  position: relative;
+.related-card{
+  border: solid 3px black;
+  /* position: relative; */
   padding: 25px 15px;
   background-color: white;
+  height: 500px;
+  width: 300px;
   margin: 50px 15px;
-  height: 300px;
-  width: 180px;
-  box-shadow: 0 2px 5px #ccc;
-  text-align: left;
+  box-shadow: 1px 1px 2px black;
+  text-align: justify;
   z-index: 1;
-} */
+}
 
 /* ===================== Outfit ===================== */
  .outfit-list{
@@ -52,6 +68,19 @@
    flex-direction: row;
    flex-wrap: wrap;
    justify-content: flex-start;;
+  }
+
+  .outfit-card{
+    border: solid 3px black;
+    /* position: relative; */
+    padding: 25px 15px;
+    background-color: white;
+    height: 500px;
+    width: 400px;
+    margin: 50px 15px;
+    box-shadow: 1px 1px 2px black;
+    text-align: justify;
+    z-index: 1;
   }
 
   /* ================= Comparison Modal =================*/

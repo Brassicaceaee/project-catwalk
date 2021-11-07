@@ -23,11 +23,11 @@ const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
   }
 
   return (
-    <div >
-      <div>
+    <div className='related-card'>
+      <div className='button'>
         <i onClick={handleRemoveOutfit} className="far fa-times-circle"></i>
       </div>
-      <img src={outfitImg}/>
+      <img className='img' src={outfitImg}/>
       <div>{storedOutfit.category}</div>
       <div>{storedOutfit.name}</div>
       {isSale

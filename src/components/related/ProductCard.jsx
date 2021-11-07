@@ -18,15 +18,15 @@ const ProductCard = ({relatedProduct}) =>{
 
   return (
     <div className='related-card'>
-      <div>
+      <div className='button'>
         <i className="far fa-star" onClick={togglePop}></i>
       </div>
       {isOpen
       ? <ComparisonModal left={info} right={relatedProduct} togglePop={togglePop}/>
       : <></>}
       <img
-        // className={styles.img}
-        src={relatedImg || imgNotAvailable }/>
+        className='img'
+        src={relatedImg || imgNotAvailable}/>
       <div>{relatedProduct.info.category}</div>
       <div>{relatedProduct.info.name}</div>
       {isSale

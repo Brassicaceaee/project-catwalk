@@ -42,7 +42,7 @@ const OutfitList = () => {
       <img
         className='add'
         src={plusSymbol}
-        style={{ height: '200px', width: '200px'}}
+        style={{ height: '150px', width: '150px'}}
         onClick={handleAddOutfit}
       />
       {Object.values(outfitData).map((storedOutfit) => {
