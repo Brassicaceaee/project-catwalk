@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './related.css';
 import {useProductContext} from '../../context/ProductContext.jsx';
+import Stars from '../Stars.jsx'
 
 const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
-  const { styles } = useProductContext();
+  const { styles, meta } = useProductContext();
 
   const outfitImg = styles.results[0].photos[0].thumbnail_url
   const isSale = styles.results[0].sale_price
   const originalPrice = styles.results[0].original_price
+  const averageRating = meta.average;
 
   // delete outfit, then get the new outfit list back and reset outfitData
   const handleRemoveOutfit = () =>{
@@ -28,15 +30,18 @@ const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
         <i onClick={handleRemoveOutfit} className="far fa-times-circle"></i>
       </div>
       <img className='img' src={outfitImg}/>
-      <div>{storedOutfit.category}</div>
-      <div>{storedOutfit.name}</div>
-      {isSale
-      ? <div>
-         ${isSale}
-         <strike style={{color: 'red'}}>${originalPrice}</strike>
-        </div>
-      : <div>${originalPrice}</div>
-      }
+      <div className='product-info'>
+        <div className='category'>{storedOutfit.category}</div>
+        <div>{storedOutfit.name}</div>
+        {isSale
+        ? <div>
+          ${isSale}
+          <strike style={{color: 'red'}}>${originalPrice}</strike>
+          </div>
+        : <div>${originalPrice}</div>
+        }
+        <Stars rating={averageRating}/>
+      </div>
     </div>
   )
 }

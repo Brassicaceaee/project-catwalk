@@ -8,32 +8,33 @@ import rightArrow from '../../../asset/img/right-arrow.png';
 const ProductCardList = () =>{
   const { related } = useProductContext();
   const style = { height: '130px', width: '50px'};
-
-  // const ref = useRef()
-  // console.log(ref.current)
+  const ref = useRef(null)
 
 
-  // const handleSlide = (width) => {
-  //   // alert('click!')
-  //   ref.current.scrollLeft += width;
-  // }
+  const handleSlide = (width) => {
+    ref.current.scrollLeft += width;
+    console.log(ref.current.scrollLeft)
+  }
 
   return (
     <div className='related-list'>
         <img
-          className='arrow'
+          className='left-arrow'
           src={leftArrow}
           style={style}
+          onClick={() => handleSlide(-50)}
         />
-      {Object.values(related).map((result, index) => {
-        return(
-         <ProductCard
-          key={index}
-          relatedProduct={result}
-         />
-      )})}
+      <div className='carousel' ref={ref}>
+        {Object.values(related).map((result, index) => {
+          return(
+          <ProductCard
+            key={index}
+            relatedProduct={result}
+          />
+        )})}
+      </div>
       <img
-        className='arrow'
+        className='right-arrow'
         src={rightArrow}
         style={style}
       />

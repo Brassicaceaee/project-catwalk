@@ -27,15 +27,17 @@ const ProductCard = ({relatedProduct}) =>{
       <img
         className='img'
         src={relatedImg || imgNotAvailable}/>
-      <div>{relatedProduct.info.category}</div>
-      <div>{relatedProduct.info.name}</div>
-      {isSale
-      ? <div>
-         ${isSale}
-         <strike style={{color: 'red'}}>${originalPrice}</strike>
-        </div>
-      : <div>${originalPrice}</div>
-      }
+      <div className='product-info'>
+        <div className='category'>{relatedProduct.info.category}</div>
+        <div>{relatedProduct.info.name}</div>
+        {isSale
+        ? <div>
+          ${isSale}
+          <strike style={{color: 'red'}}>${originalPrice}</strike>
+          </div>
+        : <div>${originalPrice}</div>
+        }
+      </div>
     </div>
   )
 }
