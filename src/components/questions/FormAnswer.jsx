@@ -8,12 +8,12 @@ const AnswerForm = (props) => {
   const {info} = useProductContext();
   const productName = info.name;
 
+  // This section keeps track of the uploaded file images in an array. I use this state to prevent more than 5 files from being uploaded.
   const [uploadArray, setUploadArray] = useState([]);
-  let imageInput = document.getElementById('image-uploads');
+  // let imageInput = document.getElementById('image-uploads');
 
-  useEffect(() => {
-    // updateArray(ref.current);
-  }, [uploadArray])
+  // useEffect(() => {
+  // }, [uploadArray])
 
   const handleUpload = (e) => {
     console.log(e.target.files[0])
@@ -21,14 +21,13 @@ const AnswerForm = (props) => {
     uploadFile(e);
     // updateArray(uploadArray => [...uploadArray, e.target.files[0]])
   }
-
+  // These next functions allow me to track the latest file uploaded and store it in the 'file' variable. I use this to turn the file into an image at the bottom of the form where you see an image tag.
   const [file, setFile] = useState()
-  const ref = useRef(null);
 
   const uploadFile = (e) => {
     setFile(e.target.files[0])
   }
-  // Create state for input fields
+  // Create state for input fields -- will use this for validation later
   const [answer, updateAnswer] = useState('');
   const handleAnswerChange = (e) => {
     updateAnswer(e.target.value);
