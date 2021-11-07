@@ -23,16 +23,21 @@ const AnswerForm = (props) => {
   const uploadFile = (e) => {
     setFile(e.target.files[0])
   }
-
+  // Create state for input fields
+  const [answer, updateAnswer] = useState('');
+  const handleAnswerChange = (e) => {
+    updateAnswer(e.target.value);
+  }
+  // onSubmit={handleSubmit}
   if (props.show) {
     return (
       <div className={styles.modal}>
         <div className={styles.content}>
           <h3> Submit Your Answer </h3>
           <span>[Insert Product Name]: [Insert Product Body] </span>
-          <form className={styles.questionForm}>
+          <form className={styles.questionForm} >
             <label> Your Answer (mandatory) </label>
-            <input type='text' name='question' maxlength='1000'></input>
+            <input type='text' name='question' maxlength='1000' onChange={handleAnswerChange}></input>
             <label> What is your nickname (mandatory) </label>
             <input type='text' placeholder='Example: jack543!' maxlength='60'></input>
             <span className={styles.inputSubtext}> For privacy reasons, do not use your full name or email address </span>
@@ -48,6 +53,7 @@ const AnswerForm = (props) => {
             {file && <img src={URL.createObjectURL(file)}/>} */}
             <div className={styles.actions}>
               <button onClick={props.modalButtonClick}> Close </button>
+              <input type='submit' value='Submit' />
             </div>
           </form>
         </div>
