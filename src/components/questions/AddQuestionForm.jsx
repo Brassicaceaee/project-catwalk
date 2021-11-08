@@ -2,12 +2,19 @@ import React, {useState} from 'react';
 import styles from './questions.module.css';
 import {useProductContext} from '../../context/ProductContext.jsx';
 import axios from 'axios';
+import { API_KEY } from '../../../config/config.js';
+
+
+
+
 
 const QuestionForm = (props) => {
 
     // Store variables from context
     const {info} = useProductContext();
     const productName = info.name;
+    const {meta} =useProductContext();
+    const product_id = meta.product_id;
 
   // Create state for input fields -- will use this for validation later
   const [question, updateQuestion] = useState('');
@@ -23,9 +30,39 @@ const QuestionForm = (props) => {
     updateEmail(e.target.value);
   }
 
-    const submitQuestion = () => {
-      axios.po
+  // let options = {
+  //   headers: {'Authorization': API_KEY}
+  // };
+
+  // axios.post('https://httpbin.org/post', { hello: 'world' }, {
+  //   headers: {
+  //     'Test-Header': 'test-value'
+  //   }
+  // });
+
+
+  const submitQuestion = () => {
+    event.preventDefault();
+    if (question && nickname && email) {
+      axios.post('/qa/questions', {
+        body: question,
+        name: nickname,
+        email: email,
+        product_id: product_id
+      },
+      {headers: {'Authorization': API_KEY}
+    })
+
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log('error during post attempt: ', error);
+      });
+    } else {
+      alert('One or more mandatory fields are empty');
     }
+  }
 
   if (props.show) {
     return (
@@ -33,7 +70,7 @@ const QuestionForm = (props) => {
         <div className={styles.content}>
           <h3> Ask Your Question </h3>
           <span>{`About the ${productName}`} </span>
-          <form className={styles.questionForm}>
+          <form className={styles.questionForm} onSubmit={submitQuestion}>
             <label> Your Question *</label>
             <input type='text' name='question' maxlength='1000' onChange={handleQuestionChange}></input>
             <label> Your Nickname *</label>
@@ -57,3 +94,22 @@ const QuestionForm = (props) => {
 }
 
 export default QuestionForm;
+
+
+// get method
+
+// if (question && nickname && email) {
+//   axios.get('/qa/questions',
+//   {headers: {'Authorization': API_KEY}
+// })
+
+//   .then((response) => {
+//     console.log(response);
+//   })
+//   .catch((error) => {
+//     console.log('error during post attempt: ', error);
+//   });
+// } else {
+//   alert('One or more mandatory fields are empty');
+// }
+// }
