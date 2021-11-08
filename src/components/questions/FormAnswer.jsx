@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import styles from './questions.module.css';
-
-const AnswerForm = (props) => {
-
-
-
-  // var loadFile = function(event) {
-	// var image = document.getElementById('output');
-	// image.src = URL.createObjectURL(event.target.files[0]);
-  // };
-=======
 import React, {useState, useEffect, useRef} from 'react';
 import styles from './questions.module.css';
 import {useProductContext} from '../../context/ProductContext.jsx';
@@ -20,6 +7,9 @@ const AnswerForm = (props) => {
   // Store variables from context
   const {info} = useProductContext();
   const productName = info.name;
+
+  const {questions} = useProductContext();
+  let questionBody = props.question.question_body;
 
   // This section keeps track of the uploaded file images in an array. I use this state to prevent more than 5 files from being uploaded.
   const [uploadArray, setUploadArray] = useState([]);
@@ -38,6 +28,7 @@ const AnswerForm = (props) => {
   const [file, setFile] = useState()
 
   const uploadFile = (e) => {
+    console.log(file)
     setFile(e.target.files[0])
   }
   // Create state for input fields -- will use this for validation later
@@ -58,31 +49,13 @@ const AnswerForm = (props) => {
     alert(`answer: ${answer} nickname: ${nickname} email ${email}`)
   }
 
->>>>>>> 6628d52d5eb7b8982debb7435760031f8e51a65a
 
   if (props.show) {
     return (
       <div className={styles.modal}>
         <div className={styles.content}>
           <h3> Submit Your Answer </h3>
-<<<<<<< HEAD
-          <span>[Insert Product Name]: [Insert Product Body] </span>
-          <form className={styles.questionForm}>
-            <label> Your Answer (mandatory) </label>
-            <input type='text' name='question' maxlength='1000'></input>
-            <label> What is your nickname (mandatory) </label>
-            <input type='text' placeholder='Example: jack543!' maxlength='60'></input>
-            <span className={styles.inputSubtext}> For privacy reasons, do not use your full name or email address </span>
-
-            <label> Your email (mandatory) </label>
-             <input type='text' placeholder='Example: jack@email.com' maxlength='60'></input>
-            <span className={styles.inputSubtext}> “For authentication reasons, you will not be emailed”</span>
-            <label> Upload your photos </label>
-            <input type='file' accept="image/*" multiple></input>
-            <div className={styles.actions}>
-              <button onClick={props.modalButtonClick}> Close </button>
-=======
-          <span>{productName} </span>
+          <span>{`${productName}: ${questionBody}`} </span>
           <form className={styles.questionForm} onSubmit={handleSubmit}>
             <label> Your Answer *</label>
             <input type='text' name='question' maxlength='1000' onChange={handleAnswerChange}></input>
@@ -102,7 +75,6 @@ const AnswerForm = (props) => {
             <div className={styles.actions}>
               <button onClick={props.modalButtonClick}> Close </button>
               <input type='submit' value='Submit' />
->>>>>>> 6628d52d5eb7b8982debb7435760031f8e51a65a
             </div>
           </form>
         </div>

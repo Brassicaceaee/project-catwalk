@@ -15,7 +15,7 @@ const Question = (props) => {
           </div>
           <div className={styles.questionRowRight}>
             <button> helpful</button>
-            <AddAnswer/>
+            <AddAnswer question={props.question}/>
           </div>
         </div>
         <div className={styles.answerRow}>

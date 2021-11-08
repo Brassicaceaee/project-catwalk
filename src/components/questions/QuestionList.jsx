@@ -2,12 +2,14 @@ import React, {useState, useEffect, useRef} from 'react';
 import Question from './IndividualQuestion.jsx';
 import AddQuestion from './AddQuestion.jsx';
 import styles from './questions.module.css';
+import {useProductContext} from '../../context/ProductContext.jsx';
+
 
 const QuestionList = (props) => {
 
-
-  let allQuestions = props.data.results;
-  let firstTwoQuestions = props.data.results.slice(0, 2);
+  // Added actual questions using context
+  const {questions} = useProductContext();
+  let allQuestions = questions.results;
 
   let items = allQuestions.map((question, i) => {
     return (
