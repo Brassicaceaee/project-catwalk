@@ -1,11 +1,19 @@
 import React from 'react';
 import styles from './questions.module.css';
+import {useProductContext} from '../../context/ProductContext.jsx';
 
 const QuestionForm = (props) => {
+
+    // Store variables from context
+    const {info} = useProductContext();
+    const productName = info.name;
+
   if (props.show) {
     return (
       <div className={styles.modal}>
         <div className={styles.content}>
+          <h3> Ask Your Question </h3>
+          <span>{`About the ${productName}`} </span>
           <form className={styles.questionForm}>
             <label> Your Question *</label>
             <input type='text' name='question' maxlength='1000'></input>
