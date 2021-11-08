@@ -8,6 +8,9 @@ const AnswerForm = (props) => {
   const {info} = useProductContext();
   const productName = info.name;
 
+  const {questions} = useProductContext();
+  let questionBody = props.question.question_body;
+
   // This section keeps track of the uploaded file images in an array. I use this state to prevent more than 5 files from being uploaded.
   const [uploadArray, setUploadArray] = useState([]);
   // let imageInput = document.getElementById('image-uploads');
@@ -25,6 +28,7 @@ const AnswerForm = (props) => {
   const [file, setFile] = useState()
 
   const uploadFile = (e) => {
+    console.log(file)
     setFile(e.target.files[0])
   }
   // Create state for input fields -- will use this for validation later
@@ -51,7 +55,7 @@ const AnswerForm = (props) => {
       <div className={styles.modal}>
         <div className={styles.content}>
           <h3> Submit Your Answer </h3>
-          <span>{productName} </span>
+          <span>{`${productName}: ${questionBody}`} </span>
           <form className={styles.questionForm} onSubmit={handleSubmit}>
             <label> Your Answer *</label>
             <input type='text' name='question' maxlength='1000' onChange={handleAnswerChange}></input>

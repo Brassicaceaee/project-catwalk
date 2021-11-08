@@ -15,11 +15,11 @@ const Question = (props) => {
           </div>
           <div className={styles.questionRowRight}>
             <button> helpful</button>
-            <AddAnswer/>
+            <AddAnswer question={props.question}/>
           </div>
         </div>
         <div className={styles.answerRow}>
-          <AnswerList answers={answers.results}/>
+          <AnswerList answers={answers.results} questionid={props.questionid}/>
         </div>
       </li>
   )

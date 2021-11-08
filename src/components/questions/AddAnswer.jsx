@@ -13,7 +13,7 @@ const AddAnswer = (props) => {
     <div>
       <button onClick={modalButtonClick}>Add Answer</button>
       <div>
-        <AnswerForm show={modalShown} modalButtonClick={modalButtonClick}/>
+        <AnswerForm show={modalShown} modalButtonClick={modalButtonClick} question={props.question}/>
       </div>
     </div>
   )
