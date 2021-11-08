@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReviewTile from './ReviewTile.jsx';
-import styles from "./reviews.module.css";
-import { useProductContext } from "../../context/ProductContext.jsx";
+import ReviewForm from './ReviewForm.jsx';
+import styles from './reviews.module.css';
+import modalStyle from '../questions/questions.module.css';
+import { useProductContext } from '../../context/ProductContext.jsx';
 
 const ReviewsList = () => {
   const {reviews} = useProductContext();
+  const [modalIsActive, setModalState] = useState(false);
   const reviewsList = reviews.results;
+
+  const startReview = () => {
+    setModalState(true);
+  }
+
+  const cancelReview = () => {
+    setModalState(false);
+  }
 
   return (
     <div className={`${styles.reviewsComponent} ${styles.flex} ${styles.column} ${styles.medPadding}`}>
@@ -24,8 +35,9 @@ const ReviewsList = () => {
       </div>
       <div>
         <button>MORE REVIEWS</button>
-        <button>ADD A REVIEW +</button>
+        <button onClick={startReview}>ADD A REVIEW +</button>
       </div>
+      {modalIsActive && <ReviewForm close={cancelReview}/>}
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { useProductContext } from '../../context/ProductContext.jsx'
 const ProductBreakdown = () => {
   const {meta} = useProductContext();
   const characteristics = meta.characteristics;
-  // debugger;
+
   return (
     <div className={`${styles.flex} ${styles.column} ${styles.medPadding}`}>
       {Object.keys(characteristics).map((key, index) => {
