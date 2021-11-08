@@ -26,7 +26,7 @@ const ReviewTile = ({review}) => {
       </div>
       <p>{review.reviewer_name}</p>
       {review.response &&
-        <div className={s`${tyles.response} ${smallPadding}`}>
+        <div className={`${styles.response} ${styles.smallPadding}`}>
           <strong>Response from seller:</strong>
           <p>{review.response}</p>
         </div>
