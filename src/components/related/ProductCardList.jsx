@@ -18,12 +18,12 @@ const ProductCardList = () =>{
 
   return (
     <div className='related-list'>
-        <img
-          className='left-arrow'
-          src={leftArrow}
-          style={style}
-          onClick={() => handleSlide(-50)}
-        />
+      <img
+        className='left-arrow'
+        src={leftArrow}
+        style={style}
+        onClick={() => handleSlide(-50)}
+      />
       <div className='carousel' ref={ref}>
         {Object.values(related).map((result, index) => {
           return(
@@ -37,6 +37,7 @@ const ProductCardList = () =>{
         className='right-arrow'
         src={rightArrow}
         style={style}
+        onClick={() => handleSlide(50)}
       />
     </div>
   );
@@ -57,12 +58,12 @@ export default ProductCardList;
   //   headers: {'Authorization': API_KEY}
   // };
 
-  // useEffect(() => {
-    //   // get the related products' id
-    //   axios.get(`${API_URL}/40365/related`,options)
-    //   .then(response => setRelatedID(response.data))
+//   useEffect(() => {
+//       // get the related products' id
+//       axios.get(`${API_URL}/40365/related`,options)
+//       .then(response => setRelatedID(response.data))
 
-    //   // get the overview product info
-    //   axios.get(`${API_URL}/40365`,options)
+//       // get the overview product info
+//       axios.get(`${API_URL}/40365`,options)
 //   .then(response => setOverviewProduct(response.data))
 // }, []);

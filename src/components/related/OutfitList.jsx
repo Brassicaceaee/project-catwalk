@@ -38,15 +38,15 @@ const OutfitList = () => {
 
   return (
     <div className='outfit-list'>
-      <div className='small-title'>
-        Add to Outfit
-      </div>
+      <div className='add'>
         <img
-          className='add'
+          className='img'
           src={plusSymbol}
-          style={{ height: '150px', width: '150px'}}
+          // style={{ height: '150px', width: '150px'}}
           onClick={handleAddOutfit}
         />
+         <div className='category'>Add to Outfit</div>
+      </div>
       {Object.values(outfitData).map((storedOutfit) => {
         return (
           <OutfitCard

@@ -12,6 +12,8 @@ const ProductCard = ({relatedProduct}) =>{
     setIsOpen(!isOpen)
   };
 
+  // const changeOverviwe = ()
+
   const isSale = relatedProduct.styles[0].sale_price
   const originalPrice = relatedProduct.info.default_price
   const relatedImg = relatedProduct.styles[0].photos[0].thumbnail_url
@@ -21,9 +23,7 @@ const ProductCard = ({relatedProduct}) =>{
       <div className='button'>
         <i className="far fa-star" onClick={togglePop}></i>
       </div>
-      {isOpen
-      ? <ComparisonModal left={info} right={relatedProduct} togglePop={togglePop}/>
-      : <></>}
+      {isOpen && <ComparisonModal left={info} right={relatedProduct} togglePop={togglePop}/>}
       <img
         className='img'
         src={relatedImg || imgNotAvailable}/>
@@ -32,8 +32,8 @@ const ProductCard = ({relatedProduct}) =>{
         <div>{relatedProduct.info.name}</div>
         {isSale
         ? <div>
-          ${isSale}
-          <strike style={{color: 'red'}}>${originalPrice}</strike>
+            ${isSale}
+            <strike style={{color: 'red'}}>${originalPrice}</strike>
           </div>
         : <div>${originalPrice}</div>
         }

@@ -35,8 +35,8 @@ const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
         <div>{storedOutfit.name}</div>
         {isSale
         ? <div>
-          ${isSale}
-          <strike style={{color: 'red'}}>${originalPrice}</strike>
+            ${isSale}
+            <strike style={{color: 'red'}}>${originalPrice}</strike>
           </div>
         : <div>${originalPrice}</div>
         }
