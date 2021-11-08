@@ -28,9 +28,6 @@ const Overview = (props) => {
     const [styleIndex, setStyleIndex] = useState(0);
     var product = useProductContext();
 
-    // const changeStyleIndex = (event, index) => {
-    //   setStyleIndex(index)
-    // }
     console.log(styleIndex)
     return(
       <StyleIndexContext.Provider value ={{changeStyleIndex : setStyleIndex}}>
@@ -42,15 +39,15 @@ const Overview = (props) => {
 
 
         <div className={styles.productInfo}>
-        <ProductInfo productInfo={product}/>
+        <ProductInfo product={product} styles={product.styles.results} styleIndex={styleIndex}/>
         </div>
 
         <div className={styles.description}>
-          <Description />
+          <Description product={product}/>
         </div>
 
         <div className={styles.features}>
-          <Features />
+          <Features product={product}/>
         </div>
       </div>
     </StyleIndexContext.Provider>

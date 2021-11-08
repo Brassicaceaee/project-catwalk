@@ -16,22 +16,16 @@ const StyleSelector = (props) => {
 
 
   return (
-    <>
-      <StyleIndexContext.Consumer>
-        {
-        ({changeStyleIndex}) => {
-        //  console.log(styleIndex)
-        //  console.log(changeStyleIndex)
-          if(selectedStyle === '') {
-            // setStyle(props.styles[0])
-            changeStyleIndex(0)
-          }
-        return (
+    <StyleIndexContext.Consumer>
+      {
+      ({changeStyleIndex}) => {
+        if(selectedStyle === '') {
+          changeStyleIndex(0)
+        }
+      return (
 
-
-          <>
+      <>
         <p className={styles.styleText}>STYLE > <span>{selectedStyle.name}</span></p>
-
         <div className={styles.styleSelection}>
 
             {props.styles.map( (option, index) =>
@@ -45,11 +39,10 @@ const StyleSelector = (props) => {
               </span>
             )}
         </div>
-        </>
-        )}
-      }
-      </StyleIndexContext.Consumer>
-    </>
+      </>
+      )}
+    }
+    </StyleIndexContext.Consumer>
   );
 };
 

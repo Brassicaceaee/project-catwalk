@@ -5,7 +5,6 @@ import json from './styleSample.json';
 
 const ImageGallery = (props) => {
 
-  // var photos = json.results[0].photos;
   var photos = props.styles[props.styleIndex].photos;
   const [mainPhoto, setMainPhoto] = useState(0);
 
