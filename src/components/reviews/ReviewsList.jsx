@@ -25,7 +25,7 @@ const ReviewsList = () => {
     } else if (sortBy === 'helpful') {
       return b.helpfulness - a.helpfulness;
     } else if (sortBy === 'newest') {
-      return bDaysAgo - aDaysAgo;
+      return aDaysAgo - bDaysAgo;
     }
   });
 
