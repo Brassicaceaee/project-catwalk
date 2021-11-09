@@ -1,18 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import Answer from './Answer.jsx';
 import styles from './questions.module.css';
+import {useProductContext} from '../../context/ProductContext.jsx';
 
 const AnswerList = (props) => {
 
-  let answers = props.answers.map((answer, i) => {
+  // Added actual questions using context
+  const {answers} = useProductContext();
+  let answerData = answers[props.questionid];
+
+  let answerElements = answerData.map((answer, i) => {
     return <Answer answer={answer} key={i} />
   });
-  let firstTwoAnswers = answers.slice(0, 2);
+  let firstTwoAnswers = answerElements.slice(0, 2);
 
   const [collapsed, toggleDisplayState] = useState(true);
 
 
-  const [displayed, setDisplayed] = useState(answers.slice(0, 2));
+  const [displayed, setDisplayed] = useState(answerElements.slice(0, 2));
   // useEffect(() => {
   //   displayedAnswers = answers.slice(0, 2);
   // })
@@ -21,7 +26,7 @@ const AnswerList = (props) => {
 
   const changeAnswerDisplay = () => {
     if (collapsed) {
-      setDisplayed(answers);
+      setDisplayed(answerElements);
       changeButtonText('Collapse Answers');
       toggleDisplayState(!collapsed);
     } else {

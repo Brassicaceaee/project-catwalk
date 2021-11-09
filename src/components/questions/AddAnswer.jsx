@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import styles from './questions.module.css';
-import QuestionForm from './AddQuestionForm.jsx';
+import AnswerForm from './FormAnswer.jsx';
 
-const AddQuestion = (props) => {
+const AddAnswer = (props) => {
 
   const [modalShown, toggleModal] = useState(false);
   const modalButtonClick = () => {
@@ -11,12 +11,12 @@ const AddQuestion = (props) => {
 
   return(
     <div>
-      <button onClick={modalButtonClick}>Add Question +</button>
+      <button onClick={modalButtonClick}>Add Answer</button>
       <div>
-        <QuestionForm show={modalShown} modalButtonClick={modalButtonClick}/>
+        <AnswerForm show={modalShown} modalButtonClick={modalButtonClick} question={props.question}/>
       </div>
     </div>
   )
 };
 
-export default AddQuestion;
+export default AddAnswer;
