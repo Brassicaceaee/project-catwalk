@@ -7,7 +7,6 @@ import {StyleIndexContext} from './overview.jsx'
 
 const StyleSelector = (props) => {
 
-  console.log(props.styles)
   const [selectedStyle, setStyle] = useState(props.styles[0]);
 
   const handleClick = (event, option) => {

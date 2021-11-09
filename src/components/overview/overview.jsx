@@ -14,14 +14,6 @@ export const StyleIndexContext = React.createContext({
   changeStyleIndex: () => {},
 });
 
-//Refactoring to pass Style info as props to components
-// Then the StyleContext will change the Index for the ImageGallery and AddToCart to determine
-  //The selected style
-
-//If new productInfo is provide,
-//the style index will be reset to first index.
-//Maybe create state for overview to retain the state of style index, and cureent product info
-  //Could compare to previous ID to see if there needs to be an index reset
 
 const Overview = (props) => {
 

@@ -29,7 +29,7 @@ const ImageGallery = (props) => {
               <span className={styles.galleryThumbnailPhotoContainer} key={index}>
 
 
-                <img className={thumbnailStyle}
+                <img className={styles.thumbnailStyle}
                 src={photo.thumbnail_url}
                 onClick={(e) => handleThumbnailClick(e, index)}/>
               </span>
