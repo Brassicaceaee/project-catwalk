@@ -7,12 +7,13 @@ const port = 3000;
 app.use(express.json())
 app.use(express.static('dist'))
 
+let url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
+let options = {
+  headers: {'Authorization': API_KEY}
+};
+
 app.get('/products', (req, res) => {
   let productId = req.query.product_id
-  let url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
-  let options = {
-    headers: {'Authorization': API_KEY}
-  }
 
   let product = {}
 
@@ -131,3 +132,29 @@ const calculateAverage = (ratings) => {
   average = Math.round((weightedTotal / total) * 10) / 10;
   return {total, average};
 }
+
+// Q & A
+
+app.post('/qa/questions', (req, res) => {
+  let body = req.body.body;
+  let name = req.body.name;
+  let email = req.body.email;
+  let product_id = req.body.product_id;
+  let data = {
+    body: body,
+    name: name,
+    email: email,
+    product_id: parseInt(product_id)
+  }
+
+  axios.post(`${url}/qa/questions`,data, options)
+  .then(results => {
+    console.log('result post at the server', results)
+    res.sendStatus(201)
+  })
+  .catch(err => {
+    console.log('err', err)
+    res.sendStatus(500)
+  })
+});
+

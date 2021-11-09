@@ -14,6 +14,22 @@
   grid-row-start: 1;
   grid-row-end: 3;
 }
+
+
+/* Grid layout for characteristics in the add review component */
+.charGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  border-color: black;
+}
+
+.alignLeft {
+  align-self: start;
+  justify-self: start;
+}
+
+
 /* The other two subcomponents are automatically placed */
 
 
@@ -28,6 +44,7 @@
 
 .center {
   justify-content: center;
+  justify-items: center;
   align-items: center;
 }
 
