@@ -2,10 +2,6 @@ import React, {useState} from 'react';
 import styles from './questions.module.css';
 import {useProductContext} from '../../context/ProductContext.jsx';
 import axios from 'axios';
-import { API_KEY } from '../../../config/config.js';
-
-
-
 
 
 const QuestionForm = ({show, modalButtonClick}) => {
