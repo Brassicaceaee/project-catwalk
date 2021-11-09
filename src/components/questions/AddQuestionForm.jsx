@@ -30,8 +30,6 @@ const QuestionForm = ({show, modalButtonClick}) => {
     updateEmail(e.target.value);
   }
 
-let options = {
-  headers: {'Authorization': API_KEY}
 }
 let data = {
   body: question,
@@ -39,11 +37,12 @@ let data = {
   email: email,
   product_id: product_id
 }
+
 const submitQuestion = () => {
   event.preventDefault();
   if (question && nickname && email){
 
-    axios.post('/qa/questions', data, options)
+    axios.post('/qa/questions', data)
 
     .then((response) => {
       console.log(response);
