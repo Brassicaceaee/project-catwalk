@@ -135,26 +135,7 @@ const calculateAverage = (ratings) => {
 
 // Q & A
 
-// app.post('/qa/questions', (req, res) => {
-//   // console.log(req.body)
-//   let body = req.body.body;
-//   let name = req.body.name;
-//   let email = req.body.email;
-//   let product_id = req.body.product_id;
-
-//   axios.post(`${url}/qa/questions`, options)
-//   .then(results => {
-//     console.log(results)
-//     res.status(201).send(results)
-//   })
-//   .catch(err => {
-//     console.log('err', err)
-//     res.sendStatus(500)
-//   })
-// });
-
 app.post('/qa/questions', (req, res) => {
-  // console.log(req.body)
   let body = req.body.body;
   let name = req.body.name;
   let email = req.body.email;

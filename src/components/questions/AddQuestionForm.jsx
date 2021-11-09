@@ -30,31 +30,31 @@ const QuestionForm = ({show, modalButtonClick}) => {
     updateEmail(e.target.value);
   }
 
-}
-let data = {
-  body: question,
-  name: nickname,
-  email: email,
-  product_id: product_id
-}
-
-const submitQuestion = () => {
-  event.preventDefault();
-  if (question && nickname && email){
-
-    axios.post('/qa/questions', data)
-
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log('error during post attempt: ', error);
-    });
-    modalButtonClick();
-  }else{
-    alert('One or more mandatory fields are empty');
+  // Post Parameters Data
+  let data = {
+    body: question,
+    name: nickname,
+    email: email,
+    product_id: product_id
   }
-}
+
+  const submitQuestion = () => {
+    event.preventDefault();
+    if (question && nickname && email){
+
+      axios.post('/qa/questions', data)
+
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log('error during post attempt: ', error);
+      });
+      modalButtonClick();
+    }else{
+      alert('One or more mandatory fields are empty');
+    }
+  }
 
 
   if (show) {
