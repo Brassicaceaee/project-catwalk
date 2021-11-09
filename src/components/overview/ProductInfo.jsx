@@ -13,23 +13,23 @@ const ProductInfo = (props) => {
       </div>
 
       <div className={styles.category}>
-        <p>Category</p>
+        <p>{props.product.info.category}</p>
       </div>
 
       <div className={styles.title}>
-        <p>Expanded Product Name</p>
+        <p>{props.product.info.name}</p>
       </div>
 
       <div className={styles.price}>
-        <p>Price</p>
+        <p>PRICE</p>
       </div>
 
       <div className={styles.styles}>
-        <StyleSelector />
+        <StyleSelector styles={props.product.styles.results}/>
       </div>
 
-      <div className={styles.addToCart}>
-        <AddToCart />
+      <div className={styles.addToCart} >
+        <AddToCart skus={props.styles[props.styleIndex].skus}/>
       </div>
 
     </div>
