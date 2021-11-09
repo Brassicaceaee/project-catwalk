@@ -12,18 +12,29 @@ export const updateFilterContext = () => {
 }
 
 export const FilterProvider = ({children}) => {
-  // Filter will someday be an object that stores which ratings of reviews shouldn't be filtered out.
-  const [filter, setFilter] = useState(null);
+  // Filter is an object that stores whether a review of a certain rating should be shown or not. Each rating defaults to true and can be toggled with the updateFilter function
+  const [filter, setFilter] = useState({
+    5: true,
+    4: true,
+    3: true,
+    2: true,
+    1: true
+  });
 
-  const updateFilter (item) => {
-    // Somehow add or remove the input item from filter.
+  const updateFilter = (rating) => {
+    // setFilter won't recognize changes if we change filter and try to use that to setFilter so we need to make a copy.
+    let newFilter = Object.assign({}, filter);
+    if (newFilter[rating] !== undefined) {
+      newFilter[rating] = !newFilter[rating];
+      setFilter(newFilter);
+    }
   }
 
   return (
-    <FilterContext value={filter}>
-      <FilterUpdate value={}>
+    <FilterContext.Provider value={filter}>
+      <FilterUpdate.Provider value={updateFilter}>
         {children}
-      </FilterUpdate>
-    </FilterContext>
+      </FilterUpdate.Provider>
+    </FilterContext.Provider>
   )
 }
