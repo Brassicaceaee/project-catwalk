@@ -135,17 +135,41 @@ const calculateAverage = (ratings) => {
 
 // Q & A
 
+// app.post('/qa/questions', (req, res) => {
+//   // console.log(req.body)
+//   let body = req.body.body;
+//   let name = req.body.name;
+//   let email = req.body.email;
+//   let product_id = req.body.product_id;
+
+//   axios.post(`${url}/qa/questions`, options)
+//   .then(results => {
+//     console.log(results)
+//     res.status(201).send(results)
+//   })
+//   .catch(err => {
+//     console.log('err', err)
+//     res.sendStatus(500)
+//   })
+// });
+
 app.post('/qa/questions', (req, res) => {
   // console.log(req.body)
   let body = req.body.body;
   let name = req.body.name;
   let email = req.body.email;
   let product_id = req.body.product_id;
+  let data = {
+    body: body,
+    name: name,
+    email: email,
+    product_id: parseInt(product_id)
+  }
 
-  axios.post(`${url}/qa/questions`, options)
+  axios.post(`${url}/qa/questions`,data, options)
   .then(results => {
-    console.log(results)
-    res.status(201).send(results)
+    console.log('result post at the server', results)
+    res.sendStatus(201)
   })
   .catch(err => {
     console.log('err', err)
@@ -153,20 +177,3 @@ app.post('/qa/questions', (req, res) => {
   })
 });
 
-// app.get('/qa/questions', (req, res) => {
-//   // console.log(req.body)
-//   // let body = req.body.body;
-//   // let name = req.body.name;
-//   // let email = req.body.email;
-//   // let product_id = req.body.product_id;
-
-//   axios.get(`${url}/qa/questions`, options)
-//   .then(results => {
-//     // console.log(results)
-//     res.status(200).send(results)
-//   })
-//   .catch(err => {
-//     console.log('err', err)
-//     res.sendStatus(500)
-//   })
-// });

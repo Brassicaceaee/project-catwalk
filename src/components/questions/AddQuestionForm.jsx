@@ -41,28 +41,74 @@ const QuestionForm = (props) => {
   // });
 
 
-  const submitQuestion = () => {
-    event.preventDefault();
-    if (question && nickname && email) {
-      axios.post('/qa/questions', {
-        body: question,
-        name: nickname,
-        email: email,
-        product_id: product_id
-      },
-      {headers: {'Authorization': API_KEY}
-    })
+  // const submitQuestion = () => {
+  //   event.preventDefault();
+  //   if (question && nickname && email) {
+  //     axios.post('/qa/questions', {
+  //       body: question,
+  //       name: nickname,
+  //       email: email,
+  //       product_id: product_id
+  //     },
+  //     {headers: {'Authorization': API_KEY}
+  //   })
 
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log('error during post attempt: ', error);
-      });
-    } else {
-      alert('One or more mandatory fields are empty');
-    }
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((error) => {
+  //       console.log('error during post attempt: ', error);
+  //     });
+  //   } else {
+  //     alert('One or more mandatory fields are empty');
+  //   }
+  // }
+
+//   const submitQuestion = () => {
+//     event.preventDefault();
+//     if (question && nickname && email) {
+//     axios.get('/qa/questions',
+//     {headers: {'Authorization': API_KEY}
+//     })
+//     .then((response) => {
+//       console.log(response);
+//     })
+//     .catch((error) => {
+//       console.log('error during post attempt: ', error);
+//     });
+//   } else {
+//     alert('One or more mandatory fields are empty');
+//   }
+// }
+
+let options = {
+  headers: {'Authorization': API_KEY}
+}
+let data = {
+  body: question,
+  name: nickname,
+  email: email,
+  product_id: product_id
+}
+const submitQuestion = () => {
+  event.preventDefault();
+  if (question && nickname && email){
+
+    axios.post('/qa/questions', data, options)
+
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log('error during post attempt: ', error);
+    });
+    props.modalButtonClick();
+  }else{
+    alert('One or more mandatory fields are empty');
   }
+}
+
+
 
   if (props.show) {
     return (
