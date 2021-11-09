@@ -5,19 +5,13 @@ import json from '../styleSample.json';
 
 const AddToCart = (props) => {
 
-  var options = json.results;
-  var currentSkus = options[0].skus; //Object of containing skus;
-
+  var currentSkus = props.skus;
   var skus = Object.values(currentSkus)
 
   const [selectedSize, setSize] = useState('')
   const [selectedSKU, setSKU] = useState('')
   const [selectedQuantity, setQuantity] = useState(1);
 
-  //TODO
-  //Based on the selected size, get SKU, creat quantity selector
-  //If no sizes, selector only has "OUT of Stock"
-  //If size not selected, render "-" for quantity selector
 
   const handleSizeSelect = (event) => {
     var skuID = event.target.value
@@ -43,16 +37,27 @@ const AddToCart = (props) => {
   }
 
 
+
+
   const handleQuantitySelect = (event) => {
     setQuantity(event.target.value)
   }
 
   let quantitySelector;
 
-  if (selectedSKU === '') {
+  if (selectedSize === '') {
     quantitySelector = <select><option> - </option></select>
+
   } else {
-    var num = currentSkus[selectedSKU].quantity
+    //Defaults to first SKU if new Style was selected
+    if(currentSkus[selectedSKU]) {
+      var num = currentSkus[selectedSKU].quantity
+
+    } else {
+      var firstSku = Object.keys(currentSkus)[0]
+      var num = currentSkus[firstSku].quantity;
+    }
+
     //Keeps quantity to only display 15 max
     if (num > 15) {
       num = 15
