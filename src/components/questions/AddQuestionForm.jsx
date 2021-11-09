@@ -8,7 +8,7 @@ import { API_KEY } from '../../../config/config.js';
 
 
 
-const QuestionForm = (props) => {
+const QuestionForm = ({show, modalButtonClick}) => {
 
     // Store variables from context
     const {info} = useProductContext();
@@ -29,57 +29,6 @@ const QuestionForm = (props) => {
   const handleEmailChange = (e) => {
     updateEmail(e.target.value);
   }
-
-  // let options = {
-  //   headers: {'Authorization': API_KEY}
-  // };
-
-  // axios.post('https://httpbin.org/post', { hello: 'world' }, {
-  //   headers: {
-  //     'Test-Header': 'test-value'
-  //   }
-  // });
-
-
-  // const submitQuestion = () => {
-  //   event.preventDefault();
-  //   if (question && nickname && email) {
-  //     axios.post('/qa/questions', {
-  //       body: question,
-  //       name: nickname,
-  //       email: email,
-  //       product_id: product_id
-  //     },
-  //     {headers: {'Authorization': API_KEY}
-  //   })
-
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => {
-  //       console.log('error during post attempt: ', error);
-  //     });
-  //   } else {
-  //     alert('One or more mandatory fields are empty');
-  //   }
-  // }
-
-//   const submitQuestion = () => {
-//     event.preventDefault();
-//     if (question && nickname && email) {
-//     axios.get('/qa/questions',
-//     {headers: {'Authorization': API_KEY}
-//     })
-//     .then((response) => {
-//       console.log(response);
-//     })
-//     .catch((error) => {
-//       console.log('error during post attempt: ', error);
-//     });
-//   } else {
-//     alert('One or more mandatory fields are empty');
-//   }
-// }
 
 let options = {
   headers: {'Authorization': API_KEY}
@@ -102,15 +51,14 @@ const submitQuestion = () => {
     .catch((error) => {
       console.log('error during post attempt: ', error);
     });
-    props.modalButtonClick();
+    modalButtonClick();
   }else{
     alert('One or more mandatory fields are empty');
   }
 }
 
 
-
-  if (props.show) {
+  if (show) {
     return (
       <div className={styles.modal}>
         <div className={styles.content}>
@@ -128,7 +76,7 @@ const submitQuestion = () => {
             <span className={styles.inputSubtext}> “For authentication reasons, you will not be emailed”</span>
             <input type='submit' name='Submit Question'></input>
             <div className={styles.actions}>
-              <button onClick={props.modalButtonClick}> Close </button>
+              <button onClick={modalButtonClick}> Close </button>
             </div>
           </form>
         </div>
@@ -141,21 +89,3 @@ const submitQuestion = () => {
 
 export default QuestionForm;
 
-
-// get method
-
-// if (question && nickname && email) {
-//   axios.get('/qa/questions',
-//   {headers: {'Authorization': API_KEY}
-// })
-
-//   .then((response) => {
-//     console.log(response);
-//   })
-//   .catch((error) => {
-//     console.log('error during post attempt: ', error);
-//   });
-// } else {
-//   alert('One or more mandatory fields are empty');
-// }
-// }
