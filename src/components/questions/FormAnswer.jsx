@@ -49,6 +49,14 @@ const AnswerForm = (props) => {
     alert(`answer: ${answer} nickname: ${nickname} email ${email}`)
   }
 
+  const submitAnswer = () => {
+    event.preventDefault();
+    if (answer && nickname && email) {
+     console.log('Success');
+    } else {
+      alert('One or more mandatory fields are empty');
+    }
+  }
 
   if (props.show) {
     return (
@@ -56,7 +64,7 @@ const AnswerForm = (props) => {
         <div className={styles.content}>
           <h3> Submit Your Answer </h3>
           <span>{`${productName}: ${questionBody}`} </span>
-          <form className={styles.questionForm} onSubmit={handleSubmit}>
+          <form className={styles.questionForm} onSubmit={submitAnswer}>
             <label> Your Answer *</label>
             <input type='text' name='question' maxlength='1000' onChange={handleAnswerChange}></input>
             <label> What is your nickname *</label>

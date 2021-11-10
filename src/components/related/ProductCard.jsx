@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './related.css';
 import ComparisonModal from './ComparisonModal.jsx';
-import {useProductContext, updateProductContext} from '../../context/ProductContext.jsx';
+import {useProductContext} from '../../context/ProductContext.jsx';
 import imgNotAvailable from '../../../asset/img/image-not-available.png';
 
 const ProductCard = ({relatedProduct, update}) =>{
   const { info } = useProductContext();
-  // const update = updateProductContext()
 
   const[isOpen, setIsOpen] = useState(false);
 
