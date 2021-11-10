@@ -112,6 +112,33 @@ app.delete('/outfit', (req, res) => {
 });
 
 
+// Items stored in users cart
+var cartItems = {};
+
+// add item sku and quantity to list
+app.post('/cart/:skuID', (req, res) => {
+
+  let quantity = parseInt(req.body.quantity);
+  let skuID = req.params.skuID;
+
+  cartItems[skuID] = quantity
+
+  res.sendStatus(201)
+})
+
+//Retrieve list of items user has in cart (sku and quantity)
+app.get('/cart', (req, res) => {
+  let itemList = []
+  let cartItemEntries = Object.entries(cartItems);
+  for(let i=0; i < cartItemEntries.length; i++) {
+
+    itemList.push({"sku_id": cartItemEntries[i][0],
+                  "count": cartItemEntries[i][1]})
+  }
+  res.status(200).send(itemList);
+})
+
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
