@@ -7,12 +7,13 @@ const port = 3000;
 app.use(express.json())
 app.use(express.static('dist'))
 
+let url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
+let options = {
+  headers: {'Authorization': API_KEY}
+}
+
 app.get('/products', (req, res) => {
   let productId = req.query.product_id
-  let url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
-  let options = {
-    headers: {'Authorization': API_KEY}
-  }
 
   let product = {}
 
@@ -111,6 +112,7 @@ app.delete('/outfit', (req, res) => {
 });
 
 
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
@@ -131,3 +133,7 @@ const calculateAverage = (ratings) => {
   average = Math.round((weightedTotal / total) * 10) / 10;
   return {total, average};
 }
+
+
+
+

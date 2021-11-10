@@ -3,8 +3,6 @@ import './related.css';
 
 const ComparisonModal = ({left, right, togglePop}) => {
 
-  // console.log('left', left)
-  // console.log('right', right)
   const currentProductName = left.name;
   const relatedProductName = right.info.name;
 

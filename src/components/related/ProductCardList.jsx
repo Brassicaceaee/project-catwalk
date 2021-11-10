@@ -1,43 +1,60 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './related.css';
 import ProductCard from './ProductCard.jsx';
-import {useProductContext} from '../../context/ProductContext.jsx';
+import { useProductContext, updateProductContext } from '../../context/ProductContext.jsx';
 import leftArrow from '../../../asset/img/left-arrow.png';
 import rightArrow from '../../../asset/img/right-arrow.png';
 
+
 const ProductCardList = () =>{
   const { related } = useProductContext();
-  const style = { height: '130px', width: '50px'};
-  const ref = useRef(null)
+  const update = updateProductContext();
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+  const style = { height: '80px', width: '40px'};
+  const ref = useRef();
 
+
+  const handleLoad = () => {
+    var element = ref.current;
+    if (element.clientWidth) {
+      element.addEventListener('scroll', () => {
+        setShowLeftArrow(element.scrollLeft > 0);
+        setShowRightArrow(element.scrollLeft < element.scrollWidth - element.clientWidth);
+      });
+    }
+  }
 
   const handleSlide = (width) => {
     ref.current.scrollLeft += width;
-    console.log(ref.current.scrollLeft)
+    // console.log(ref.current.scrollLeft)
   }
 
   return (
     <div className='related-list'>
       <img
-        className='left-arrow'
+        className='arrow'
+        className={showLeftArrow? 'active':'non-active'}
         src={leftArrow}
         style={style}
-        onClick={() => handleSlide(-50)}
+        onClick={() => handleSlide(-400)}
       />
-      <div className='carousel' ref={ref}>
+      <div className='carousel' ref={ref} onLoad={handleLoad}>
         {Object.values(related).map((result, index) => {
           return(
           <ProductCard
             key={index}
             relatedProduct={result}
+            update={update}
           />
         )})}
       </div>
       <img
-        className='right-arrow'
+        className='arrow'
+        className={showRightArrow? 'active':'non-active'}
         src={rightArrow}
         style={style}
-        onClick={() => handleSlide(50)}
+        onClick={() => handleSlide(400)}
       />
     </div>
   );

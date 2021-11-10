@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import './related.css';
 import ComparisonModal from './ComparisonModal.jsx';
-import {useProductContext} from '../../context/ProductContext.jsx';
+import {useProductContext, updateProductContext} from '../../context/ProductContext.jsx';
 import imgNotAvailable from '../../../asset/img/image-not-available.png';
 
-const ProductCard = ({relatedProduct}) =>{
-  const { info, styles } = useProductContext();
+const ProductCard = ({relatedProduct, update}) =>{
+  const { info } = useProductContext();
+  // const update = updateProductContext()
+
   const[isOpen, setIsOpen] = useState(false);
 
   const togglePop = () => {
     setIsOpen(!isOpen)
   };
 
-  // const changeOverviwe = ()
+  const changeCurrentProduct = () =>{
+    update(relatedProduct.info.id)
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 
   const isSale = relatedProduct.styles[0].sale_price
   const originalPrice = relatedProduct.info.default_price
@@ -26,7 +35,9 @@ const ProductCard = ({relatedProduct}) =>{
       {isOpen && <ComparisonModal left={info} right={relatedProduct} togglePop={togglePop}/>}
       <img
         className='img'
-        src={relatedImg || imgNotAvailable}/>
+        src={relatedImg || imgNotAvailable}
+        onClick={changeCurrentProduct}
+      />
       <div className='product-info'>
         <div className='category'>{relatedProduct.info.category}</div>
         <div>{relatedProduct.info.name}</div>

@@ -5,15 +5,11 @@ import './related.css';
 
 const Related = () => {
   return (
-    <div className='widget'>
-      <div className='productCardList'>
-        <p className='title'>Related Products</p>
+    <div className='widget' id='related'>
+        <p className='small-title'>Related Products</p>
         <ProductCardList />
-      </div>
-      <div className='outfitList'>
-      <p className='title'>Your Outfit List</p>
+        <p className='small-title'>Your Outfit List</p>
         <OutfitList />
-      </div>
     </div>
   )
 }

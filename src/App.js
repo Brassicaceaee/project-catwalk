@@ -5,8 +5,8 @@ import Reviews from './components/reviews/Reviews.jsx';
 import Questions from './components/questions/Questions.jsx';
 import Overview from './components/overview/overview.jsx'
 import {ProductProvider} from './context/ProductContext.jsx'
-
 import Related from './components/related/Related.jsx'
+import NavigatorBar from './components/navigator/NavigatorBar.jsx'
 
 
 const App = () => {
@@ -16,6 +16,7 @@ const App = () => {
         <h1>
         Brassicaceae
         </h1>
+        <NavigatorBar />
         <Overview />
         <Related />
         <Questions/>

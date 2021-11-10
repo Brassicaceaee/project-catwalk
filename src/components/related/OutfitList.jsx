@@ -3,13 +3,15 @@ import './related.css';
 import axios from 'axios';
 import {useProductContext} from '../../context/ProductContext.jsx';
 import OutfitCard from './OutfitCard.jsx';
-import plusSymbol from '../../../asset/img/plus-symbol.png';
+
 
 
 const OutfitList = () => {
 
   const { info } = useProductContext();
   const [outfitData, setOutfitData] = useState([]);
+  const style = { height: '350px', width: '300px'};
+  let  plusSymbol = 'https://www.pngarts.com/files/3/Plus-Symbol-Transparent-Images.png'
 
   //get stored outfit list
   const getStoredOutfit = () =>{
@@ -36,16 +38,17 @@ const OutfitList = () => {
     getStoredOutfit()
   }
 
+
   return (
     <div className='outfit-list'>
       <div className='add'>
         <img
           className='img'
           src={plusSymbol}
-          // style={{ height: '150px', width: '150px'}}
+          style={style}
           onClick={handleAddOutfit}
         />
-         <div className='category'>Add to Outfit</div>
+         <div className='small-title'>Add to Outfit</div>
       </div>
       {Object.values(outfitData).map((storedOutfit) => {
         return (
