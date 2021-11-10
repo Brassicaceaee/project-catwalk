@@ -6,7 +6,7 @@ import Questions from './components/questions/Questions.jsx';
 import Overview from './components/overview/overview.jsx'
 import {ProductProvider} from './context/ProductContext.jsx'
 import Related from './components/related/Related.jsx'
-import NavigatorBar from './components/navigator/NavigatorBar.jsx'
+import NavBar from './components/navigator/NavBar.jsx'
 
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
         <h1>
         Brassicaceae
         </h1>
-        <NavigatorBar />
+        <NavBar />
         <Overview />
         <Related />
         <Questions/>

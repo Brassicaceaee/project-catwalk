@@ -4,7 +4,7 @@ import styles from './questions.module.css';
 const SearchBar = (props) => {
 
   return(
-    <div className={styles.searchBar}>
+    <div id='search' className={styles.searchBar}>
       <form>
         <input type='text' placeholder='Have a question? Search for answers…'></input>
       </form>
