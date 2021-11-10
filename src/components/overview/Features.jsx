@@ -3,9 +3,16 @@ import styles from './overview.module.css'
 
 
 const Features = (props) => {
-
+  console.log(props)
+  // debugger;
   return(
-    <div>Features</div>
+    <div>
+      {props.productInfo.features.map( (feature) =>
+       <li>{feature.feature}:
+           {feature.value}
+       </li>)}
+      {/* <li> {productInfo.features} </li> */}
+    </div>
 
   )
 

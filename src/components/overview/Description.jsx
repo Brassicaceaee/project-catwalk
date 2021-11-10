@@ -2,10 +2,14 @@ import React from 'react';
 import styles from './overview.module.css'
 
 
-const Description = (props) => {
+const Description = ({productInfo}) => {
+  console.log(productInfo)
 
   return(
-    <div>Description</div>
+    <>
+    <div >{productInfo.slogan} </div>
+    <p >{productInfo.description} </p>
+    </>
 
   )
 
