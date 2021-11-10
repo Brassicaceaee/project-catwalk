@@ -185,3 +185,18 @@ app.post('/qa/questions', (req, res) => {
   })
 });
 
+
+
+// REVIEWS
+
+app.put('/helpful', (req, res) => {
+  let review_id = req.query.review_id;
+  console.log(review_id);
+  axios.put(`${url}/reviews/${review_id}/helpful`, {}, options)
+  .then((result) => {
+    res.sendStatus(result.status)
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+})

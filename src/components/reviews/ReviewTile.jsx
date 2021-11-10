@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import axios from 'axios';
 import Stars from '../Stars.jsx';
 import moment from 'moment';
 import styles from "./reviews.module.css";
+import {useProductContext, updateProductContext} from '../../context/ProductContext.jsx';
 
 const ReviewTile = ({review}) => {
+
+  const {info} = useProductContext();
+  const updateProduct = updateProductContext();
 
   const [helpful, setHelpful] = useState(false)
 
   const helpfulClicked = (e) => {
     setHelpful(true);
+    axios.put(`/helpful?review_id=${review.review_id}`)
+    .then((result) => {
+      updateProduct(info.id);
+    })
   }
 
   return (
