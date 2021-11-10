@@ -10,7 +10,7 @@ app.use(express.static('dist'))
 let url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
 let options = {
   headers: {'Authorization': API_KEY}
-
+}
   
 app.get('/products', (req, res) => {
   let productId = req.query.product_id
