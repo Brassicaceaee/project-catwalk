@@ -20,7 +20,6 @@ const Overview = (props) => {
   const [styleIndex, setStyleIndex] = useState(0);
   var product = useProductContext();
 
-  console.log(styleIndex) //need to remove after testing
   return(
     <StyleIndexContext.Provider value ={{changeStyleIndex : setStyleIndex}}>
       <div className={styles.widget}>

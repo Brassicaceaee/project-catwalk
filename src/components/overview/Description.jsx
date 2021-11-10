@@ -3,17 +3,13 @@ import styles from './overview.module.css'
 
 
 const Description = ({productInfo}) => {
-  console.log(productInfo)
 
   return(
-    <>
-    <div >{productInfo.slogan} </div>
-    <p >{productInfo.description} </p>
-    </>
-
+    <div className={styles.descriptionContainer}>
+      <div className={styles.slogan} >{productInfo.slogan} </div>
+      <div className={styles.descriptionText}>{productInfo.description} </div>
+    </div>
   )
-
-
 };
 
 export default Description;
