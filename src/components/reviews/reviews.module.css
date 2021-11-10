@@ -156,6 +156,15 @@
   background-color: var(--light-gray);
 }
 
+/* Review Tile */
+.helpful {
+  text-decoration: underline;
+}
+
+.helpful:hover {
+  color: gray;
+}
+
 
 /* Review Form */
 .ratingContainer {

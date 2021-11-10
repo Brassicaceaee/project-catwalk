@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Stars from '../Stars.jsx';
 import moment from 'moment';
 import styles from "./reviews.module.css";
 
 const ReviewTile = ({review}) => {
+
+  const [helpful, setHelpful] = useState(false)
+
+  const helpfulClicked = (e) => {
+    setHelpful(true);
+  }
+
   return (
     <div className={styles.largeMarginBottom}>
       <div className={styles.flex}>
@@ -31,7 +38,7 @@ const ReviewTile = ({review}) => {
           <p>{review.response}</p>
         </div>
       }
-      <p>Was this review? <span>Yes</span> ({review.helpfulness}) </p>
+      <p>Was this review helpful? <span className={!helpful ? styles.helpful : undefined} onClick={!helpful ? helpfulClicked : undefined}>Yes</span> ({review.helpfulness}) </p>
       <hr></hr>
     </div>
   );
