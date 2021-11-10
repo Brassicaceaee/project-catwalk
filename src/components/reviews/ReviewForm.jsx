@@ -28,20 +28,11 @@ const ReviewForm = ({close}) => {
   }
 
   const onRatingClick = (e) => {
-    // Get the target
     const target = e.target;
-
-    // Get the bounding rectangle of target
     const rect = target.getBoundingClientRect();
-
-    // Mouse position on the x axis
     const x = e.clientX - rect.left;
-
     const percent = x / (rect.right - rect.left);
-
-    // Round percent to the nearest 20%
     const round = Math.ceil(percent * 100 / 20);
-
     setRating(round);
   }
 
