@@ -14,7 +14,7 @@ const ImageGallery = (props) => {
 
 
   return(
-    <div id='imageGallery' className={styles.galleryContainer}>
+    <div className={styles.galleryContainer}>
 
       <span className={styles.galleryThumbnails}>
 
