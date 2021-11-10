@@ -45,15 +45,29 @@ const AnswerForm = (props) => {
     updateEmail(e.target.value);
   }
 
-  const handleSubmit = () => {
-    alert(`answer: ${answer} nickname: ${nickname} email ${email}`)
+  // Data for post request
+  console.log(uploadArray)
+  let data = {
+    body: answer,
+    name: nickname,
+    email: email,
+    // need to add array of photo urls
   }
 
   const submitAnswer = () => {
     event.preventDefault();
-    if (answer && nickname && email) {
-     console.log('Success');
-    } else {
+    if (answer && nickname && email){
+
+      axios.post(`/qa/questions/${props.question.question_id}/answers`, data)
+
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log('error during post attempt: ', error);
+      });
+      modalButtonClick();
+    }else{
       alert('One or more mandatory fields are empty');
     }
   }

@@ -135,6 +135,7 @@ const calculateAverage = (ratings) => {
 
 // Q & A
 
+// Post a Question
 app.post('/qa/questions', (req, res) => {
   let body = req.body.body;
   let name = req.body.name;
@@ -157,4 +158,29 @@ app.post('/qa/questions', (req, res) => {
     res.sendStatus(500)
   })
 });
+
+// Post an Answer
+
+// app.post('/qa/questions', (req, res) => {
+//   let body = req.body.body;
+//   let name = req.body.name;
+//   let email = req.body.email;
+//   let product_id = req.body.product_id;
+//   let data = {
+//     body: body,
+//     name: name,
+//     email: email,
+//     product_id: parseInt(product_id)
+//   }
+
+//   axios.post(`${url}/qa/questions`,data, options)
+//   .then(results => {
+//     console.log('result post at the server', results)
+//     res.sendStatus(201)
+//   })
+//   .catch(err => {
+//     console.log('err', err)
+//     res.sendStatus(500)
+//   })
+// });
 
