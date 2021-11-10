@@ -8,7 +8,6 @@ const AnswerList = (props) => {
   // Added actual questions using context
   const {answers} = useProductContext();
   let answerData = answers[props.questionid];
-  console.log(answerData);
   answerData.sort((a, b) => {
     return b.helpfulness - a.helpfulness;
   });
