@@ -155,3 +155,11 @@
 .response {
   background-color: var(--light-gray);
 }
+
+
+/* Review Form */
+.ratingContainer {
+  /* temporary background color until we decide on different colors for the empty stars */
+  background-color: black;
+  width: fit-content;
+}
