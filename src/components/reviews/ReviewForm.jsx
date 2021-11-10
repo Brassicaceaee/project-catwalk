@@ -1,17 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import modalStyle from '../questions/questions.module.css';
 import Stars from '../Stars.jsx';
 import styles from './reviews.module.css';
 
 
 const ReviewForm = ({close}) => {
+  const [hoverRating, setHoverRating] = useState(0)
+  const [rating, setRating] = useState(null)
+
+  const onRatingHover = (e) => {
+    const target = e.target;
+    const rect = target.getBoundingClientRect();
+    // This gets where the mouse is pointing in the target element on the x axis
+    const x = e.clientX - rect.left;
+
+    // At what percent we are on the x axis in the target element
+    const percent = x / (rect.right - rect.left);
+
+    // Change the percent to a 1 through 5 rating
+    const round = Math.ceil(percent * 100 / 20);
+
+    setHoverRating(round);
+  }
+
+  const leaveHover = (e) => {
+    setHoverRating(0);
+  }
+
+  const onRatingClick = (e) => {
+    // Get the target
+    const target = e.target;
+
+    // Get the bounding rectangle of target
+    const rect = target.getBoundingClientRect();
+
+    // Mouse position on the x axis
+    const x = e.clientX - rect.left;
+
+    const percent = x / (rect.right - rect.left);
+
+    // Round percent to the nearest 20%
+    const round = Math.ceil(percent * 100 / 20);
+
+    setRating(round);
+  }
+
   return (
     <div className={modalStyle.modal}>
       <div className={modalStyle.content}>
         <form>
           <div>
             <h4>Rating</h4>
-            <Stars rating={0}/>
+            <div onMouseMove={onRatingHover} onClick={onRatingClick} onMouseLeave={leaveHover} className={styles.ratingContainer}>
+              <Stars rating={rating || hoverRating}/>
+            </div>
           </div>
           <div>
             <h4>Would you recommend this product?</h4>
