@@ -76,11 +76,6 @@ const AddToCart = (props) => {
     )
   }
 
-
-  /////Add to cart button
-
-
-
   return (
       <>
       <div className={styles.addToCart}>
@@ -91,7 +86,6 @@ const AddToCart = (props) => {
           {quantitySelector}
         </span>
         <span className={styles.cartButton}>
-
           {skus.length > 0 &&
             <AddToCartButton size={selectedSize} skuID={selectedSKU} quantity={selectedQuantity} />
           }
