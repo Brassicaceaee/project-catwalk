@@ -8,6 +8,10 @@ const AnswerList = (props) => {
   // Added actual questions using context
   const {answers} = useProductContext();
   let answerData = answers[props.questionid];
+  console.log(answerData);
+  answerData.sort((a, b) => {
+    return b.helpfulness - a.helpfulness;
+  });
 
   let answerElements = answerData.map((answer, i) => {
     return <Answer answer={answer} key={i} />
@@ -18,9 +22,6 @@ const AnswerList = (props) => {
 
 
   const [displayed, setDisplayed] = useState(answerElements.slice(0, 2));
-  // useEffect(() => {
-  //   displayedAnswers = answers.slice(0, 2);
-  // })
 
   const [expandCollapseText, changeButtonText] = useState('See More Answers');
 
