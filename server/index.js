@@ -189,10 +189,24 @@ app.post('/qa/questions', (req, res) => {
 
 // REVIEWS
 
-app.put('/helpful', (req, res) => {
+// Mark a review as helpful
+app.put('/rev/helpful', (req, res) => {
   let review_id = req.query.review_id;
   console.log(review_id);
   axios.put(`${url}/reviews/${review_id}/helpful`, {}, options)
+  .then((result) => {
+    res.sendStatus(result.status)
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+})
+
+// Report a review
+app.put('/rev/report', (req, res) => {
+  let review_id = req.query.review_id;
+  console.log(review_id);
+  axios.put(`${url}/reviews/${review_id}/report`, {}, options)
   .then((result) => {
     res.sendStatus(result.status)
   })

@@ -10,11 +10,20 @@ const ReviewTile = ({review}) => {
   const {info} = useProductContext();
   const updateProduct = updateProductContext();
 
-  const [helpful, setHelpful] = useState(false)
+  const [helpful, setHelpful] = useState(false);
+  const [reported, setReported] = useState(false);
 
   const helpfulClicked = (e) => {
     setHelpful(true);
-    axios.put(`/helpful?review_id=${review.review_id}`)
+    axios.put(`/rev/helpful?review_id=${review.review_id}`)
+    .then((result) => {
+      updateProduct(info.id);
+    })
+  }
+
+  const reportedClicked = (e) => {
+    setReported(true);
+    axios.put(`/rev/report?review_id=${review.review_id}`)
     .then((result) => {
       updateProduct(info.id);
     })
@@ -47,7 +56,11 @@ const ReviewTile = ({review}) => {
           <p>{review.response}</p>
         </div>
       }
-      <p>Was this review helpful? <span className={!helpful ? styles.helpful : undefined} onClick={!helpful ? helpfulClicked : undefined}>Yes</span> ({review.helpfulness}) </p>
+      <p>Was this review helpful?
+        <span className={`${!helpful ? styles.active : undefined} ${styles.smallMarginLeft}`} onClick={!helpful ? helpfulClicked : undefined}>Yes </span>
+        ({review.helpfulness})
+        <span className={`${!reported ? styles.active : undefined} ${styles.smallMarginLeft}`} onClick={!reported ? reportedClicked : undefined}>Report</span>
+      </p>
       <hr></hr>
     </div>
   );

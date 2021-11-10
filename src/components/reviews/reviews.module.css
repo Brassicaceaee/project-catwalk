@@ -79,6 +79,10 @@
   margin-right: 10px;
 }
 
+.smallMarginLeft {
+  margin-left: 10px;
+}
+
 .medMarginRight {
   margin-right: 20px;
 }
@@ -157,11 +161,11 @@
 }
 
 /* Review Tile */
-.helpful {
+.active {
   text-decoration: underline;
 }
 
-.helpful:hover {
+.active:hover {
   color: gray;
 }
 
