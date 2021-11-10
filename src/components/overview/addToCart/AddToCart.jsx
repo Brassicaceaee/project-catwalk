@@ -92,7 +92,7 @@ const AddToCart = (props) => {
         </span>
         <span className={styles.cartButton}>
 
-          {sku.length > 0 &&
+          {skus.length > 0 &&
             <AddToCartButton size={selectedSize} skuID={selectedSKU} quantity={selectedQuantity} />
           }
         </span>
