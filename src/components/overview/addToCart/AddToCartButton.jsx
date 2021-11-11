@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios'
-
+import styles from '../overview.module.css'
 const AddToCartButton =  ({size, skuID, quantity}) => {
 
 
@@ -15,7 +15,7 @@ const AddToCartButton =  ({size, skuID, quantity}) => {
   }
 
   return(
-    <button onClick={handleAddButtonClick}>AddToCart</button>
+    <button onClick={handleAddButtonClick}  className={styles.cartButton}>AddToCart</button>
   )
 
 };

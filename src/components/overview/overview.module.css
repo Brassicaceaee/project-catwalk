@@ -167,18 +167,28 @@
 }
 
 .cartButton {
-  border: 2px solid darkblue;
+  border: 3px solid darkgray;
+  background-color: white;
   margin: 10px;
   height: 60px;
   width: 300px;
+  font-size: larger;
+  font-weight: bold;
+  text-align: left;
+}
 
+.cartButton:hover{
+  background-color: lightgray;
+}
+.cartButton:active{
+  color: white;
 }
 
 .cartStar {
   border: 3px solid darkgray;
   margin: 10px;
-  height: 60px;
-  width: 60px;
+  height: 55px;
+  width:  55px;
 
 
 }
