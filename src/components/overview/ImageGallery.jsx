@@ -20,16 +20,16 @@ const ImageGallery = (props) => {
 
           {photos.map((photo, index) => {
             if (mainPhoto === index) {
-              var thumbnailStyle = styles.galleryThumbnailPhotoSelected;
+              var thumbnailContainerStyle = styles.galleryThumbnailPhotoContainerSelected;
             } else {
-              var thumbnailStyle = styles.galleryThumbnailPhoto;
+              var thumbnailContainerStyle = styles.galleryThumbnailPhotoContainer;
             }
 
             return (
-              <span className={styles.galleryThumbnailPhotoContainer} key={index}>
+              <span className={thumbnailContainerStyle} key={index}>
 
 
-                <img className={thumbnailStyle}
+                <img className={styles.galleryThumbnailPhoto}
                 src={photo.thumbnail_url}
                 onClick={(e) => handleThumbnailClick(e, index)}/>
               </span>
