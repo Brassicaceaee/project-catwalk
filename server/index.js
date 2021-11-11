@@ -162,6 +162,7 @@ const calculateAverage = (ratings) => {
 
 // Q & A
 
+// Post a Question
 app.post('/qa/questions', (req, res) => {
   let body = req.body.body;
   let name = req.body.name;
@@ -185,6 +186,32 @@ app.post('/qa/questions', (req, res) => {
   })
 });
 
+
+// Post an Answer
+
+app.post('/qa/questions/:question_id/answers', (req, res) => {
+  let body = req.body.body;
+  let name = req.body.name;
+  let email = req.body.email;
+  let photos = req.body.photos;
+  let question_id = req.body.question_id;
+  let data = {
+    body: body,
+    name: name,
+    email: email,
+    photos: photos
+  }
+
+  axios.post(`${url}/qa/questions/${question_id}/answers`,data, options)
+  .then(results => {
+    console.log('result post at the server', results)
+    res.sendStatus(201)
+  })
+  .catch(err => {
+    console.log('err', err)
+    res.sendStatus(500)
+  })
+});
 
 
 // REVIEWS
@@ -214,3 +241,4 @@ app.put('/rev/report', (req, res) => {
     console.log(err);
   })
 })
+
