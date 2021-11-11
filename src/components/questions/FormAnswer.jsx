@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState} from 'react';
 import styles from './questions.module.css';
 import {useProductContext} from '../../context/ProductContext.jsx';
 import axios from 'axios';
@@ -14,30 +14,20 @@ const AnswerForm = (props) => {
 
   // This section keeps track of the uploaded file images in an array. I use this state to prevent more than 5 files from being uploaded.
   const [uploadArray, setUploadArray] = useState([]);
-  // let imageInput = document.getElementById('image-uploads');
-
-  // useEffect(() => {
-  // }, [uploadArray])
 
   const handleUpload = (e) => {
-    // console.log(e.target.files[0])
     setUploadArray(uploadArray => [...uploadArray, e.target.files[0]]);
-    // console.log('url:', URL.createObjectURL(uploadArray[0]))
     uploadFile(e);
-    // updateArray(uploadArray => [...uploadArray, e.target.files[0]])
   }
 
-  // let imageURLs = (uploadArray.map(imageFile)) => {
-  //   return URL.createObjectURL(imageFile);
-  // }
+
   // These next functions allow me to track the latest file uploaded and store it in the 'file' variable. I use this to turn the file into an image at the bottom of the form where you see an image tag.
   const [file, setFile] = useState()
 
+  // this variable will hold the array of image urls in state (used in post req)
   const [imageURLS, addImageURL] = useState([]);
 
   const uploadFile = (e) => {
-    // console.log(file)
-    // console.log(e.target.files[0].name)
     setFile(e.target.files[0])
     addImageURL(imageURLS => [...imageURLS, e.target.files[0].name])
   }
@@ -56,11 +46,7 @@ const AnswerForm = (props) => {
   }
 
   // Data for post request
-  // console.log(uploadArray)
-  // console.log(imageURLS)
-  // let urls = () => (uploadArray.map(file)) => {
-  //   return file.name;
-  // }
+
   let data = {
     body: answer,
     name: nickname,
@@ -69,13 +55,12 @@ const AnswerForm = (props) => {
     question_id: props.question.question_id
   }
 
-  const submitAnswer = () => {
-    console.log('data', data)
+  const submitAnswerForm = () => {
     event.preventDefault();
+
     if (answer && nickname && email){
 
       axios.post(`/qa/questions/${props.question.question_id}/answers`, data)
-
       .then((response) => {
         console.log(response);
       })
@@ -94,7 +79,7 @@ const AnswerForm = (props) => {
         <div className={styles.content}>
           <h3> Submit Your Answer </h3>
           <span>{`${productName}: ${questionBody}`} </span>
-          <form className={styles.questionForm} onSubmit={submitAnswer}>
+          <form className={styles.questionForm} onSubmit={submitAnswerForm}>
             <label> Your Answer *</label>
             <input type='text' name='question' maxlength='1000' onChange={handleAnswerChange}></input>
             <label> What is your nickname *</label>
@@ -107,9 +92,6 @@ const AnswerForm = (props) => {
             {uploadArray.length < 5 && <label> Upload your photos </label>}
             {uploadArray.length < 5 && <input type='file' id='file' name='file' accept="image/*" onChange={handleUpload}></input>}
             {file && <img src={URL.createObjectURL(file)} width='100'/>}
-            {/* <label> Upload your photos </label>
-            <input type='file' id='image-uploads' accept="image/*" ref={ref} multiple onChange={ uploadFile }></input>
-            {file && <img src={URL.createObjectURL(file)}/>} */}
             <div className={styles.actions}>
               <button onClick={props.modalButtonClick}> Close </button>
               <input type='submit' value='Submit' />
