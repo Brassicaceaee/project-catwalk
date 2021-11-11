@@ -79,6 +79,10 @@
   margin-right: 10px;
 }
 
+.smallMarginLeft {
+  margin-left: 10px;
+}
+
 .medMarginRight {
   margin-right: 20px;
 }
@@ -154,4 +158,21 @@
 
 .response {
   background-color: var(--light-gray);
+}
+
+/* Review Tile */
+.active {
+  text-decoration: underline;
+}
+
+.active:hover {
+  color: gray;
+}
+
+
+/* Review Form */
+.ratingContainer {
+  /* temporary background color until we decide on different colors for the empty stars */
+  background-color: black;
+  width: fit-content;
 }

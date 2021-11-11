@@ -2,14 +2,29 @@ import React from 'react';
 import styles from './overview.module.css'
 import StyleSelector from './StyleSelector.jsx'
 import AddToCart from './addToCart/AddToCart.jsx'
+import Stars from '../Stars.jsx'
 
 const ProductInfo = (props) => {
 
+  let price;
+  let originalPrice = props.styles[props.styleIndex].original_price;
+  let salePrice = props.styles[props.styleIndex].sale_price;
+  let saleStyle = {'text-decoration':'line-through'}
+
+  if(salePrice) {
+    price = <span style={saleStyle}> {originalPrice}</span>
+  } else {
+    price = <span>{originalPrice}</span>
+  }
+
+
   return(
+
     <div className={styles.infoComponent}>
 
       <div className={styles.starReview}>
-        <p>starReview</p>
+        <Stars rating={props.product.meta.average}/>
+        <a href='#reviewsWidget'>Read all reviews</a>
       </div>
 
       <div className={styles.category}>
@@ -21,7 +36,10 @@ const ProductInfo = (props) => {
       </div>
 
       <div className={styles.price}>
-        <p>PRICE</p>
+
+        <span>{price}</span>
+        {salePrice &&  <span style={{'color' : 'red'}}>{salePrice}</span>}
+
       </div>
 
       <div className={styles.styles}>

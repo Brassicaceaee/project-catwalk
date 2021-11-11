@@ -112,6 +112,33 @@ app.delete('/outfit', (req, res) => {
 });
 
 
+// Items stored in users cart
+var cartItems = {};
+
+// add item sku and quantity to list
+app.post('/cart/:skuID', (req, res) => {
+
+  let quantity = parseInt(req.body.quantity);
+  let skuID = req.params.skuID;
+
+  cartItems[skuID] = quantity
+
+  res.sendStatus(201)
+})
+
+//Retrieve list of items user has in cart (sku and quantity)
+app.get('/cart', (req, res) => {
+  let itemList = []
+  let cartItemEntries = Object.entries(cartItems);
+  for(let i=0; i < cartItemEntries.length; i++) {
+
+    itemList.push({"sku_id": cartItemEntries[i][0],
+                  "count": cartItemEntries[i][1]})
+  }
+  res.status(200).send(itemList);
+})
+
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
@@ -159,6 +186,7 @@ app.post('/qa/questions', (req, res) => {
   })
 });
 
+
 // Post an Answer
 
 app.post('/qa/questions/:question_id/answers', (req, res) => {
@@ -184,4 +212,33 @@ app.post('/qa/questions/:question_id/answers', (req, res) => {
     res.sendStatus(500)
   })
 });
+
+
+// REVIEWS
+
+// Mark a review as helpful
+app.put('/rev/helpful', (req, res) => {
+  let review_id = req.query.review_id;
+  console.log(review_id);
+  axios.put(`${url}/reviews/${review_id}/helpful`, {}, options)
+  .then((result) => {
+    res.sendStatus(result.status)
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+})
+
+// Report a review
+app.put('/rev/report', (req, res) => {
+  let review_id = req.query.review_id;
+  console.log(review_id);
+  axios.put(`${url}/reviews/${review_id}/report`, {}, options)
+  .then((result) => {
+    res.sendStatus(result.status)
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+})
 

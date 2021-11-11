@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from '../overview.module.css';
 import json from '../styleSample.json';
-
+import AddToCartButton from './AddToCartButton.jsx';
 
 const AddToCart = (props) => {
 
@@ -76,7 +76,6 @@ const AddToCart = (props) => {
     )
   }
 
-
   return (
       <>
       <div className={styles.addToCart}>
@@ -86,7 +85,12 @@ const AddToCart = (props) => {
         <span className={styles.quantity}>
           {quantitySelector}
         </span>
-        <span className={styles.cartButton}>add To Cart</span>
+        <span className={styles.cartButton}>
+          {skus.length > 0 &&
+            <AddToCartButton size={selectedSize} skuID={selectedSKU} quantity={selectedQuantity} />
+          }
+        </span>
+
         <span className={styles.cartStar}>star</span>
       </div>
       </>
