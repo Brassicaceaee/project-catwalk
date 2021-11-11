@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styles from './questions.module.css';
 import {useProductContext} from '../../context/ProductContext.jsx';
+import axios from 'axios';
 
 const AnswerForm = (props) => {
 
@@ -55,8 +56,8 @@ const AnswerForm = (props) => {
   }
 
   // Data for post request
-  console.log(uploadArray)
-  console.log(imageURLS)
+  // console.log(uploadArray)
+  // console.log(imageURLS)
   // let urls = () => (uploadArray.map(file)) => {
   //   return file.name;
   // }
@@ -64,10 +65,12 @@ const AnswerForm = (props) => {
     body: answer,
     name: nickname,
     email: email,
-    // need to add array of photo urls
+    photos: imageURLS,
+    question_id: props.question.question_id
   }
 
   const submitAnswer = () => {
+    console.log('data', data)
     event.preventDefault();
     if (answer && nickname && email){
 
@@ -82,7 +85,6 @@ const AnswerForm = (props) => {
       modalButtonClick();
     }else{
       alert('One or more mandatory fields are empty');
-      console.log('image url array:', imageURLS)
     }
   }
 
