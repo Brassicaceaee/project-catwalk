@@ -145,19 +145,24 @@
 }
 
 .size {
- border: 2px solid darkblue;
+ border: 3px solid darkgray;
  height: 60px;
  width: 250px;
  margin: 10px;
+ font-size: larger;
+ font-weight: bold;
+
  /* flex-basis: 100px; */
 
 }
 
 .quantity {
-  border: 2px solid darkblue;
+  border: 3px solid darkgray;
   height: 60px;
   width: 150px;
   margin: 10px;
+  font-size: larger;
+  font-weight: bold;
   /* flex-basis: 100px; */
 }
 
@@ -170,7 +175,7 @@
 }
 
 .cartStar {
-  border: 2px solid darkblue;
+  border: 3px solid darkgray;
   margin: 10px;
   height: 60px;
   width: 60px;
@@ -200,7 +205,6 @@
   border: 1px solid purple;
   display: flex;
   flex-direction: column;
-  /* justify-content:right; */
   align-items: flex-end;
 }
 
@@ -209,12 +213,9 @@
   height: 90px;
   width: 80px;
   margin: 0px 1px 5px 0px;
-  /* border: 2px solid black; */
-
   justify-content:right;
   overflow: hidden;
-  /* align-items: center; */
-  /* vertical-align: middle; */
+
 }
 
 .galleryThumbnailPhotoContainerSelected{
@@ -259,8 +260,6 @@
 }
 
 .mainPhoto{
-  /* height: 100%;
-  width: auto; */
   max-width: 100%;
   max-height: 120%;
   object-fit: cover;
