@@ -6,25 +6,27 @@ import imgNotAvailable from '../../../asset/img/image-not-available.png';
 
 const ProductCard = ({relatedProduct, update}) =>{
   const { info } = useProductContext();
-
   const[isOpen, setIsOpen] = useState(false);
+
+  const isSale = relatedProduct.styles[0].sale_price
+  const originalPrice = relatedProduct.info.default_price
+  const relatedImg = relatedProduct.styles[0].photos[0].thumbnail_url
+  const relatedCategory = relatedProduct.info.category
+  const relatedName = relatedProduct.info.name
 
   const togglePop = () => {
     setIsOpen(!isOpen)
   };
 
   const changeCurrentProduct = () =>{
-    update(relatedProduct.info.id)
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    // update(relatedProduct.info.id)
+    setTimeout(() =>  window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+     }), 600);
   }
 
-  const isSale = relatedProduct.styles[0].sale_price
-  const originalPrice = relatedProduct.info.default_price
-  const relatedImg = relatedProduct.styles[0].photos[0].thumbnail_url
 
   return (
     <div className='related-card'>
@@ -38,8 +40,8 @@ const ProductCard = ({relatedProduct, update}) =>{
         onClick={changeCurrentProduct}
       />
       <div className='product-info'>
-        <div className='category'>{relatedProduct.info.category}</div>
-        <div>{relatedProduct.info.name}</div>
+        <div className='category'>{relatedCategory}</div>
+        <div>{relatedName}</div>
         {isSale
         ? <div>
             ${isSale}

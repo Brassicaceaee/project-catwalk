@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './related.css';
 import ProductCard from './ProductCard.jsx';
 import { useProductContext, updateProductContext } from '../../context/ProductContext.jsx';
-import leftArrow from '../../../asset/img/left-arrow.png';
+// import leftArrow from '../../../asset/img/left-arrow.png';
 import rightArrow from '../../../asset/img/right-arrow.png';
 
 
@@ -16,7 +16,7 @@ const ProductCardList = () =>{
 
 
   const handleLoad = () => {
-    var element = ref.current;
+    let element = ref.current;
     if (element.clientWidth) {
       element.addEventListener('scroll', () => {
         setShowLeftArrow(element.scrollLeft > 0);
@@ -27,18 +27,22 @@ const ProductCardList = () =>{
 
   const handleSlide = (width) => {
     ref.current.scrollLeft += width;
-    // console.log(ref.current.scrollLeft)
   }
 
   return (
     <div className='related-list'>
-      <img
+      <button
+        className='left-arrow'
+        className={showLeftArrow? 'visible':'non-visible'}
+        onClick={() => handleSlide(-400)}
+      ></button>
+      {/* <img
         className='arrow'
-        className={showLeftArrow? 'active':'non-active'}
+        className={showLeftArrow? 'visible':'non-visible'}
         src={leftArrow}
         style={style}
         onClick={() => handleSlide(-400)}
-      />
+      /> */}
       <div className='carousel' ref={ref} onLoad={handleLoad}>
         {Object.values(related).map((result, index) => {
           return(
@@ -49,13 +53,17 @@ const ProductCardList = () =>{
           />
         )})}
       </div>
-      <img
+      <button
+        className='right-arrow'
+        className={showRightArrow? 'visible':'non-visible'}
+        onClick={() => handleSlide(400)}
+      >
+      </button>
+      {/* <img
         className='arrow'
         className={showRightArrow? 'active':'non-active'}
-        src={rightArrow}
-        style={style}
         onClick={() => handleSlide(400)}
-      />
+      /> */}
     </div>
   );
 }

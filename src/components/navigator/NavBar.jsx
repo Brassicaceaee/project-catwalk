@@ -11,7 +11,7 @@ const NavBar = () => {
         <div className='navbar-right'>
           <a href='#related' style={{ textDecoration: 'none', color: 'red'}} >Related</a>
           <a href='#search' style={{ textDecoration: 'none', color: 'red'}}>Q & A</a>
-          <a href='#review' style={{ textDecoration: 'none', color: 'red'}}>Review</a>
+          <a href='#reviewsWidget' style={{ textDecoration: 'none', color: 'red'}}>Review</a>
         </div>
       </div>
   )

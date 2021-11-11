@@ -39,9 +39,9 @@ const ComparisonModal = ({left, right, togglePop}) => {
       <div>{Object.keys(featureHolder).map((features, index) => {
         return (
         <div key={index} className='content comparison'>
-          <span className='left-comparison'>{overviewFeatures[features]? overviewFeatures[features] : 'x'}</span>
+          <span className='left-comparison'>{overviewFeatures[features]? overviewFeatures[features] : ''}</span>
           <span className='middle-comparison'>{features}</span>
-          <span className='right-comparison'>{relatedFeatures[features]?  relatedFeatures[features] : 'x'}</span>
+          <span className='right-comparison'>{relatedFeatures[features]?  relatedFeatures[features] : ''}</span>
         </div>
         )})}
       </div>

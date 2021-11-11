@@ -13,9 +13,6 @@ const App = () => {
 
   return (
       <ProductProvider>
-        <h1>
-        Brassicaceae
-        </h1>
         <NavBar />
         <Overview />
         <Related />

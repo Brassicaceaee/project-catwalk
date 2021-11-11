@@ -27,6 +27,7 @@
   cursor: pointer;
 }
 
+
 /*
 ========================
         Image
@@ -48,12 +49,34 @@
   align-self: center;
 }
 
-.active{
+.right-arrow{
+  border: solid black;
+  border-width: 0 10px 10px 0;
+  /* display: inline-block; */
+  padding: 10px;
+  background-color: rgb(0, 0, 0, 0);
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left-arrow{
+  border: solid black;
+  border-width: 0 10px 10px 0;
+  /* display: inline-block; */
+  padding: 10px;
+  background-color: rgb(0, 0, 0, 0);
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+
+
+.visible{
   visibility: visible;
   align-self: center;
 }
 
-.non-active{
+.non-visible{
   visibility: hidden;
 }
 
@@ -86,6 +109,7 @@
 
 .button{
   text-align: right;
+
 }
 
 .product-info{
