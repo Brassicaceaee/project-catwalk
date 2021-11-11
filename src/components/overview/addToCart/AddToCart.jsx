@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styles from '../overview.module.css';
 import json from '../styleSample.json';
 import AddToCartButton from './AddToCartButton.jsx';
+import { AiOutlineStar } from "react-icons/ai";
 
 const AddToCart = (props) => {
 
@@ -91,7 +92,9 @@ const AddToCart = (props) => {
           }
         </span>
 
-        <span className={styles.cartStar}>star</span>
+        <span className={styles.cartStar}>
+          <AiOutlineStar size={53} color={'grey'}/>
+          </span>
       </div>
       </>
   );
