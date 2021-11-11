@@ -67,7 +67,8 @@ const AnswerForm = (props) => {
       .catch((error) => {
         console.log('error during post attempt: ', error);
       });
-      modalButtonClick();
+      // this function closes the modal window
+      props.modalButtonClick();
     }else{
       alert('One or more mandatory fields are empty');
     }
