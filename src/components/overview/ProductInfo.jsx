@@ -2,14 +2,17 @@ import React from 'react';
 import styles from './overview.module.css'
 import StyleSelector from './StyleSelector.jsx'
 import AddToCart from './addToCart/AddToCart.jsx'
+import Stars from '../Stars.jsx'
 
 const ProductInfo = (props) => {
+
 
   return(
     <div className={styles.infoComponent}>
 
       <div className={styles.starReview}>
-        <p>starReview</p>
+        <Stars rating={props.product.meta.average}/>
+        <a href='#reviewsWidget'>Read all reviews</a>
       </div>
 
       <div className={styles.category}>
