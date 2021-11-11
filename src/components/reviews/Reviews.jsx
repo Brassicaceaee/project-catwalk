@@ -6,7 +6,7 @@ import styles from './reviews.module.css';
 
 const Reviews = () => {
   return (
-    <div className={`${styles.widget} ${styles.maxSize} reviews`}>
+    <div className={`${styles.widget} ${styles.maxSize} reviews`} id={'reviewsWidget'}>
       <RatingBreakdown/>
       <ReviewsList/>
       <ProductBreakdown/>
