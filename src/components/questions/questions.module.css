@@ -60,6 +60,7 @@
 }
 
 .questionList {
+  max-height: 95vh;
   overflow: auto;
 }
 
