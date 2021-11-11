@@ -34,7 +34,7 @@ const StyleSelector = (props) => {
                   src={option.photos[0].thumbnail_url}
                   onClick={(e)=>{handleClick(e, option); changeStyleIndex(index)}}
                 />
-                {option === selectedStyle && <FaCheck id={styles.check} color="#00acee"/>}
+                {option === selectedStyle && <FaCheck id={styles.check} color='lightgray' size={20}/>}
               </span>
             )}
         </div>
