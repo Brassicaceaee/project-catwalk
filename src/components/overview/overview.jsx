@@ -17,13 +17,12 @@ export const StyleIndexContext = React.createContext({
 
 const Overview = (props) => {
 
-    const [styleIndex, setStyleIndex] = useState(0);
-    var product = useProductContext();
+  const [styleIndex, setStyleIndex] = useState(0);
+  var product = useProductContext();
 
-    console.log(styleIndex)
-    return(
-      <StyleIndexContext.Provider value ={{changeStyleIndex : setStyleIndex}}>
-        <div className={styles.widget}>
+  return(
+    <StyleIndexContext.Provider value ={{changeStyleIndex : setStyleIndex}}>
+      <div className={styles.widget}>
 
         <div className={styles.imageGallery}>
         <ImageGallery styles={product.styles.results} styleIndex={styleIndex}/>
@@ -35,11 +34,11 @@ const Overview = (props) => {
         </div>
 
         <div className={styles.description}>
-          <Description product={product}/>
+          <Description productInfo={product.info}/>
         </div>
 
         <div className={styles.features}>
-          <Features product={product}/>
+          <Features productInfo={product.info}/>
         </div>
       </div>
     </StyleIndexContext.Provider>
