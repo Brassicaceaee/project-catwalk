@@ -21,14 +21,22 @@ const AnswerForm = (props) => {
   const handleUpload = (e) => {
     console.log(e.target.files[0])
     setUploadArray(uploadArray => [...uploadArray, e.target.files[0]]);
+    // console.log('url:', URL.createObjectURL(uploadArray[0]))
     uploadFile(e);
     // updateArray(uploadArray => [...uploadArray, e.target.files[0]])
   }
+
+  // let imageURLs = (uploadArray.map(imageFile)) => {
+  //   return URL.createObjectURL(imageFile);
+  // }
   // These next functions allow me to track the latest file uploaded and store it in the 'file' variable. I use this to turn the file into an image at the bottom of the form where you see an image tag.
   const [file, setFile] = useState()
 
+  const [imageURLS, addImageURL] = useState([]);
+
   const uploadFile = (e) => {
     console.log(file)
+    console.log(e.target.files[0].name)
     setFile(e.target.files[0])
   }
   // Create state for input fields -- will use this for validation later
