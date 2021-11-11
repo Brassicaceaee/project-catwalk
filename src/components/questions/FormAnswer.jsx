@@ -19,7 +19,7 @@ const AnswerForm = (props) => {
   // }, [uploadArray])
 
   const handleUpload = (e) => {
-    console.log(e.target.files[0])
+    // console.log(e.target.files[0])
     setUploadArray(uploadArray => [...uploadArray, e.target.files[0]]);
     // console.log('url:', URL.createObjectURL(uploadArray[0]))
     uploadFile(e);
@@ -35,9 +35,10 @@ const AnswerForm = (props) => {
   const [imageURLS, addImageURL] = useState([]);
 
   const uploadFile = (e) => {
-    console.log(file)
-    console.log(e.target.files[0].name)
+    // console.log(file)
+    // console.log(e.target.files[0].name)
     setFile(e.target.files[0])
+    addImageURL(imageURLS => [...imageURLS, e.target.files[0].name])
   }
   // Create state for input fields -- will use this for validation later
   const [answer, updateAnswer] = useState('');
@@ -55,6 +56,10 @@ const AnswerForm = (props) => {
 
   // Data for post request
   console.log(uploadArray)
+  console.log(imageURLS)
+  // let urls = () => (uploadArray.map(file)) => {
+  //   return file.name;
+  // }
   let data = {
     body: answer,
     name: nickname,
@@ -77,6 +82,7 @@ const AnswerForm = (props) => {
       modalButtonClick();
     }else{
       alert('One or more mandatory fields are empty');
+      console.log('image url array:', imageURLS)
     }
   }
 
