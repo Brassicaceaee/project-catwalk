@@ -49,6 +49,7 @@
 
 .non-visible{
   visibility: hidden;
+  align-self: center;
 }
 
 .add{
