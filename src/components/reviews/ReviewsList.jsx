@@ -64,8 +64,8 @@ const ReviewsList = () => {
         })}
       </div>
       <div>
-        <button>MORE REVIEWS</button>
-        <button onClick={startReview}>ADD A REVIEW +</button>
+        <div className>MORE REVIEWS</div>
+        <div onClick={startReview} className={styles.button}>ADD A REVIEW +</div>
       </div>
       {modalIsActive && <ReviewForm close={cancelReview}/>}
     </div>

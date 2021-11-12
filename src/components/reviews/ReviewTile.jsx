@@ -9,7 +9,6 @@ const ReviewTile = ({review}) => {
 
   const {info} = useProductContext();
   const updateProduct = updateProductContext();
-
   const [helpful, setHelpful] = useState(false);
   const [reported, setReported] = useState(false);
 

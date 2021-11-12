@@ -2,33 +2,28 @@
   height: var(--widget-height);
   background-color: white;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 3fr minmax(200px, 2fr);
   grid-template-rows: 3fr 1fr;
 }
 
 
 
 .imageGallery {
- /* background-color: rgb(120, 194, 83); */
- background-color: white;
  grid-column: 1;
  grid-row:1
 }
 
 .productInfo {
-  /* background-color: rgb(126, 89, 89); */
   grid-column: 2;
   grid-row: 1;
 }
 
 .description {
-  /* background-color: rgb(139, 139, 226); */
   grid-column: 1;
   grid-row: 2;
 }
 
 .features {
-  /* background-color: rgb(37, 37, 113); */
   grid-column: 2;
   grid-row: 2;
 }
@@ -92,18 +87,20 @@
 }
 
 .styleSelection{
-  margin-top: 20px;
-  display: flexbox;
-  flex-wrap: wrap;
+  margin-top: 8px;
+  /* display: flexbox;
+  flex-wrap: wrap; */
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
   height: 95%;
-  width:  330px;
+  /* width:  350px; */
   /* border: 1px solid darkblue; */
-  justify-content: space-between;
+  justify-items: auto;
 }
 
 .styleItem {
-  flex: 1;
-  height: 100px;
+  /* flex: 1; */
+  /* height: 100px; */
   width: 10px;
   margin: 2.5px;
 
@@ -130,11 +127,20 @@
 
 #check  {
   position: absolute;
-  bottom: 0px;
+  bottom: 60px;
   left: 0px;
-  border: 2px solid lightgray;
-  border-radius: 25%;
+  border: 2px solid #47682C;
+  outline: 1px solid white;
+  border-radius: 50%;
+  background-color: #47682C;
 }
+
+.outline {
+  border: 2px solid white;
+  outline: 2px solid #47682C;
+  border-radius: 50%;
+}
+
 
 
 /*============= ProductInfo_Add To Cart  ====================*/
