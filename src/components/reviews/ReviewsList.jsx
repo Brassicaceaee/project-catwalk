@@ -63,9 +63,9 @@ const ReviewsList = () => {
           return <ReviewTile key={review.review_id} review={review}/>
         })}
       </div>
-      <div>
-        <div className>MORE REVIEWS</div>
-        <div onClick={startReview} className={styles.button}>ADD A REVIEW +</div>
+      <div className={styles.flex}>
+        <button className='button'>MORE REVIEWS</button>
+        <button onClick={startReview} className='button'>ADD A REVIEW +</button>
       </div>
       {modalIsActive && <ReviewForm close={cancelReview}/>}
     </div>

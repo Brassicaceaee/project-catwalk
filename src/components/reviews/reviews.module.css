@@ -7,6 +7,7 @@
   grid-template-columns: auto 2fr;
   grid-template-rows: auto 1fr;
   height: 95vh;
+  padding-top: 20px;
 }
 
 .reviewsComponent {
@@ -137,6 +138,11 @@
   font-size: 42px;
 }
 
+.subFont {
+  font-size: smaller;
+  color: gray;
+}
+
 
 
 
@@ -160,6 +166,18 @@
   background-color: var(--light-gray);
 }
 
+.button {
+  padding: 10px 10px;
+  margin: 10px 10px;
+  background-color: #47682C;
+  color: white;
+  border-radius: 5%;
+}
+
+.button:hover {
+  background-color: #568035;
+}
+
 /* Review Tile */
 .active {
   text-decoration: underline;
@@ -167,6 +185,7 @@
 
 .active:hover {
   color: #ADB6C4;
+  cursor: pointer;
 }
 
 
