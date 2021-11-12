@@ -29,21 +29,9 @@ const QuestionList = (props) => {
     }
   }
 
-  // This stores the height of the client screen
-  const screenHeight = window.innerHeight;
-
-  // this is the hook for tracking the height of the questions list element
-  const [height, setHeight] = useState(0);
-  const ref = useRef(null);
-
-  // This updates the height according to the ref in the <ul> element
-  useEffect(() => {
-    setHeight(ref.current.clientHeight);
-  });
-
   return(
     <div>
-      <ul className={styles.questionList} ref={ref} style={{maxHeight: screenHeight - 100}}>
+      <ul className={styles.questionList}>
         {displayedQuestions}
       </ul>
       <div className={styles.questionListButtons}>

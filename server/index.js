@@ -24,7 +24,7 @@ app.get('/products', (req, res) => {
     axios.get(`${url}/products/${productId}/related`, options),
     axios.get(`${url}/reviews?product_id=${productId}`, options),
     axios.get(`${url}/reviews/meta?product_id=${productId}`, options),
-    axios.get(`${url}/qa/questions?product_id=${productId}`, options),
+    axios.get(`${url}/qa/questions?product_id=${productId}&count=50`, options),
     axios.get(`${url}/cart`, options)
   ])
   .then((result) => {
