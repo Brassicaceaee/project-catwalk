@@ -38,7 +38,11 @@ const ProductInfo = (props) => {
       <div className={styles.price}>
 
         <span>{price}</span>
-        {salePrice &&  <span style={{'color' : 'red'}}>{salePrice}</span>}
+        {salePrice &&
+        <span style={{'color' : 'red',
+                      'font-style': 'italic',
+                      'font-weight' : 'bolder'}}>
+          {salePrice}</span>}
 
       </div>
 
