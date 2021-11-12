@@ -162,6 +162,7 @@ const calculateAverage = (ratings) => {
 
 // Q & A
 
+// Post a Question
 app.post('/qa/questions', (req, res) => {
   let body = req.body.body;
   let name = req.body.name;
@@ -184,4 +185,60 @@ app.post('/qa/questions', (req, res) => {
     res.sendStatus(500)
   })
 });
+
+
+// Post an Answer
+
+app.post('/qa/questions/:question_id/answers', (req, res) => {
+  let body = req.body.body;
+  let name = req.body.name;
+  let email = req.body.email;
+  let photos = req.body.photos;
+  let question_id = req.body.question_id;
+  let data = {
+    body: body,
+    name: name,
+    email: email,
+    photos: photos
+  }
+
+  axios.post(`${url}/qa/questions/${question_id}/answers`,data, options)
+  .then(results => {
+    console.log('result post at the server', results)
+    res.sendStatus(201)
+  })
+  .catch(err => {
+    console.log('err', err)
+    res.sendStatus(500)
+  })
+});
+
+
+// REVIEWS
+
+// Mark a review as helpful
+app.put('/rev/helpful', (req, res) => {
+  let review_id = req.query.review_id;
+  console.log(review_id);
+  axios.put(`${url}/reviews/${review_id}/helpful`, {}, options)
+  .then((result) => {
+    res.sendStatus(result.status)
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+})
+
+// Report a review
+app.put('/rev/report', (req, res) => {
+  let review_id = req.query.review_id;
+  console.log(review_id);
+  axios.put(`${url}/reviews/${review_id}/report`, {}, options)
+  .then((result) => {
+    res.sendStatus(result.status)
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+})
 

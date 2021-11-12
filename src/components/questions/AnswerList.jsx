@@ -9,6 +9,9 @@ const AnswerList = (props) => {
   const {answers} = useProductContext();
 
   let answerData = answers[props.questionid];
+  answerData.sort((a, b) => {
+    return b.helpfulness - a.helpfulness;
+  });
 
 
   let answerElements = answerData.map((answer, i) => {
@@ -21,9 +24,6 @@ const AnswerList = (props) => {
 
 
   const [displayed, setDisplayed] = useState(answerElements.slice(0, 2));
-  // useEffect(() => {
-  //   displayedAnswers = answers.slice(0, 2);
-  // })
 
   const [expandCollapseText, changeButtonText] = useState('See More Answers');
 
