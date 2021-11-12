@@ -19,7 +19,7 @@ const ProductCard = ({relatedProduct, update}) =>{
   };
 
   const changeCurrentProduct = () =>{
-    // update(relatedProduct.info.id)
+    update(relatedProduct.info.id)
     setTimeout(() =>  window.scrollTo({
         top: 0,
         left: 0,
