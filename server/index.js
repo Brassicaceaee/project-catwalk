@@ -10,7 +10,7 @@ app.use(express.static('dist'))
 let url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
 let options = {
   headers: {'Authorization': API_KEY}
-};
+}
 
 app.get('/products', (req, res) => {
   let productId = req.query.product_id
@@ -160,8 +160,11 @@ const calculateAverage = (ratings) => {
   return {total, average};
 }
 
+
+
 // Q & A
 
+// Post a Question
 app.post('/qa/questions', (req, res) => {
   let body = req.body.body;
   let name = req.body.name;
@@ -184,7 +187,6 @@ app.post('/qa/questions', (req, res) => {
     res.sendStatus(500)
   })
 });
-
 
 
 // REVIEWS
@@ -214,3 +216,4 @@ app.put('/rev/report', (req, res) => {
     console.log(err);
   })
 })
+

@@ -11,6 +11,8 @@ const QuestionList = (props) => {
   const {questions} = useProductContext();
   let allQuestions = questions.results;
 
+
+
   let items = allQuestions.map((question, i) => {
     return (
       <Question question={question} key={i} questionid={question.question_id}/>
