@@ -7,6 +7,7 @@
   grid-template-columns: auto 2fr;
   grid-template-rows: auto 1fr;
   height: 95vh;
+  padding-top: 20px;
 }
 
 .reviewsComponent {
@@ -109,7 +110,7 @@
 
 /* This is specifically for the precent bars filled portion. The width is added inline. */
 .bar>div:not(.downArrow) {
-  background-color: green;
+  background-color: #47682C;
   height: 10px;
 }
 
@@ -117,7 +118,7 @@
 .downArrow {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 15px solid black;
+  border-top: 15px solid #47682C;
   height: 0;
   left: calc(var(--score) / 5 * 100% );
   width: 0;
@@ -135,6 +136,11 @@
 
 .largeFont {
   font-size: 42px;
+}
+
+.subFont {
+  font-size: smaller;
+  color: gray;
 }
 
 
@@ -160,19 +166,30 @@
   background-color: var(--light-gray);
 }
 
+.button {
+  padding: 10px 10px;
+  margin: 10px 10px;
+  background-color: #47682C;
+  color: white;
+  border-radius: 5%;
+}
+
+.button:hover {
+  background-color: #568035;
+}
+
 /* Review Tile */
 .active {
   text-decoration: underline;
 }
 
 .active:hover {
-  color: gray;
+  color: #ADB6C4;
+  cursor: pointer;
 }
 
 
 /* Review Form */
 .ratingContainer {
-  /* temporary background color until we decide on different colors for the empty stars */
-  background-color: black;
   width: fit-content;
 }

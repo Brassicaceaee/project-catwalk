@@ -11,7 +11,7 @@ const AddQuestion = (props) => {
 
   return(
     <div>
-      <button onClick={modalButtonClick}>Add Question +</button>
+      <button className='button' onClick={modalButtonClick}>Add Question +</button>
       <div>
         <QuestionForm show={modalShown} modalButtonClick={modalButtonClick}/>
       </div>

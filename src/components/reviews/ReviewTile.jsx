@@ -9,7 +9,6 @@ const ReviewTile = ({review}) => {
 
   const {info} = useProductContext();
   const updateProduct = updateProductContext();
-
   const [helpful, setHelpful] = useState(false);
   const [reported, setReported] = useState(false);
 
@@ -29,15 +28,17 @@ const ReviewTile = ({review}) => {
     })
   }
 
+  const reviewDate = moment(review.date).format('MMMM DD, YYYY');
+
   return (
     <div className={styles.largeMarginBottom}>
-      <div className={styles.flex}>
+      <div className={`${styles.flex} ${styles.spaceBetween}`}>
         <Stars rating={review.rating}/>
-        <span>{moment(review.date).format('MMMM DD, YYYY')}</span>
+        <span className={styles.subFont}>{`${review.reviewer_name}, ${reviewDate}`}</span>
       </div>
       <p><strong>Review summary</strong></p>
       <p>{review.body}</p>
-      <p>Show more</p>
+      {/* <p>Show more</p> */}
       <div className={styles.flex}>
         {
           review.photos.map((photo) => {
@@ -49,14 +50,13 @@ const ReviewTile = ({review}) => {
           })
         }
       </div>
-      <p>{review.reviewer_name}</p>
       {review.response &&
         <div className={`${styles.response} ${styles.smallPadding}`}>
           <strong>Response from seller:</strong>
           <p>{review.response}</p>
         </div>
       }
-      <p>Was this review helpful?
+      <p className={styles.subFont}>Was this review helpful?
         <span className={`${!helpful ? styles.active : undefined} ${styles.smallMarginLeft}`} onClick={!helpful ? helpfulClicked : undefined}>Yes </span>
         ({review.helpfulness})
         <span className={`${!reported ? styles.active : undefined} ${styles.smallMarginLeft}`} onClick={!reported ? reportedClicked : undefined}>Report</span>

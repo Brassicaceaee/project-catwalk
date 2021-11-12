@@ -11,7 +11,7 @@ const AddAnswer = (props) => {
 
   return(
     <div>
-      <button onClick={modalButtonClick}>Add Answer</button>
+      <span className={styles.clickableWord} onClick={modalButtonClick}>Add Answer</span>
       <div>
         <AnswerForm show={modalShown} modalButtonClick={modalButtonClick} question={props.question}/>
       </div>

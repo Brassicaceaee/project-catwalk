@@ -7,11 +7,13 @@ const NavBar = () => {
 
   return(
       <div className='navbar'>
-        <h1>Brassicaceae</h1>
+        <h1><span className={'broccoli'}></span>Brassicaceae</h1>
         <div className='navbar-right'>
-          <a href='#related' style={{ textDecoration: 'none', color: 'red'}} >Related</a>
-          <a href='#search' style={{ textDecoration: 'none', color: 'red'}}>Q & A</a>
-          <a href='#reviewsWidget' style={{ textDecoration: 'none', color: 'red'}}>Review</a>
+          <a href='#related'>Related</a>
+          <div className='divider'></div>
+          <a href='#search'>Q & A</a>
+          <div className='divider'></div>
+          <a href='#reviewsWidget'>Review</a>
         </div>
       </div>
   )
