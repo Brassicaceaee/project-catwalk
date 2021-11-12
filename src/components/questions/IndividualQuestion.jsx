@@ -1,4 +1,4 @@
-import React,  {useEffect, useState} from 'react';
+import React from 'react';
 import AnswerList from './AnswerList.jsx';
 const answers = require('./questiondata/answerdata.js');
 import styles from './questions.module.css';
@@ -6,11 +6,6 @@ import AddAnswer from './AddAnswer.jsx';
 
 const Question = (props) => {
 
-
-  const [propsquestionid, setPropsquestionid] = useState(props.questionid)
-  useEffect( () => {
-    setPropsquestionid(props.questionid)
-  },[props])
 
   return(
       <li className={styles.question}>
@@ -24,7 +19,7 @@ const Question = (props) => {
           </div>
         </div>
         <div className={styles.answerRow}>
-          <AnswerList answers={answers.results} questionid={propsquestionid}/>
+          <AnswerList answers={answers.results} questionid={props.question_id}/>
         </div>
       </li>
   )

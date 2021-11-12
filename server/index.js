@@ -10,7 +10,7 @@ app.use(express.static('dist'))
 let url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
 let options = {
   headers: {'Authorization': API_KEY}
-};
+}
 
 app.get('/products', (req, res) => {
   let productId = req.query.product_id
@@ -160,6 +160,8 @@ const calculateAverage = (ratings) => {
   return {total, average};
 }
 
+
+
 // Q & A
 
 // Post a Question
@@ -176,33 +178,6 @@ app.post('/qa/questions', (req, res) => {
   }
 
   axios.post(`${url}/qa/questions`,data, options)
-  .then(results => {
-    console.log('result post at the server', results)
-    res.sendStatus(201)
-  })
-  .catch(err => {
-    console.log('err', err)
-    res.sendStatus(500)
-  })
-});
-
-
-// Post an Answer
-
-app.post('/qa/questions/:question_id/answers', (req, res) => {
-  let body = req.body.body;
-  let name = req.body.name;
-  let email = req.body.email;
-  let photos = req.body.photos;
-  let question_id = req.body.question_id;
-  let data = {
-    body: body,
-    name: name,
-    email: email,
-    photos: photos
-  }
-
-  axios.post(`${url}/qa/questions/${question_id}/answers`,data, options)
   .then(results => {
     console.log('result post at the server', results)
     res.sendStatus(201)
