@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styles from '../overview.module.css';
 import json from '../styleSample.json';
 import AddToCartButton from './AddToCartButton.jsx';
+import { AiOutlineStar } from "react-icons/ai";
 
 const AddToCart = (props) => {
 
@@ -24,7 +25,7 @@ const AddToCart = (props) => {
 
   if (Object.entries(currentSkus).length > 0){
    sizeSelector = (
-             <select name={selectedSize} onChange={handleSizeSelect}>
+             <select name={selectedSize} onChange={handleSizeSelect} className={styles.size}>
 
                 {selectedSize === '' && <option>Select Style</option>}
                 {Object.entries(currentSkus).map( (sku) =>
@@ -46,7 +47,7 @@ const AddToCart = (props) => {
   let quantitySelector;
 
   if (selectedSize === '') {
-    quantitySelector = <select><option> - </option></select>
+    quantitySelector = <select className={styles.quantity}><option> - </option></select >
 
   } else {
     //Defaults to first SKU if new Style was selected
@@ -67,7 +68,7 @@ const AddToCart = (props) => {
     var quantityNumbers = Array.from(Array(num).keys())
 
     quantitySelector = (
-              <select value={selectedQuantity} onChange={handleQuantitySelect}>
+              <select value={selectedQuantity} onChange={handleQuantitySelect} className={styles.quantity}>
 
                 {quantityNumbers.slice(1, quantityNumbers.length).map( (number) =>
                   <option value={number} key={number}>{number}</option>)}
@@ -79,19 +80,21 @@ const AddToCart = (props) => {
   return (
       <>
       <div className={styles.addToCart}>
-        <span className={styles.size}>
+        <span >
            {sizeSelector}
         </span>
-        <span className={styles.quantity}>
+        <span >
           {quantitySelector}
         </span>
-        <span className={styles.cartButton}>
+        <span >
           {skus.length > 0 &&
             <AddToCartButton size={selectedSize} skuID={selectedSKU} quantity={selectedQuantity} />
           }
         </span>
 
-        <span className={styles.cartStar}>star</span>
+        <span className={styles.cartStar}>
+          <AiOutlineStar size={53} color={'grey'}/>
+          </span>
       </div>
       </>
   );
