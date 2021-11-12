@@ -7,14 +7,17 @@ const AnswerList = (props) => {
 
   // Added actual questions using context
   const {answers} = useProductContext();
+
   let answerData = answers[props.questionid];
   answerData.sort((a, b) => {
     return b.helpfulness - a.helpfulness;
   });
 
+
   let answerElements = answerData.map((answer, i) => {
     return <Answer answer={answer} key={i} />
   });
+
   let firstTwoAnswers = answerElements.slice(0, 2);
 
   const [collapsed, toggleDisplayState] = useState(true);

@@ -19,7 +19,7 @@ const Question = (props) => {
           </div>
         </div>
         <div className={styles.answerRow}>
-          <AnswerList answers={answers.results} questionid={props.questionid}/>
+          <AnswerList answers={answers.results} questionid={props.question_id}/>
         </div>
       </li>
   )

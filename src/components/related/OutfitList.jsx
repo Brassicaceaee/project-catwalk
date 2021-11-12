@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import styles from './related.module.css';
+import './related.css';
 import axios from 'axios';
 import {useProductContext} from '../../context/ProductContext.jsx';
 import OutfitCard from './OutfitCard.jsx';
-import plusSymbol from '../../../asset/img/plus-symbol.png';
+
 
 
 const OutfitList = () => {
 
   const { info } = useProductContext();
   const [outfitData, setOutfitData] = useState([]);
+  const style = { height: '350px', width: '300px'};
+  let  plusSymbol = 'https://www.pngarts.com/files/3/Plus-Symbol-Transparent-Images.png'
 
   //get stored outfit list
   const getStoredOutfit = () =>{
@@ -36,21 +38,26 @@ const OutfitList = () => {
     getStoredOutfit()
   }
 
+
   return (
-    <div className={styles.OutfitList}>
-      Add to Outfit
-      <img
-        src={plusSymbol}
-        style={{ height: '200px', width: '200px'}}
-        onClick={handleAddOutfit}
-      />
-      {Object.values(outfitData).map((storedOutfit) => {
-        return <OutfitCard
-          key={storedOutfit.id}
-          storedOutfit={storedOutfit}
-          getStoredOutfit={getStoredOutfit}
+    <div className='outfit-list'>
+      <div className='add'>
+        <img
+          className='img'
+          src={plusSymbol}
+          style={style}
+          onClick={handleAddOutfit}
         />
-      })}
+         <div className='small-title'>Add to Outfit</div>
+      </div>
+      {Object.values(outfitData).map((storedOutfit) => {
+        return (
+          <OutfitCard
+            key={storedOutfit.id}
+            storedOutfit={storedOutfit}
+            getStoredOutfit={getStoredOutfit}
+          />
+      )})}
     </div>
   )
 }
