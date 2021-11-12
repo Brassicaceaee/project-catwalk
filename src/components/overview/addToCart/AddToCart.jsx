@@ -80,20 +80,15 @@ const AddToCart = (props) => {
   return (
       <>
       <div className={styles.addToCart}>
-        <span >
-           {sizeSelector}
-        </span>
-        <span >
+          {sizeSelector}
+
           {quantitySelector}
-        </span>
-        <span >
+
           {skus.length > 0 &&
             <AddToCartButton size={selectedSize} skuID={selectedSKU} quantity={selectedQuantity} />
           }
-        </span>
-
         <span className={styles.cartStar}>
-          <AiOutlineStar size={53} color={'grey'}/>
+          <AiOutlineStar size={52} color={'grey'}/>
           </span>
       </div>
       </>
