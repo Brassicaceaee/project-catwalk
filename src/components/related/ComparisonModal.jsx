@@ -6,49 +6,65 @@ const ComparisonModal = ({left, right, togglePop}) => {
   const currentProductName = left.name;
   const relatedProductName = right.info.name;
 
-  // get an array of objects, having all the overviewProduct features as key, and value as value
-  let overviewFeatures = left.features.reduce((obj, user) => {
-    obj[user.feature] = user.value;
-    return obj;
-  }, {});
+  const comparisonContent = () => {
 
-  // get an array of objects, having all the relatedProduct features as key, and value as value
-  let relatedFeatures = right.info.features.reduce((obj, user) => {
-    obj[user.feature] = user.value;
-    return obj;
-  }, {});
+    // get an array of objects, having all the overviewProduct features as key, and value as value
+    let overviewFeatures = left.features.reduce((obj, user) => {
+      obj[user.feature] = user.value;
+      return obj;
+    }, {});
 
-  let featureHolder = {};
-  Object.keys(overviewFeatures).forEach(value =>{
-    featureHolder[value] = ''
-  })
+    // get an array of objects, having all the relatedProduct features as key, and value as value
+    let relatedFeatures = right.info.features.reduce((obj, user) => {
+      obj[user.feature] = user.value;
+      return obj;
+    }, {});
 
-  Object.keys(relatedFeatures).forEach(value =>{
-    featureHolder[value] = ''
-  })
+    let featureHolder = {};
+    Object.keys(overviewFeatures).forEach(value =>{
+      featureHolder[value] = ''
+    })
+
+    Object.keys(relatedFeatures).forEach(value =>{
+      featureHolder[value] = ''
+    })
+
+    return (
+      Object.keys(featureHolder).map((features, index) => {
+        return (
+        <tr key={index} className='content comparison'>
+          <td className='left-comparison'>{overviewFeatures[features]? overviewFeatures[features] : ''}</td>
+          <td className='middle-comparison'>{features}</td>
+          <td className='right-comparison'>{relatedFeatures[features]?  relatedFeatures[features] : ''}</td>
+        </tr>
+        )
+      })
+    )
+  }
 
   return (
-    <div>
-      <div className='modal'>
+    <div className='modal'>
       <div className='actions'>
         <button onClick={togglePop}>Close</button>
       </div>
-      <h3>Comparing</h3>
-      <span className='left-comparison'>{currentProductName}</span>
-      <span className='right-comparison'>{relatedProductName}</span>
-      <div>{Object.keys(featureHolder).map((features, index) => {
-        return (
-        <div key={index} className='content comparison'>
-          <span className='left-comparison'>{overviewFeatures[features]? overviewFeatures[features] : ''}</span>
-          <span className='middle-comparison'>{features}</span>
-          <span className='right-comparison'>{relatedFeatures[features]?  relatedFeatures[features] : ''}</span>
-        </div>
-        )})}
-      </div>
-      </div>
+      <table>
+        <caption className='caption'>Comparing</caption>
+        <thead>
+          <tr>
+            <th>{currentProductName}</th>
+            <th> </th>
+            <th>{relatedProductName}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {comparisonContent()}
+        </tbody>
+      </table>
     </div>
   );
  }
 
 
 export default ComparisonModal;
+
+

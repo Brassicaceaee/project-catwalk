@@ -33,7 +33,7 @@ const ProductCardList = () =>{
       <MdOutlineArrowBackIos
         className='arrow'
         className={showLeftArrow? 'visible':'non-visible'}
-        onClick={() => handleSlide(-400)}
+        onClick={() => handleSlide(-600)}
         size={100} color={'black'}
       />
       <div className='carousel' ref={ref} onLoad={handleLoad}>
@@ -49,7 +49,7 @@ const ProductCardList = () =>{
       <MdOutlineArrowForwardIos
         className='arrow'
         className={showRightArrow? 'visible':'non-visible'}
-        onClick={() => handleSlide(400)}
+        onClick={() => handleSlide(600)}
         size={100} color={'black'}
       />
     </div>

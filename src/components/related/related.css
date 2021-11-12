@@ -176,7 +176,7 @@
    Comparison Modal
 ======================== */
 .modal {
-  width: 500px;
+  width: 530px;
   background: white;
   border: 1px solid #ccc;
   box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
@@ -186,14 +186,18 @@
   z-index: 1;
 }
 
-.modal h3 {
+.modal .caption {
   border-bottom: 1px solid #ccc;
   padding: 1rem;
   margin: 0;
+  font:  1.3em "Fira Sans", sans-serif;
+  font-weight: 700;
+  text-align: left;
 }
 
 .modal .content {
   padding: 1rem;
+  text-align: center;
 }
 
 .modal .actions {
@@ -207,7 +211,7 @@
   background: #78f89f;
   border-radius: 5px;
   padding: 0.5rem 1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1;
 }
 .modal .actions button:hover{
@@ -215,22 +219,21 @@
 }
 
 
-.comparison{
+/* .comparison{
   display: flex;
-  /* width:100%;
-  height:100%; */
   z-index: 3;
+
 }
   .left-comparison{
     float: left;
-    width: 30%;
+    width: 33%;
     margin: 0 2.5% 0 0;
     height: 100%;
   }
   .middle-comparison{
 
     float: left;
-    width:30%;
+    width:33%;
     margin-left:2.5%;
     margin-right:5%;
     height:100%;
@@ -239,5 +242,5 @@
   .right-comparison{
 
     overflow:hidden;
-    height:100%;
-  }
+    height:33%;
+  } */
