@@ -24,14 +24,14 @@ const AddToCart = (props) => {
   let sizeSelector;
 
   if (Object.entries(currentSkus).length > 0){
-   sizeSelector = (
-             <select name={selectedSize} onChange={handleSizeSelect} className={styles.size}>
+    sizeSelector = (
+      <select name={selectedSize} onChange={handleSizeSelect} className={styles.size}>
 
-                {selectedSize === '' && <option>Select Style</option>}
-                {Object.entries(currentSkus).map( (sku) =>
-                <option value={sku[0]} key={sku[0]}> {sku[1].size} </option>)}
+        {selectedSize === '' && <option>Select Style</option>}
+        {Object.entries(currentSkus).map( (sku) =>
+        <option value={sku[0]} key={sku[0]}> {sku[1].size} </option>)}
 
-              </select>
+      </select>
     )
   } else {
    sizeSelector = <p>OUT OF STOCK</p>
@@ -88,7 +88,7 @@ const AddToCart = (props) => {
             <AddToCartButton size={selectedSize} skuID={selectedSKU} quantity={selectedQuantity} />
           }
         <span className={styles.cartStar}>
-          <AiOutlineStar size={52} color={'grey'}/>
+          <AiOutlineStar size={52} color={'#47682C'}/>
           </span>
       </div>
       </>

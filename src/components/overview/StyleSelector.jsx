@@ -28,14 +28,14 @@ const StyleSelector = (props) => {
         <div className={styles.styleSelection}>
 
             {props.styles.map( (option, index) =>
-              <span className={styles.styleItem} key={index}>
+              <div className={styles.styleItem} key={index}>
                 <img
-                  className={styles.styleThumbnail}
+                  className={`${styles.styleThumbnail} ${option === selectedStyle ? styles.outline : undefined}`}
                   src={option.photos[0].thumbnail_url}
                   onClick={(e)=>{handleClick(e, option); changeStyleIndex(index)}}
                 />
-                {option === selectedStyle && <FaCheck id={styles.check} color='lightgray' size={20}/>}
-              </span>
+                {option === selectedStyle && <FaCheck id={styles.check} color='white' size={20}/>}
+              </div>
             )}
         </div>
       </>

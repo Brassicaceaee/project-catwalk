@@ -45,7 +45,7 @@ const AnswerList = (props) => {
       <ul className={styles.answerList}>
         {displayed}
       </ul>
-      <span onClick={changeAnswerDisplay}><b>{expandCollapseText}</b></span>
+      <span className={styles.loadAnswers} onClick={changeAnswerDisplay}><b>{expandCollapseText}</b></span>
     </div>
   )
 };

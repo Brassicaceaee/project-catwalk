@@ -8,7 +8,7 @@ import styles from './reviews.module.css';
 const Reviews = () => {
   return (
     <FilterProvider>
-        <div className={`${styles.widget} ${styles.maxSize} reviews`} id={'reviewsWidget'}>
+        <div className={`${styles.widget} ${styles.maxSize}`} id={'reviewsWidget'}>
         <RatingBreakdown/>
         <ReviewsList/>
         <ProductBreakdown/>

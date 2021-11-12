@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./reviews.module.css";
-import { useProductContext } from '../../context/ProductContext.jsx'
+import { useProductContext } from '../../context/ProductContext.jsx';
 
 const ProductBreakdown = () => {
   const {meta} = useProductContext();
