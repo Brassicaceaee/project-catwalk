@@ -33,7 +33,6 @@ const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
         onClick={handleRemoveOutfit}
       />
       </div>
-        {/* <i onClick={handleRemoveOutfit} className="far fa-times-circle"></i> */}
       <img className='outfit-img' src={outfitImg}/>
       <div className='product-info'>
         <div className='category'>{storedOutfit.category}</div>

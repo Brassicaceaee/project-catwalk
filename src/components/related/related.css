@@ -176,7 +176,7 @@
    Comparison Modal
 ======================== */
 .modal {
-  width: 530px;
+  width: 510px;
   background: white;
   border: 1px solid #ccc;
   box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
@@ -184,6 +184,7 @@
   visibility: visible;
   position: absolute;
   z-index: 1;
+  overflow-y: auto;
 }
 
 .modal .caption {

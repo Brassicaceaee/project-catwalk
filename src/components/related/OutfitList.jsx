@@ -48,7 +48,7 @@ const OutfitList = () => {
           onClick={handleAddOutfit}
         />
          <div className='small-title'>Add to Outfit</div>
-      </div >
+      </div>
       {Object.values(outfitData).map((storedOutfit) => {
         return (
           <OutfitCard
