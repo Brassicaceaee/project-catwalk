@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  color: white;
+  color: rgb(255, 250, 240);
   font-size: 3em;
   margin: 0;
   letter-spacing: 3px;
@@ -11,7 +11,7 @@ h1 {
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgb(255, 250, 240);
 }
 
 a:hover {
@@ -25,11 +25,13 @@ html {
 #app {
   margin: 0 18.5% 0;
   font: 1em "Fira Sans", sans-serif;
+  background-color: rgb(255, 250, 240);
 }
 
 :root {
   --widget-height: 950px;
   --light-gray: rgb(180, 180, 180);
+  background-color: white;
 }
 
 .overview {
@@ -51,7 +53,7 @@ html {
   padding: 10px 10px;
   margin: 10px 20px 10px 0px;
   background-color: #47682C;
-  color: white;
+  color: rgb(255, 250, 240);
   /* border-radius: 5%; */
 }
 

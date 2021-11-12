@@ -7,7 +7,7 @@ const NavBar = () => {
 
   return(
       <div className='navbar'>
-        <h1>Brassicaceae</h1>
+        <h1><span className={'broccoli'}></span>Brassicaceae</h1>
         <div className='navbar-right'>
           <a href='#related'>Related</a>
           <div className='divider'></div>

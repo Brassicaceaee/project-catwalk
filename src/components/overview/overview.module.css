@@ -1,6 +1,6 @@
 .widget {
   height: 95vh;
-  background-color: white;
+  /* background-color: white; */
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: 3fr 1fr;
@@ -144,13 +144,13 @@
   bottom: 10px;
   left: 0px;
   border: 2px solid #47682C;
-  outline: 1px solid white;
+  outline: 1px solid rgb(255, 250, 240);;
   border-radius: 50%;
   background-color: #47682C;
 }
 
 .outline {
-  border: 2px solid white;
+  border: 2px solid rgb(255, 250, 240);
   outline: 2px solid #47682C;
   border-radius: 50%;
 }
@@ -173,8 +173,10 @@
  height: 60px;
  width: 45%;
  margin: 10px 10px 10px 0px;
+ padding: 15px;
  font-size: larger;
  font-weight: bold;
+ background-color: rgb(255, 250, 240);
 
  /* flex-basis: 100px; */
 
@@ -182,9 +184,11 @@
 
 .quantity {
   border: 1px solid darkgray;
+  background-color: rgb(255, 250, 240);
   height: 60px;
   width: 35%;
   margin: 10px 0px 10px 0px;
+  padding: 15px;
   font-size: larger;
   font-weight: bold;
   /* flex-basis: 100px; */
@@ -192,7 +196,8 @@
 
 .cartButton {
   border: 1px solid darkgray;
-  background-color: white;
+  background-color: rgb(255, 250, 240);
+  padding: 15px;
   margin: 0px 10px 10px 0px;
   height: 60px;
   width: 60%;
@@ -206,7 +211,7 @@
   border: 1px inset darkgray;
 }
 .cartButton:active{
-  color: white;
+  color: rgb(255, 250, 240);
 }
 
 .cartStar {

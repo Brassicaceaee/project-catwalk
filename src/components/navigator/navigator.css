@@ -22,3 +22,18 @@
 .divider {
    border-right: white solid 1px;
 }
+
+.broccoli {
+   --percent: calc(var(--rating) / 5 * 100%);
+   font-size: var(--star-size);
+   font-family: Times;
+   line-height: 1;
+ }
+ .broccoli::before {
+   content: '🥦';
+   letter-spacing: 3px;
+   font-size: 50px;
+   background: rgb(255, 250, 240);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
