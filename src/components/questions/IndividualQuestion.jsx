@@ -1,6 +1,5 @@
 import React from 'react';
 import AnswerList from './AnswerList.jsx';
-const answers = require('./questiondata/answerdata.js');
 import styles from './questions.module.css';
 import AddAnswer from './AddAnswer.jsx';
 
@@ -24,7 +23,7 @@ const Question = (props) => {
           </div>
         </div>
         <div className={styles.answerRow}>
-          <AnswerList answers={answers.results} questionid={props.questionid}/>
+          <AnswerList  questionid={props.questionid}/>
         </div>
       </li>
   )

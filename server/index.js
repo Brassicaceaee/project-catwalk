@@ -73,7 +73,6 @@ app.get('/products', (req, res) => {
         product.related[relatedProduct.id].info = relatedProduct;
         product.related[relatedProduct.id].styles = relatedStyles;
       }
-      // res.send(200, product);
       res.status(200).send(product)
     })
     .catch((error) => {
@@ -110,6 +109,19 @@ app.delete('/outfit', (req, res) => {
   delete storedOutfit[productID]
   res.sendStatus(202);
 });
+
+let rating = {}
+//get avgerage rating from related product
+app.get('/rating/:id', (req, res) => {
+  const relatedId = req.params.id
+  axios.get(`${url}/reviews/meta?product_id=${relatedId}`, options)
+  .then( results => {
+    rating[relatedId] = calculateAverage(results.data.ratings).average
+    return rating
+  })
+  .then( rating => res.status(200).send(rating))
+  .catch(err => console.log("rating err", err))
+})
 
 
 // Items stored in users cart
