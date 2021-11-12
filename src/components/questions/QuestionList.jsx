@@ -26,6 +26,11 @@ const QuestionList = (props) => {
   // This code sets the length of the displayed questions (default is 2)
   const [displayedQuestions, setDisplayed] = useState(jsxQuestions.slice(0, 2));
 
+  console.log('jsx questions:', jsxQuestions)
+  useEffect(() => {
+    setDisplayed(jsxQuestions.slice(0, 2));
+  }, [jsxQuestions])
+
   // Each click extends list of questions by up to 2
   let moreQuestionsClick = () => {
     if (jsxQuestions.length > displayedQuestions.length) {
