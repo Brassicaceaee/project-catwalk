@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import ReviewTile from './ReviewTile.jsx';
+
+import { useFilterContext } from './FilterContext.jsx';
 import ReviewForm from './ReviewForm.jsx';
+
 import styles from './reviews.module.css';
 import modalStyle from '../questions/questions.module.css';
 import { useProductContext } from '../../context/ProductContext.jsx';
@@ -8,6 +11,10 @@ import { useProductContext } from '../../context/ProductContext.jsx';
 const ReviewsList = () => {
   const {reviews} = useProductContext();
   const [modalIsActive, setModalState] = useState(false);
+
+
+  const filters = useFilterContext();
+
   const [sortBy, setSortBy] = useState('relevance');
   const reviewsList = reviews.results.slice();
 
@@ -27,6 +34,7 @@ const ReviewsList = () => {
       return aDaysAgo - bDaysAgo;
     }
   });
+
 
   const startReview = () => {
     setModalState(true);
