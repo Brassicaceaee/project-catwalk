@@ -26,12 +26,13 @@ const Answer = (props) => {
 
   return(
     <li className={styles.answer}>
+      <div className={styles.smallMarginRight}>A:</div>
       <div>
-        {props.answer.body}
-      </div>
-      <div className={styles.answerInfo}>
-        <span> by {returnUsername(username)}, {moment(date).format('MMMM DD, YYYY')} | </span>
-          <div>
+        <div>
+          {props.answer.body}
+        </div>
+        <div className={styles.answerInfo}>
+          <span> by {returnUsername(username)}, {moment(date).format('MMMM DD, YYYY')} | </span>
             <span className={styles.helpfulAnswer}>Helpful</span>
             <span
             className={styles.helpfulAnswer}
@@ -40,8 +41,8 @@ const Answer = (props) => {
             >Yes
             </span>
             <span className={styles.helpfulAnswer}>({helpful}) | </span>
-          </div>
-          <span className={styles.report} className={styles.clickableWord}>Report</span>
+            <span className={styles.report} className={styles.clickableWord}>Report</span>
+        </div>
       </div>
     </li>
   )

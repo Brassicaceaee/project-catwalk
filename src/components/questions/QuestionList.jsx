@@ -48,9 +48,9 @@ const QuestionList = (props) => {
       </ul>
       <div className={styles.questionListButtons}>
         {(displayedQuestions.length < items.length) &&
-        <button onClick={moreQuestionsClick}>More Answered Questions</button>
+        <button className='button' onClick={moreQuestionsClick}>More Answered Questions</button>
       }
-      {(displayedQuestions.length === items.length && items.length > 2) && <button onClick={ () => setDisplayed(items.slice(0, 2))}>Collapse Questions</button> }
+      {(displayedQuestions.length === items.length && items.length > 2) && <button className='button' onClick={ () => setDisplayed(items.slice(0, 2))}>Collapse Questions</button> }
       <AddQuestion/>
       </div>
     </div>

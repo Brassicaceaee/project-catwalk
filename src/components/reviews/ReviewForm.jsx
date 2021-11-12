@@ -81,8 +81,8 @@ const ReviewForm = ({close}) => {
             <h4>Review</h4>
             <input type='text' placeholder='What did you like or dislike about the product?'></input>
           </div>
-          <div>
-            <button>ADD PHOTOS</button>
+          <div className={styles.flex}>
+            <button className='button'>ADD PHOTOS</button>
           </div>
           <div>
             <h4>Nickname</h4>
@@ -92,9 +92,9 @@ const ReviewForm = ({close}) => {
             <h4>Email</h4>
             <input type='text' placeholder='Example: jackson11@email.com'></input>
           </div>
-          <div>
-            <button>SUBMIT</button>
-            <button onClick={close}>CLOSE</button>
+          <div className={styles.flex}>
+            <button className='button'>SUBMIT</button>
+            <button className='button' onClick={close}>CLOSE</button>
           </div>
         </form>
       </div>

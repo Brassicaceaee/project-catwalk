@@ -8,7 +8,7 @@ const Questions = () => {
 
   return (
     <div className={styles.widget}>
-      <h4 id='search'> Questions & Answers </h4>
+      <h4 className={styles.widgetHeader} id='search'> Questions & Answers </h4>
       <SearchBar />
       <QuestionList />
     </div>
