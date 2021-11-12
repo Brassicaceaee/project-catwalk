@@ -7,7 +7,7 @@
 ========================
         hover
 ======================== */
-.button:hover{
+.related-button:hover{
   cursor: pointer;
 }
 
