@@ -3,7 +3,7 @@ import './related.css';
 import ProductCard from './ProductCard.jsx';
 import { useProductContext, updateProductContext } from '../../context/ProductContext.jsx';
 // import leftArrow from '../../../asset/img/left-arrow.png';
-import rightArrow from '../../../asset/img/right-arrow.png';
+// import rightArrow from '../../../asset/img/right-arrow.png';
 
 
 const ProductCardList = () =>{
@@ -11,8 +11,11 @@ const ProductCardList = () =>{
   const update = updateProductContext();
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
-  const style = { height: '80px', width: '40px'};
+  // const style = { height: '80px', width: '40px'};
   const ref = useRef();
+  const leftArrow = 'https://cdn.iconscout.com/icon/free/png-256/left-arrow-13-460294.png'
+  const rightArrow = 'https://p.kindpng.com/picc/s/383-3837817_where-to-play-the-line-arrow-right-right.png'
+
 
 
   const handleLoad = () => {
@@ -31,18 +34,13 @@ const ProductCardList = () =>{
 
   return (
     <div className='related-list'>
-      <button
-        className='left-arrow'
-        className={showLeftArrow? 'visible':'non-visible'}
-        onClick={() => handleSlide(-400)}
-      ></button>
-      {/* <img
+      <img
         className='arrow'
         className={showLeftArrow? 'visible':'non-visible'}
         src={leftArrow}
-        style={style}
+        // style={style}
         onClick={() => handleSlide(-400)}
-      /> */}
+      />
       <div className='carousel' ref={ref} onLoad={handleLoad}>
         {Object.values(related).map((result, index) => {
           return(
@@ -53,17 +51,18 @@ const ProductCardList = () =>{
           />
         )})}
       </div>
-      <button
+      {/* <button
         className='right-arrow'
         className={showRightArrow? 'visible':'non-visible'}
         onClick={() => handleSlide(400)}
       >
-      </button>
-      {/* <img
+      </button> */}
+      <img
         className='arrow'
         className={showRightArrow? 'active':'non-active'}
+        src={rightArrow}
         onClick={() => handleSlide(400)}
-      /> */}
+      />
     </div>
   );
 }

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './related.css';
 import ComparisonModal from './ComparisonModal.jsx';
 import {useProductContext} from '../../context/ProductContext.jsx';
-import imgNotAvailable from '../../../asset/img/image-not-available.png';
 
 const ProductCard = ({relatedProduct, update}) =>{
   const { info } = useProductContext();
   const[isOpen, setIsOpen] = useState(false);
 
+  const imgNotAvailable ='https://www.gemkom.com.tr/wp-content/uploads/2020/02/NO_IMG_600x600-1.png'
   const isSale = relatedProduct.styles[0].sale_price
   const originalPrice = relatedProduct.info.default_price
   const relatedImg = relatedProduct.styles[0].photos[0].thumbnail_url
