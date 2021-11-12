@@ -9,7 +9,7 @@ import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from "react-icons/md"
 const OutfitList = () => {
   const { info } = useProductContext();
   const [outfitData, setOutfitData] = useState([]);
-  const style = { height: '350px', width: '300px'};
+  const style = { height: '300px', width: '260px'};
   let  plusSymbol = 'https://www.pngarts.com/files/3/Plus-Symbol-Transparent-Images.png'
 
   //get stored outfit list

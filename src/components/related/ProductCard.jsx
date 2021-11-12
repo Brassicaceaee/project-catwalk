@@ -41,7 +41,7 @@ const ProductCard = ({relatedProduct, update}) =>{
 
   return (
     <div className='related-card'>
-      <div className='button'>
+      <div className='related-button'>
         <AiOutlineStar size={30} color={'black'} onClick={togglePop}/>
       </div>
       {isOpen && <ComparisonModal left={info} right={relatedProduct} togglePop={togglePop}/>}

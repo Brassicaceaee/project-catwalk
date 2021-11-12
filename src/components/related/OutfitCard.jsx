@@ -27,7 +27,7 @@ const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
 
   return (
     <div className='related-card'>
-      <div className='button'>
+      <div className='related-button'>
       <MdClose
         size={30} color={'black'}
         onClick={handleRemoveOutfit}
