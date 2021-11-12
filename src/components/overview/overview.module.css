@@ -126,7 +126,7 @@
   box-sizing: border-box;
   overflow: visible;
   height: 85%;
-  width: 95%;
+  width: 85%;
   border-radius: 50%;
   position: relative;
   top: 2px;
@@ -216,7 +216,7 @@
 
 .cartStar {
   /* border: 1px solid darkgray; */
-  margin: 0px 0px 10px 0px;
+  margin: 2px 0px 10px 12px;
   height: 55px;
   width:  55px;
   align-items: center;

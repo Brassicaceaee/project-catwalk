@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './overview.module.css'
 import {FaChevronRight} from 'react-icons/fa'
+import {IoLeafOutline} from 'react-icons/io5'
 
 const Features = (props) => {
   console.log(props)
@@ -8,9 +9,11 @@ const Features = (props) => {
   return(
     <div className={styles.featuresContainer}>
       {props.productInfo.features.map( (feature, index) =>
+
          <li className={styles.features} key={index}>
-           <FaChevronRight className={styles.chevron} />
-           {feature.feature}: {feature.value}
+          <IoLeafOutline color='#47682C'/>
+          {feature.feature}{':  '}
+          <span style={{'font-style': 'italic',}}>{feature.value}</span>
 
          </li>
       )}
