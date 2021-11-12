@@ -1,23 +1,18 @@
 import React, {useState} from 'react';
 import styles from '../overview.module.css';
 import json from '../styleSample.json';
-
+import AddToCartButton from './AddToCartButton.jsx';
+import { AiOutlineStar } from "react-icons/ai";
 
 const AddToCart = (props) => {
 
-  var options = json.results;
-  var currentSkus = options[0].skus; //Object of containing skus;
-
+  var currentSkus = props.skus;
   var skus = Object.values(currentSkus)
 
   const [selectedSize, setSize] = useState('')
   const [selectedSKU, setSKU] = useState('')
   const [selectedQuantity, setQuantity] = useState(1);
 
-  //TODO
-  //Based on the selected size, get SKU, creat quantity selector
-  //If no sizes, selector only has "OUT of Stock"
-  //If size not selected, render "-" for quantity selector
 
   const handleSizeSelect = (event) => {
     var skuID = event.target.value
@@ -30,7 +25,7 @@ const AddToCart = (props) => {
 
   if (Object.entries(currentSkus).length > 0){
    sizeSelector = (
-             <select name={selectedSize} onChange={handleSizeSelect}>
+             <select name={selectedSize} onChange={handleSizeSelect} className={styles.size}>
 
                 {selectedSize === '' && <option>Select Style</option>}
                 {Object.entries(currentSkus).map( (sku) =>
@@ -43,16 +38,27 @@ const AddToCart = (props) => {
   }
 
 
+
+
   const handleQuantitySelect = (event) => {
     setQuantity(event.target.value)
   }
 
   let quantitySelector;
 
-  if (selectedSKU === '') {
-    quantitySelector = <select><option> - </option></select>
+  if (selectedSize === '') {
+    quantitySelector = <select className={styles.quantity}><option> - </option></select >
+
   } else {
-    var num = currentSkus[selectedSKU].quantity
+    //Defaults to first SKU if new Style was selected
+    if(currentSkus[selectedSKU]) {
+      var num = currentSkus[selectedSKU].quantity
+
+    } else {
+      var firstSku = Object.keys(currentSkus)[0]
+      var num = currentSkus[firstSku].quantity;
+    }
+
     //Keeps quantity to only display 15 max
     if (num > 15) {
       num = 15
@@ -62,7 +68,7 @@ const AddToCart = (props) => {
     var quantityNumbers = Array.from(Array(num).keys())
 
     quantitySelector = (
-              <select value={selectedQuantity} onChange={handleQuantitySelect}>
+              <select value={selectedQuantity} onChange={handleQuantitySelect} className={styles.quantity}>
 
                 {quantityNumbers.slice(1, quantityNumbers.length).map( (number) =>
                   <option value={number} key={number}>{number}</option>)}
@@ -71,18 +77,24 @@ const AddToCart = (props) => {
     )
   }
 
-
   return (
       <>
       <div className={styles.addToCart}>
-        <span className={styles.size}>
+        <span >
            {sizeSelector}
         </span>
-        <span className={styles.quantity}>
+        <span >
           {quantitySelector}
         </span>
-        <span className={styles.cartButton}>add To Cart</span>
-        <span className={styles.cartStar}>star</span>
+        <span >
+          {skus.length > 0 &&
+            <AddToCartButton size={selectedSize} skuID={selectedSKU} quantity={selectedQuantity} />
+          }
+        </span>
+
+        <span className={styles.cartStar}>
+          <AiOutlineStar size={53} color={'grey'}/>
+          </span>
       </div>
       </>
   );

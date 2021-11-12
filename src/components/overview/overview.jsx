@@ -1,31 +1,47 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './overview.module.css'
 import ImageGallery from './ImageGallery.jsx';
 import ProductInfo from './ProductInfo.jsx'
 import Description from './Description.jsx';
 import Features from './Features.jsx'
+import json from './styleSample.json'
+import {useProductContext} from '../../context/ProductContext.jsx'
+//Will pass in productcontext.style to to style context as default value
+
+
+export const StyleIndexContext = React.createContext({
+  styleIndex:0,
+  changeStyleIndex: () => {},
+});
+
 
 const Overview = (props) => {
 
-    return(
+  const [styleIndex, setStyleIndex] = useState(0);
+  var product = useProductContext();
+
+  return(
+    <StyleIndexContext.Provider value ={{changeStyleIndex : setStyleIndex}}>
       <div className={styles.widget}>
 
-      <div className={styles.imageGallery}>
-      <ImageGallery />
-      </div>
+        <div className={styles.imageGallery}>
+        <ImageGallery styles={product.styles.results} styleIndex={styleIndex}/>
+        </div>
 
-      <div className={styles.productInfo}>
-      <ProductInfo />
-      </div>
 
-      <div className={styles.description}>
-        <Description />
-      </div>
+        <div className={styles.productInfo}>
+        <ProductInfo product={product} styles={product.styles.results} styleIndex={styleIndex}/>
+        </div>
 
-      <div className={styles.features}>
-        <Features />
+        <div className={styles.description}>
+          <Description productInfo={product.info}/>
+        </div>
+
+        <div className={styles.features}>
+          <Features productInfo={product.info}/>
+        </div>
       </div>
-    </div>
+    </StyleIndexContext.Provider>
   )
 }
 

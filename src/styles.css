@@ -4,9 +4,13 @@ h1 {
 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #app {
   background-color: burlywood;
-  margin: 0 10% 0;
+  margin: 0 18.5% 0;
 }
 
 :root {
@@ -32,3 +36,4 @@ h1 {
 .reviews {
   background-color: rgb(231, 213, 180);
 }
+

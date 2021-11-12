@@ -5,7 +5,7 @@ import json from './styleSample.json';
 
 const ImageGallery = (props) => {
 
-  var photos = json.results[0].photos;
+  var photos = props.styles[props.styleIndex].photos;
   const [mainPhoto, setMainPhoto] = useState(0);
 
   const handleThumbnailClick = (event, index) => {
@@ -20,16 +20,16 @@ const ImageGallery = (props) => {
 
           {photos.map((photo, index) => {
             if (mainPhoto === index) {
-              var thumbnailStyle = styles.galleryThumbnailPhotoSelected;
+              var thumbnailContainerStyle = styles.galleryThumbnailPhotoContainerSelected;
             } else {
-              var thumbnailStyle = styles.galleryThumbnailPhoto;
+              var thumbnailContainerStyle = styles.galleryThumbnailPhotoContainer;
             }
 
             return (
-              <span className={styles.galleryThumbnailPhotoContainer}>
+              <span className={thumbnailContainerStyle} key={index}>
 
 
-                <img className={thumbnailStyle}
+                <img className={styles.galleryThumbnailPhoto}
                 src={photo.thumbnail_url}
                 onClick={(e) => handleThumbnailClick(e, index)}/>
               </span>

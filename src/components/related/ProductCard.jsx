@@ -1,31 +1,55 @@
 import React, { useState, useEffect } from 'react';
-import styles from './related.module.css';
+import './related.css';
 import ComparisonModal from './ComparisonModal.jsx';
 import {useProductContext} from '../../context/ProductContext.jsx';
-import imgNotAvailable from '../../../asset/img/image-not-available.png';
 
-const ProductCard = ({relatedProduct}) =>{
-  const { info, styles } = useProductContext();
+const ProductCard = ({relatedProduct, update}) =>{
+  const { info } = useProductContext();
   const[isOpen, setIsOpen] = useState(false);
+
+  const imgNotAvailable ='https://www.gemkom.com.tr/wp-content/uploads/2020/02/NO_IMG_600x600-1.png'
+  const isSale = relatedProduct.styles[0].sale_price
+  const originalPrice = relatedProduct.info.default_price
+  const relatedImg = relatedProduct.styles[0].photos[0].thumbnail_url
+  const relatedCategory = relatedProduct.info.category
+  const relatedName = relatedProduct.info.name
 
   const togglePop = () => {
     setIsOpen(!isOpen)
   };
 
-  const salePrice = relatedProduct.styles[0].sale_price
-  const originalPrice = relatedProduct.info.default_price
-  const relatedImg = relatedProduct.styles[0].photos[0].thumbnail_url
+  const changeCurrentProduct = () =>{
+    // update(relatedProduct.info.id)
+    setTimeout(() =>  window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+     }), 600);
+  }
+
 
   return (
-    <div>
-      <i className="far fa-star" onClick={togglePop}  ></i>
-      {isOpen
-      ? <ComparisonModal left={info} right={relatedProduct} togglePop={togglePop}/>
-      : <></>}
-      <img src={relatedImg || imgNotAvailable }/>
-      <div>{relatedProduct.info.category}</div>
-      <div>{relatedProduct.info.name}</div>
-      <div>${salePrice || originalPrice }</div>
+    <div className='related-card'>
+      <div className='button'>
+        <i className="far fa-star" onClick={togglePop}></i>
+      </div>
+      {isOpen && <ComparisonModal left={info} right={relatedProduct} togglePop={togglePop}/>}
+      <img
+        className='img'
+        src={relatedImg || imgNotAvailable}
+        onClick={changeCurrentProduct}
+      />
+      <div className='product-info'>
+        <div className='category'>{relatedCategory}</div>
+        <div>{relatedName}</div>
+        {isSale
+        ? <div>
+            ${isSale}
+            <strike style={{color: 'red'}}>${originalPrice}</strike>
+          </div>
+        : <div>${originalPrice}</div>
+        }
+      </div>
     </div>
   )
 }
