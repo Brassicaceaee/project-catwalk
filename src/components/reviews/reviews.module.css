@@ -109,7 +109,7 @@
 
 /* This is specifically for the precent bars filled portion. The width is added inline. */
 .bar>div:not(.downArrow) {
-  background-color: green;
+  background-color: #47682C;
   height: 10px;
 }
 
@@ -117,7 +117,7 @@
 .downArrow {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 15px solid black;
+  border-top: 15px solid #47682C;
   height: 0;
   left: calc(var(--score) / 5 * 100% );
   width: 0;
@@ -166,13 +166,11 @@
 }
 
 .active:hover {
-  color: gray;
+  color: #ADB6C4;
 }
 
 
 /* Review Form */
 .ratingContainer {
-  /* temporary background color until we decide on different colors for the empty stars */
-  background-color: black;
   width: fit-content;
 }

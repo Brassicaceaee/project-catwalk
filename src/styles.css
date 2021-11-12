@@ -1,7 +1,17 @@
+body {
+  overflow-x: hidden;
+}
+
 h1 {
   color: white;
-  background-color: black;
+  font-size: 3em;
+  margin: 0;
+  letter-spacing: 3px;
+}
 
+a {
+  text-decoration: none;
+  color: white;
 }
 
 html {
@@ -9,7 +19,6 @@ html {
 }
 
 #app {
-  background-color: burlywood;
   margin: 0 18.5% 0;
 }
 
@@ -31,9 +40,5 @@ html {
 .related {
   background-color: rgb(147, 214, 147);
   height: var(--widget-height);
-}
-
-.reviews {
-  background-color: rgb(231, 213, 180);
 }
 
