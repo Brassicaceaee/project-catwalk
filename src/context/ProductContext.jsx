@@ -24,7 +24,7 @@ export function ProductProvider({children}) {
   }
   // debugger;
   useEffect(() => {
-    update(40344);
+    update(40365);
   }, [])
 
   if (product) {

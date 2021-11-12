@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './related.css';
 import {useProductContext} from '../../context/ProductContext.jsx';
-import Stars from '../Stars.jsx'
+import Stars from '../Stars.jsx';
+import { MdClose } from "react-icons/md";
 
 const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
   const { styles, meta } = useProductContext();
@@ -27,8 +28,12 @@ const OutfitCard = ({storedOutfit, getStoredOutfit}) => {
   return (
     <div className='related-card'>
       <div className='button'>
-        <i onClick={handleRemoveOutfit} className="far fa-times-circle"></i>
+      <MdClose
+        size={30} color={'black'}
+        onClick={handleRemoveOutfit}
+      />
       </div>
+        {/* <i onClick={handleRemoveOutfit} className="far fa-times-circle"></i> */}
       <img className='outfit-img' src={outfitImg}/>
       <div className='product-info'>
         <div className='category'>{storedOutfit.category}</div>

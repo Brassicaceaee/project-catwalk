@@ -2,17 +2,29 @@ import React, { useState, useEffect } from 'react';
 import './related.css';
 import ComparisonModal from './ComparisonModal.jsx';
 import {useProductContext} from '../../context/ProductContext.jsx';
+import { AiOutlineStar } from "react-icons/ai";
+import axios from 'axios'
+import Stars from '../Stars.jsx';
 
 const ProductCard = ({relatedProduct, update}) =>{
   const { info } = useProductContext();
   const[isOpen, setIsOpen] = useState(false);
-
+  const [averageRating, setAverageRating] = useState('');
   const imgNotAvailable ='https://www.gemkom.com.tr/wp-content/uploads/2020/02/NO_IMG_600x600-1.png'
   const isSale = relatedProduct.styles[0].sale_price
   const originalPrice = relatedProduct.info.default_price
   const relatedImg = relatedProduct.styles[0].photos[0].thumbnail_url
   const relatedCategory = relatedProduct.info.category
   const relatedName = relatedProduct.info.name
+  const relatedId = relatedProduct.info.id
+
+  //get the rating of related product
+  useEffect(() => {
+    axios.get(`/rating/${relatedId}`)
+    .then(results => {
+      setAverageRating(results.data[relatedId])
+    })
+  }, [])
 
   const togglePop = () => {
     setIsOpen(!isOpen)
@@ -27,11 +39,10 @@ const ProductCard = ({relatedProduct, update}) =>{
      }), 600);
   }
 
-
   return (
     <div className='related-card'>
       <div className='button'>
-        <i className="far fa-star" onClick={togglePop}></i>
+        <AiOutlineStar size={30} color={'black'} onClick={togglePop}/>
       </div>
       {isOpen && <ComparisonModal left={info} right={relatedProduct} togglePop={togglePop}/>}
       <img
@@ -49,6 +60,7 @@ const ProductCard = ({relatedProduct, update}) =>{
           </div>
         : <div>${originalPrice}</div>
         }
+        <Stars rating={averageRating}/>
       </div>
     </div>
   )

@@ -49,27 +49,6 @@
   align-self: center;
 }
 
-.right-arrow{
-  border: solid black;
-  border-width: 0 10px 10px 0;
-  /* display: inline-block; */
-  padding: 10px;
-  background-color: rgb(0, 0, 0, 0);
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-.left-arrow{
-  border: solid black;
-  border-width: 0 10px 10px 0;
-  /* display: inline-block; */
-  padding: 10px;
-  background-color: rgb(0, 0, 0, 0);
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-}
-
-
 
 .visible{
   visibility: visible;
@@ -85,8 +64,8 @@
   position: relative;
   padding: 25px 15px;
   background-color: white;
-  height: 550px;
-  width: 300px;
+  height: 600px;
+  width: 360px;
   margin: 15px 15px;
   box-shadow: 1px 1px 2px black;
   text-align: center;
@@ -129,14 +108,6 @@
 ======================== */
 .carousel {
   background-color: rgb(0, 0, 0, 0);
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: baseline; */
-
-  /* flex-wrap: nowrap; */
-  /* width: 80%; */
   overflow: auto;
   scroll-behavior: smooth;
   width: 85%;
@@ -166,8 +137,8 @@
   display: inline-block;
   padding: 25px 15px;
   background-color: white;
-  height: 550px;
-  width: 380px;
+  height: 600px;
+  width: 360px;
   margin: 15px 15px;
   box-shadow: 1px 1px 2px black;
   text-align: justify;
@@ -193,8 +164,8 @@
     display: inline-block;
     padding: 25px 15px;
     background-color: white;
-    height: 550px;
-    width: 380px;
+    height: 600px;
+    width: 360px;
     margin: 15px 15px;
     box-shadow: 1px 1px 2px black;
     text-align: justify;

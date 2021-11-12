@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import './related.css';
 import ProductCard from './ProductCard.jsx';
 import { useProductContext, updateProductContext } from '../../context/ProductContext.jsx';
-// import leftArrow from '../../../asset/img/left-arrow.png';
-// import rightArrow from '../../../asset/img/right-arrow.png';
+import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from "react-icons/md";
+
 
 
 const ProductCardList = () =>{
@@ -11,11 +11,7 @@ const ProductCardList = () =>{
   const update = updateProductContext();
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
-  // const style = { height: '80px', width: '40px'};
   const ref = useRef();
-  const leftArrow = 'https://cdn.iconscout.com/icon/free/png-256/left-arrow-13-460294.png'
-  const rightArrow = 'https://p.kindpng.com/picc/s/383-3837817_where-to-play-the-line-arrow-right-right.png'
-
 
 
   const handleLoad = () => {
@@ -34,12 +30,11 @@ const ProductCardList = () =>{
 
   return (
     <div className='related-list'>
-      <img
+      <MdOutlineArrowBackIos
         className='arrow'
         className={showLeftArrow? 'visible':'non-visible'}
-        src={leftArrow}
-        // style={style}
         onClick={() => handleSlide(-400)}
+        size={100} color={'black'}
       />
       <div className='carousel' ref={ref} onLoad={handleLoad}>
         {Object.values(related).map((result, index) => {
@@ -51,17 +46,11 @@ const ProductCardList = () =>{
           />
         )})}
       </div>
-      {/* <button
-        className='right-arrow'
+      <MdOutlineArrowForwardIos
+        className='arrow'
         className={showRightArrow? 'visible':'non-visible'}
         onClick={() => handleSlide(400)}
-      >
-      </button> */}
-      <img
-        className='arrow'
-        className={showRightArrow? 'active':'non-active'}
-        src={rightArrow}
-        onClick={() => handleSlide(400)}
+        size={100} color={'black'}
       />
     </div>
   );
