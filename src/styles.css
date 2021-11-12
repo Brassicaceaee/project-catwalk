@@ -20,6 +20,7 @@ html {
 
 #app {
   margin: 0 18.5% 0;
+  font: 1em "Fira Sans", sans-serif;
 }
 
 :root {

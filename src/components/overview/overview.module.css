@@ -46,7 +46,7 @@
 }
 
 .category{
-  flex: .75;
+  flex: .65;
   /* border: 1px solid black; */
   font-size: larger;
   vertical-align: middle;
@@ -54,7 +54,7 @@
 }
 
 .title{
-  flex: 1.5;
+  flex: 1.1;
   /* border: 1px solid black; */
   font-weight: bolder;
   font-size: xx-large;
@@ -63,6 +63,7 @@
 
 .price{
   flex: .5;
+  font-size: larger;
   /* border: 1px solid black; */
 }
 
@@ -81,7 +82,8 @@
   height: 2%;
   margin: 0px;
   vertical-align: text-top;
-
+  font-weight: bold;
+  font-size: large;
 }
 
 .styleSelection{
@@ -94,26 +96,35 @@
   /* width:  350px; */
   /* border: 1px solid darkblue; */
   justify-items: auto;
+  /* margin-top: 20px;
+  display: flexbox;
+  flex-wrap: wrap;
+  height: 95%;
+  width:  330px;
+  border: 1px solid darkblue;
+  justify-content: space-between; */
 }
 
 .styleItem {
   /* flex: 1; */
   /* height: 100px; */
   width: 10px;
-  margin: 2.5px 15px;
+  margin: 2.5px;
+
   position:relative;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .styleThumbnail {
-  height: 55px;
-  width: 55px;
-  /* border: 1px solid black; */
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   position: relative;
   top: 0;
   left: 0;
+  object-fit: cover;
 
 }
 
@@ -145,7 +156,7 @@
   display: flex;
   flex-wrap: wrap;
   height: 95%;
-  width:  450px;
+  width:  400px;
   /* border: 1px solid darkblue; */
   justify-items: auto;
 }
@@ -153,8 +164,8 @@
 .size {
  border: 3px solid darkgray;
  height: 60px;
- width: 250px;
- margin: 10px;
+ width: 45%;
+ margin: 10px 10px 10px 0px;
  font-size: larger;
  font-weight: bold;
 
@@ -165,8 +176,8 @@
 .quantity {
   border: 3px solid darkgray;
   height: 60px;
-  width: 150px;
-  margin: 10px;
+  width: 35%;
+  margin: 10px 0px 10px 0px;
   font-size: larger;
   font-weight: bold;
   /* flex-basis: 100px; */
@@ -175,9 +186,9 @@
 .cartButton {
   border: 3px solid darkgray;
   background-color: white;
-  margin: 10px;
+  margin: 0px 10px 10px 0px;
   height: 60px;
-  width: 300px;
+  width: 60%;
   font-size: larger;
   font-weight: bold;
   text-align: left;
@@ -192,7 +203,7 @@
 
 .cartStar {
   border: 3px solid darkgray;
-  margin: 10px;
+  margin: 0px 0px 10px 0px;
   height: 55px;
   width:  55px;
   align-items: center;
