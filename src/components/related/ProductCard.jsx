@@ -31,12 +31,12 @@ const ProductCard = ({relatedProduct, update}) =>{
   };
 
   const changeCurrentProduct = () =>{
-    // update(relatedProduct.info.id)
-    setTimeout(() =>  window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-     }), 600);
+    update(relatedProduct.info.id)
+    // setTimeout(() =>  window.scrollTo({
+    //     top: 0,
+    //     left: 0,
+    //     behavior: 'smooth'
+    //  }), 600);
   }
 
   return (

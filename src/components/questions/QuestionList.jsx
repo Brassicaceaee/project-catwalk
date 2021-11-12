@@ -12,12 +12,13 @@ const QuestionList = (props) => {
   let allQuestions = questions.results;
 
 
-
   let items = allQuestions.map((question, i) => {
     return (
       <Question question={question} key={i} questionid={question.question_id}/>
     )
   })
+
+
   // This code sets the length of the displayed questions (default is 2)
   const [displayedQuestions, setDisplayed] = useState(items.slice(0, 2));
 
