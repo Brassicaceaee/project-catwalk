@@ -1,8 +1,8 @@
 .navbar{
+   box-sizing: border-box;
    background-color: #47682C;
    display: flex;
    align-items:flex-end;
-   position: relative;
    justify-content: space-between;
    width: 100%;
    margin-bottom: 30px;
@@ -10,13 +10,15 @@
 }
 
 .navbar-right{
-   position: absolute;
    font:  1.5em "Fira Sans", sans-serif;
    /* font-weight: 700; */
-   right: 5px;
    display: flex;
    flex-direction: row;
-   justify-content: space-evenly;
-   align-items: center;
-   width: 50%;
+   justify-content: space-between;
+   /* align-items: center; */
+   width: 35%;
+}
+
+.divider {
+   border-right: white solid 1px;
 }

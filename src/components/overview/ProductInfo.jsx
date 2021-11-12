@@ -28,11 +28,11 @@ const ProductInfo = (props) => {
       </div>
 
       <div className={styles.category}>
-        <p>{props.product.info.category}</p>
+        {props.product.info.category}
       </div>
 
       <div className={styles.title}>
-        <p>{props.product.info.name}</p>
+        {props.product.info.name}
       </div>
 
       <div className={styles.price}>
