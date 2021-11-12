@@ -1,8 +1,8 @@
 .widget {
-  height: var(--widget-height);
+  height: 95vh;
   background-color: white;
   display: grid;
-  grid-template-columns: 3fr minmax(200px, 2fr);
+  grid-template-columns: 3fr 2fr;
   grid-template-rows: 3fr 1fr;
 }
 
@@ -33,20 +33,20 @@
 .infoComponent {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
+  /* justify-content: space-evenly; */
+  /* height: fit-content; */
   width: 100%;
   /* background-color: rgb(105, 125, 189); */
 }
 
 .starReview{
-  flex: .5;
+  /* flex: .5; */
   /* border: 1px solid black; */
 
 }
 
 .category{
-  flex: .65;
+  /* flex: .65; */
   /* border: 1px solid black; */
   font-size: larger;
   vertical-align: middle;
@@ -54,32 +54,34 @@
 }
 
 .title{
-  flex: 1.1;
+  /* flex: 1.1; */
   /* border: 1px solid black; */
   font-weight: bolder;
   font-size: xx-large;
-
+  margin-top: 0;
 }
 
 .price{
-  flex: .5;
+  /* flex: .5; */
   font-size: larger;
+  padding: 30px 0 20px 0
   /* border: 1px solid black; */
 }
 
 .styles{
-  flex: 4.5;
+  height: fit-content;
+  /* flex: 4.5; */
   /* border: 1px solid black; */
 }
 
 .addToCart{
-  flex: 4;
+  padding-top: 20px;
+  /* flex: 4; */
   /* border: 1px solid black; */
 }
 
 /*============= ProductInfo_Style Selector====================*/
 .styleText{
-  height: 2%;
   margin: 0px;
   vertical-align: text-top;
   font-weight: bold;
@@ -87,38 +89,50 @@
 }
 
 .styleSelection{
-  margin-top: 8px;
-  /* display: flexbox;
-  flex-wrap: wrap; */
+  /* margin-top: 8px; */
   display:grid;
   grid-template-columns: repeat(4, 1fr);
-  height: 95%;
-  /* width:  350px; */
-  /* border: 1px solid darkblue; */
-  justify-items: auto;
+  grid-auto-rows: .6fr;
+  height: fit-content;
+  /* justify-items: auto; */
+  padding-top: 20px;
+  /* display: flexbox;
+  flex-wrap: wrap; */
+  /* width:  330px; */
+  /* justify-content: space-between; */
+  align-items: center;
+  justify-items: center;
 }
 
 .styleItem {
   /* flex: 1; */
   /* height: 100px; */
-  width: 10px;
-  margin: 2.5px;
-
+  /* width: 10px; */
+  /* padding: 5px; */
+  width: 80px;
+  height: 80px;
   position:relative;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+  /* align-items: center; */
+  /* top: 0;
+  left: 0; */
+  overflow: visible;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
 .styleThumbnail {
-  height: 70px;
-  width: 70px;
+  box-sizing: border-box;
+  overflow: visible;
+  height: 85%;
+  width: 95%;
   border-radius: 50%;
   position: relative;
-  top: 0;
-  left: 0;
+  top: 2px;
+  left: 5px;
   object-fit: cover;
-
+  /* margin: 0 15px 15px 0; */
 }
 
 .styleThumbnail:hover {
@@ -127,7 +141,7 @@
 
 #check  {
   position: absolute;
-  bottom: 60px;
+  bottom: 10px;
   left: 0px;
   border: 2px solid #47682C;
   outline: 1px solid white;
@@ -155,7 +169,7 @@
 }
 
 .size {
- border: 3px solid darkgray;
+ border: 1px solid darkgray;
  height: 60px;
  width: 45%;
  margin: 10px 10px 10px 0px;
@@ -167,7 +181,7 @@
 }
 
 .quantity {
-  border: 3px solid darkgray;
+  border: 1px solid darkgray;
   height: 60px;
   width: 35%;
   margin: 10px 0px 10px 0px;
@@ -177,7 +191,7 @@
 }
 
 .cartButton {
-  border: 3px solid darkgray;
+  border: 1px solid darkgray;
   background-color: white;
   margin: 0px 10px 10px 0px;
   height: 60px;
@@ -189,13 +203,14 @@
 
 .cartButton:hover{
   background-color: lightgray;
+  border: 1px inset darkgray;
 }
 .cartButton:active{
   color: white;
 }
 
 .cartStar {
-  border: 3px solid darkgray;
+  /* border: 1px solid darkgray; */
   margin: 0px 0px 10px 0px;
   height: 55px;
   width:  55px;
@@ -219,9 +234,9 @@
 }
 
 .galleryThumbnails{
-  height: 680px;
-  width: 100px;
-  margin: 10px 1px 10px 1px;
+  height: fit-content;
+  /* width: 100px; */
+  margin: 0 1px 10px 1px;
   /* border: 1px solid purple; */
   display: flex;
   flex-direction: column;
@@ -244,15 +259,15 @@
   width: 80px;
   margin: 0px 1px 5px 0px;
   padding-left: 3px;
-  border-left: 5px solid grey;
+  border-left: 5px solid #47682C;
   justify-content:right;
   overflow: hidden;
 }
 
 
 .galleryThumbnailPhoto{
-  height: 143%;
-  max-width: 100%;
+  /* height: 143%; */
+  width: 100%;
   object-fit: cover;
 }
 
@@ -262,18 +277,16 @@
 }
 
 .galleryMain{
-  height: 665px;
-  width: 520px;
-  margin: 10px 10px 10px 2px;
-  /* border: 1px solid purple; */
+  height: 75vh;
+  width: 100%;
+  margin: 0px 10px 10px 2px;
   overflow: hidden;
 }
 
 .mainPhoto{
   max-width: 100%;
-  height: 120%;
+  height: 100%;
   object-fit: cover;
-
 }
 
 
