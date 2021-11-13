@@ -73,7 +73,4 @@ npm test
 
 ## Credits
 
-Made with [createapp.dev](https://createapp.dev/)
-
-
 Initialized with [createapp.dev](https://createapp.dev/)
