@@ -9,8 +9,28 @@
 ![Babel](https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black)
 
 
+
+We were tasked with redisgning, from scratch, the products page for an eCommerce company. As a group we created an overview component, related product component, questions and answers component and a reviews and ratings component. React allowed us to implement the requirements quickly and to keep the code maintainable. We were able to use React hooks and context to allow all the components to interface and share the same data.
+
+![2021-11-13_10-02-07 (1)](https://user-images.githubusercontent.com/54276174/141654324-9ab226c0-e36d-4683-b6c8-dc4f5f1d324e.gif)
+
+
+## Product Overview
+
+
 ## Related Products
 Related product widgets consist of two parts. One is the Related products which are related to the item displayed by overview component and it changes accordingly. Having carousel of cards let users navigate between the card. And, upon clicking on a star button a modal would pop up which compares the feature between the related card and the prodcut item. Once a card clicked, it would change the overview item as well. The second part is the outfit section, which is unique to each user. It gives the user the ability to save the current product item and navigating through them.
+
+
+## Product Questions and Answers
+
+
+## Product Ratings and Reviews
+The ratings and reviews section provides access to user feedback for the current product. Reviews from other users can be read and new reviews can becreated. Also there is a breakdown of the ratings given for all of reviews and the average score given for the characteristics of the current product.
+
+### Ratings and Review Component
+![2021-11-13_09-53-56 (1)](https://user-images.githubusercontent.com/54276174/141654272-021a70fe-390e-437a-8477-9b6f401ffe4d.gif)
+
 
 
 ## Building and running on localhost
@@ -21,13 +41,13 @@ First install dependencies:
 npm install
 ```
 
-To run in hot module reloading mode:
+To run using nodemon:
 
 ```sh
 npm start
 ```
 
-To create a production build:
+To create a production build and watch for changes:
 
 ```sh
 npm run build-prod
@@ -51,3 +71,6 @@ To run unit tests:
 npm test
 ```
 
+## Credits
+
+Initialized with [createapp.dev](https://createapp.dev/)
