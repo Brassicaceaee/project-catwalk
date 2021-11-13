@@ -1,6 +1,20 @@
 # project-catwalk
 
-Empty project.
+Hack Reactor front end capstone. We are tasked with updating an old ecommerce front end to modern techonologies. As a group we created three main components which were the Overview, Related Products, Ratings & Reviews. Utilizing React with React hooks accelerated development time and enriched the e-commerce browsing experience.
+
+
+## Product Overview
+
+
+## Related Products
+
+
+## Product Questions and Answers
+
+
+## Product Reviews
+
+
 
 ## Building and running on localhost
 
