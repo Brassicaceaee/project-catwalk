@@ -47,4 +47,4 @@ Made with [createapp.dev](https://createapp.dev/)
 
 ## Questions and Answers
 
-The questions and answers widget provides a list of questions and answers for a given product. On page load, the widget will request data from the API, to dynamically render the correct questions sorted by helpfulness rating. The widget includes a search bar to filter the displayed questions. Additional functionality includes options to post questions and answers to the API, rate questions as helpful or report question for review.
+The questions and answers widget provides the customer with a list of questions for a given product. On page load, the widget will request data from the API and dynamically render the correct questions in order of helpfulness rating. Additional functionality includes a search bar to filter the displayed questions, options to post questions and answers to the API and buttons to rate questions as helpful or report report them for internal review.
