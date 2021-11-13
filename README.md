@@ -23,7 +23,7 @@ Related product widgets consist of two parts. One is the Related products which 
 
 
 ## Product Questions and Answers
-
+The questions and answers widget provides the customer with a list of questions for a given product. On page load, the widget will request data from the API and dynamically render the correct questions in order of helpfulness rating. Additional functionality includes a search bar to filter the displayed questions, options to post questions and answers to the API and buttons to rate questions as helpful or report report them for internal review.
 
 ## Product Ratings and Reviews
 The ratings and reviews section provides access to user feedback for the current product. Reviews from other users can be read and new reviews can becreated. Also there is a breakdown of the ratings given for all of reviews and the average score given for the characteristics of the current product.
@@ -72,5 +72,8 @@ npm test
 ```
 
 ## Credits
+
+Made with [createapp.dev](https://createapp.dev/)
+
 
 Initialized with [createapp.dev](https://createapp.dev/)
