@@ -29,11 +29,7 @@ const RatingBreakdown = () => {
         let percent = (ratings[bar] / total * 100) + '%';
         return (
           <div key={index} className={`${styles.flex} ${styles.center} ${styles.medMarginBottom}`}>
-<<<<<<< HEAD
             <span onClick={onRatingClick}  data-value={bar} className={styles.medMarginRight}>{bar} Broc</span>
-=======
-            <span onClick={onRatingClick}  data-value={bar} className={styles.medMarginRight}>{bar} Brock</span>
->>>>>>> main
             <div className={styles.bar}>
               <div style={{ width: percent }}></div>
             </div>
