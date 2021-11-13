@@ -1,6 +1,6 @@
 # project-catwalk
 
-Hack Reactor front end capstone. We are tasked with updating an old ecommerce front end to modern techonologies. As a group we created three main components which were the Overview, Related Products, Ratings & Reviews. Utilizing React with React hooks accelerated development time and enriched the e-commerce browsing experience.
+We were tasked with redisgning, from scratch, the products page for an eCommerce company. As a group we created an overview component, related product component, questions and answers component and a reviews and ratings component. React allowed us to implement the requirements quickly and to keep the code maintainable. We were able to use React hooks and context to allow all the components to interface and share the same data.
 
 
 ## Product Overview
@@ -12,8 +12,13 @@ Hack Reactor front end capstone. We are tasked with updating an old ecommerce fr
 ## Product Questions and Answers
 
 
-## Product Reviews
+## Product Ratings and Reviews
+The ratings and reviews section provides access to user feedback for the current product. Reviews from other users can be read and new reviews can becreated. Also there is a breakdown of the ratings given for all of reviews and the average score given for the characteristics of the current product.
 
+### Review List
+
+
+### Add a review form
 
 
 ## Building and running on localhost
@@ -24,13 +29,13 @@ First install dependencies:
 npm install
 ```
 
-To run in hot module reloading mode:
+To run using nodemon:
 
 ```sh
 npm start
 ```
 
-To create a production build:
+To create a production build and watch for changes:
 
 ```sh
 npm run build-prod
@@ -56,4 +61,4 @@ npm test
 
 ## Credits
 
-Made with [createapp.dev](https://createapp.dev/)
+Initialized with [createapp.dev](https://createapp.dev/)
