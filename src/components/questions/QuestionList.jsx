@@ -28,9 +28,9 @@ const QuestionList = (props) => {
 
   // This should update the Q&A component so it defaults to show 2 questions, however right now including this useEffect breaks the related product click functionality so I am not including it
 
-  // useEffect(() => {
-  //   setDisplayed(jsxQuestions.slice(0, 2));
-  // }, [jsxQuestions])
+  useEffect(() => {
+    setDisplayed(jsxQuestions.slice(0, 2));
+  }, [jsxQuestions])
 
   // Each click extends list of questions by up to 2
   let moreQuestionsClick = () => {
