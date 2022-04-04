@@ -5,6 +5,7 @@ let url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
 let options = {
   headers: {'Authorization': API_KEY}
 }
+const calculateAverage = require('../helpers/calculateAverage')
 
 module.exports.getProduct = (req, res) => {
   // debugger;
@@ -79,19 +80,4 @@ module.exports.getProduct = (req, res) => {
     // debugger;
     console.log(err)
   });
-}
-
-// Helper function
-const calculateAverage = (ratings) => {
-  let average = 0;
-  let total = 0;
-  let weightedTotal = 0;
-  for (let key in ratings) {
-    let starCount = parseInt(key);
-    let count = parseInt(ratings[key]);
-    total += count;
-    weightedTotal += count * starCount;
-  }
-  average = Math.round((weightedTotal / total) * 10) / 10;
-  return {total, average};
 }
