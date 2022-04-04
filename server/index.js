@@ -3,8 +3,10 @@ const express = require('express');
 const { API_KEY } = require('../config/config.js')
 const app = express();
 const port = 3000;
-const { getProduct } = require('./controllers/overview.js')
-const productRoute = require('./routes/productRoutes.js')
+const { getProduct } = require('./controllers/overview.js');
+const cartRoutes = require('./routes/cartRoutes.js');
+const productRoute = require('./routes/productRoutes.js');
+const relatedRoutes = require('./routes/relatedRoutes.js');
 app.use(express.json())
 app.use(express.static('dist'))
 
@@ -13,32 +15,10 @@ let options = {
   headers: {'Authorization': API_KEY}
 }
 
-app.get('/products', getProduct);
-// app.use('/products', productRoute)
-
-//related product - outfit list
-var storedOutfit = {};
-
-// get outfit list data
-app.get('/outfit', (req, res) => {
-  res.send(storedOutfit);
-});
-
-// add product to outfit list
-app.post('/outfit', (req, res) => {
-  // console.log(req.body)
-  const productID = req.body.productID;
-  const productInfo = req.body.productInfo;
-  storedOutfit[productID] = productInfo
-  res.sendStatus(201);
-});
-
-// delete data from outfit List
-app.delete('/outfit', (req, res) => {
-  const productID = req.body.storedOutfitID;
-  delete storedOutfit[productID]
-  res.sendStatus(202);
-});
+// app.get('/products', getProduct);
+app.use('/products', productRoute)
+app.use('/outfit', relatedRoutes)
+app.use('/', cartRoutes)
 
 let rating = {}
 //get avgerage rating from related product
@@ -53,36 +33,8 @@ app.get('/rating/:id', (req, res) => {
   .catch(err => console.log("rating err", err))
 })
 
-
-// Items stored in users cart
-var cartItems = {};
-
-// add item sku and quantity to list
-app.post('/cart/:skuID', (req, res) => {
-
-  let quantity = parseInt(req.body.quantity);
-  let skuID = req.params.skuID;
-
-  cartItems[skuID] = quantity
-
-  res.sendStatus(201)
-})
-
-//Retrieve list of items user has in cart (sku and quantity)
-app.get('/cart', (req, res) => {
-  let itemList = []
-  let cartItemEntries = Object.entries(cartItems);
-  for(let i=0; i < cartItemEntries.length; i++) {
-
-    itemList.push({"sku_id": cartItemEntries[i][0],
-                  "count": cartItemEntries[i][1]})
-  }
-  res.status(200).send(itemList);
-})
-
-
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Server is listening at http://localhost:${port}`)
 })
 
 

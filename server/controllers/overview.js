@@ -7,6 +7,7 @@ let options = {
 }
 
 module.exports.getProduct = (req, res) => {
+  // debugger;
   let productId = req.query.product_id
 
   let product = {}
@@ -75,6 +76,22 @@ module.exports.getProduct = (req, res) => {
 
   })
   .catch((err) => {
-    debugger;
+    // debugger;
+    console.log(err)
   });
+}
+
+// Helper function
+const calculateAverage = (ratings) => {
+  let average = 0;
+  let total = 0;
+  let weightedTotal = 0;
+  for (let key in ratings) {
+    let starCount = parseInt(key);
+    let count = parseInt(ratings[key]);
+    total += count;
+    weightedTotal += count * starCount;
+  }
+  average = Math.round((weightedTotal / total) * 10) / 10;
+  return {total, average};
 }
