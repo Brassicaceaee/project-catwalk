@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { application } = require('express');
 const express = require('express');
 const { API_KEY } = require('../config/config.js')
 const app = express();
@@ -6,6 +7,7 @@ const port = 3000;
 const { getProduct } = require('./controllers/overview.js');
 const cartRoutes = require('./routes/cartRoutes.js');
 const productRoute = require('./routes/productRoutes.js');
+const questionsRoutes = require('./routes/questionRoutes.js');
 const relatedRoutes = require('./routes/relatedRoutes.js');
 app.use(express.json())
 app.use(express.static('dist'))
@@ -18,7 +20,8 @@ let options = {
 // app.get('/products', getProduct);
 app.use('/products', productRoute)
 app.use('/outfit', relatedRoutes)
-app.use('/', cartRoutes)
+app.use('/cart', cartRoutes)
+app.use('/qa/questions', questionsRoutes)
 
 let rating = {}
 //get avgerage rating from related product
@@ -53,35 +56,6 @@ const calculateAverage = (ratings) => {
   average = Math.round((weightedTotal / total) * 10) / 10;
   return {total, average};
 }
-
-
-
-// Q & A
-
-// Post a Question
-app.post('/qa/questions', (req, res) => {
-  let body = req.body.body;
-  let name = req.body.name;
-  let email = req.body.email;
-  let product_id = req.body.product_id;
-  let data = {
-    body: body,
-    name: name,
-    email: email,
-    product_id: parseInt(product_id)
-  }
-
-  axios.post(`${url}/qa/questions`,data, options)
-  .then(results => {
-    console.log('result post at the server', results)
-    res.sendStatus(201)
-  })
-  .catch(err => {
-    console.log('err', err)
-    res.sendStatus(500)
-  })
-});
-
 
 // REVIEWS
 
