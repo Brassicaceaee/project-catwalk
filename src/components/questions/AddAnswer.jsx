@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from './questions.module.css';
-import AnswerForm from './FormAnswer.jsx';
+import AnswerForm from './AnswerForm.jsx';
 
 const AddAnswer = (props) => {
 

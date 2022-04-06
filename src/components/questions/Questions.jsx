@@ -1,7 +1,5 @@
 import React from 'react';
-import SearchBar from './SearchBar.jsx';
 import QuestionList from './QuestionList.jsx';
-import AddQuestion from './AddQuestion.jsx';
 import styles from './questions.module.css';
 
 const Questions = () => {
@@ -9,7 +7,6 @@ const Questions = () => {
   return (
     <div className={styles.widget}>
       <h4 className={styles.widgetHeader} id='search'> Questions & Answers </h4>
-      <SearchBar />
       <QuestionList />
     </div>
   )

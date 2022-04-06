@@ -8,7 +8,7 @@ let options = {
 const calculateAverage = require('../helpers/calculateAverage')
 
 module.exports.getProduct = (req, res) => {
-  // debugger;
+  debugger;
   let productId = req.query.product_id
 
   let product = {}
@@ -20,7 +20,7 @@ module.exports.getProduct = (req, res) => {
     axios.get(`${url}/products/${productId}/related`, options),
     axios.get(`${url}/reviews?product_id=${productId}`, options),
     axios.get(`${url}/reviews/meta?product_id=${productId}`, options),
-    axios.get(`${url}/qa/questions?product_id=${productId}&count=50`, options),
+    axios.get(`${url}/qa/questions?product_id=${productId}&count=20`, options),
     axios.get(`${url}/cart`, options)
   ])
   .then((result) => {
