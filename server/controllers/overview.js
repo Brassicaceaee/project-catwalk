@@ -8,7 +8,6 @@ let options = {
 const calculateAverage = require('../helpers/calculateAverage')
 
 module.exports.getProduct = (req, res) => {
-  debugger;
   let productId = req.query.product_id
 
   let product = {}

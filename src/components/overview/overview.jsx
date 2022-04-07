@@ -6,6 +6,8 @@ import Description from './Description.jsx';
 import Features from './Features.jsx'
 import json from './styleSample.json'
 import {useProductContext} from '../../context/ProductContext.jsx'
+import { useContext } from 'react/cjs/react.production.min';
+import { useOverviewContext } from '../../context/OverviewContext.jsx';
 //Will pass in productcontext.style to to style context as default value
 
 
@@ -19,7 +21,7 @@ const Overview = (props) => {
 
   const [styleIndex, setStyleIndex] = useState(0);
   var product = useProductContext();
-
+  let overviewData = useOverviewContext();
   return(
     <StyleIndexContext.Provider value ={{changeStyleIndex : setStyleIndex}}>
       <div className={styles.widget}>
